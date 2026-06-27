@@ -1,0 +1,1677 @@
+{
+  "sessions": [
+    {
+      "sessionId": "ch01_w01_s01-02",
+      "chapter": 1,
+      "chapterName": "Some Basic Concepts of Chemistry",
+      "week": 1,
+      "session": "01-02",
+      "dates": [
+        "2026-05-21",
+        "2026-05-22"
+      ],
+      "days": [
+        "THU",
+        "FRI"
+      ],
+      "topics": [
+        "1.1 Importance of Chemistry",
+        "1.2 Nature of Matter",
+        "1.2.1 States of Matter",
+        "1.2.2 Classification of Matter"
+      ],
+      "file": "chapters/ch01/week01/session01-02.html"
+    },
+    {
+      "sessionId": "ch01_w01_s03-04",
+      "chapter": 1,
+      "chapterName": "Some Basic Concepts of Chemistry",
+      "week": 1,
+      "session": "03-04",
+      "dates": [
+        "2026-05-23",
+        "2026-05-25"
+      ],
+      "days": [
+        "SAT",
+        "MON"
+      ],
+      "topics": [
+        "1.3 Properties of Matter",
+        "1.3.1 Physical and Chemical Properties"
+      ],
+      "file": "chapters/ch01/week01/session03-04.html"
+    },
+    {
+      "sessionId": "ch01_w01_s05-06",
+      "chapter": 1,
+      "chapterName": "Some Basic Concepts of Chemistry",
+      "week": 1,
+      "session": "05-06",
+      "dates": [
+        "2026-05-26",
+        "2026-05-27"
+      ],
+      "days": [
+        "TUE",
+        "WED"
+      ],
+      "topics": [
+        "1.3.2-1.3.7 SI Units, Mass, Volume, Density, Temperature"
+      ],
+      "file": "chapters/ch01/week01/session05-06.html"
+    },
+    {
+      "sessionId": "ch01_w02_s01-03",
+      "chapter": 1,
+      "chapterName": "Some Basic Concepts of Chemistry",
+      "week": 2,
+      "session": "01-03",
+      "dates": [
+        "2026-05-25",
+        "2026-05-26",
+        "2026-05-27"
+      ],
+      "days": [
+        "MON",
+        "TUE",
+        "WED"
+      ],
+      "topics": [
+        "1.5 Laws of Chemical Combination"
+      ],
+      "file": "chapters/ch01/week02/session01-03.html"
+    },
+    {
+      "sessionId": "ch01_w02_s04-05",
+      "chapter": 1,
+      "chapterName": "Some Basic Concepts of Chemistry",
+      "week": 2,
+      "session": "04-05",
+      "dates": [
+        "2026-05-29",
+        "2026-05-30"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "1.6 Dalton's Atomic Theory",
+        "1.7 Atomic and Molecular Masses"
+      ],
+      "file": "chapters/ch01/week02/session04-05.html"
+    },
+    {
+      "sessionId": "ch01_w02_s06",
+      "chapter": 1,
+      "chapterName": "Some Basic Concepts of Chemistry",
+      "week": 2,
+      "session": "06",
+      "dates": [
+        "2026-06-01"
+      ],
+      "days": [
+        "MON"
+      ],
+      "topics": [
+        "1.8 Mole Concept (Part 1)"
+      ],
+      "file": "chapters/ch01/week02/session06.html"
+    },
+    {
+      "sessionId": "ch01_w03_s01-02",
+      "chapter": 1,
+      "chapterName": "Some Basic Concepts of Chemistry",
+      "week": 3,
+      "session": "01-02",
+      "dates": [
+        "2026-06-01",
+        "2026-06-02"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "1.8 Mole Concept (Part 2)"
+      ],
+      "file": "chapters/ch01/week03/session01-02.html"
+    },
+    {
+      "sessionId": "ch01_w03_s03-04",
+      "chapter": 1,
+      "chapterName": "Some Basic Concepts of Chemistry",
+      "week": 3,
+      "session": "03-04",
+      "dates": [
+        "2026-06-03",
+        "2026-06-04"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "1.9 Percentage Composition, Empirical Formula"
+      ],
+      "file": "chapters/ch01/week03/session03-04.html"
+    },
+    {
+      "sessionId": "ch01_w03_s05-06",
+      "chapter": 1,
+      "chapterName": "Some Basic Concepts of Chemistry",
+      "week": 3,
+      "session": "05-06",
+      "dates": [
+        "2026-06-05",
+        "2026-06-06"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "1.10 Stoichiometry, Limiting Reagent"
+      ],
+      "file": "chapters/ch01/week03/session05-06.html"
+    },
+    {
+      "sessionId": "ch02_w04_s01-02",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 4,
+      "session": "01-02",
+      "dates": [
+        "2026-06-08",
+        "2026-06-09"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "2.1 Discovery of Sub-atomic Particles"
+      ],
+      "file": "chapters/ch02/week04/session01-02.html"
+    },
+    {
+      "sessionId": "ch02_w04_s03-04",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 4,
+      "session": "03-04",
+      "dates": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "2.1.2-2.1.4 Charge/Mass Ratio, Protons, Neutrons"
+      ],
+      "file": "chapters/ch02/week04/session03-04.html"
+    },
+    {
+      "sessionId": "ch02_w04_s05-06",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 4,
+      "session": "05-06",
+      "dates": [
+        "2026-06-12",
+        "2026-06-13"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "2.2 Atomic Models: Thomson, Rutherford"
+      ],
+      "file": "chapters/ch02/week04/session05-06.html"
+    },
+    {
+      "sessionId": "ch02_w05_s01-02",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 5,
+      "session": "01-02",
+      "dates": [
+        "2026-06-15",
+        "2026-06-16"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "2.2 Atomic Number, Isotopes, Drawbacks of Rutherford Model"
+      ],
+      "file": "chapters/ch02/week05/session01-02.html"
+    },
+    {
+      "sessionId": "ch02_w05_s03-04",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 5,
+      "session": "03-04",
+      "dates": [
+        "2026-06-17",
+        "2026-06-18"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "2.3 Wave Nature, Electromagnetic Radiation"
+      ],
+      "file": "chapters/ch02/week05/session03-04.html"
+    },
+    {
+      "sessionId": "ch02_w05_s05-06",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 5,
+      "session": "05-06",
+      "dates": [
+        "2026-06-19",
+        "2026-06-20"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "2.3.2 Photoelectric Effect, Dual Behaviour of Radiation"
+      ],
+      "file": "chapters/ch02/week05/session05-06.html"
+    },
+    {
+      "sessionId": "ch02_w06_s01-02",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 6,
+      "session": "01-02",
+      "dates": [
+        "2026-06-22",
+        "2026-06-23"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "2.3.3 Atomic Spectra, Line Spectrum of Hydrogen"
+      ],
+      "file": "chapters/ch02/week06/session01-02.html"
+    },
+    {
+      "sessionId": "ch02_w06_s03-04",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 6,
+      "session": "03-04",
+      "dates": [
+        "2026-06-24",
+        "2026-06-25"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "2.4 Bohr's Model, Hydrogen Spectrum"
+      ],
+      "file": "chapters/ch02/week06/session03-04.html"
+    },
+    {
+      "sessionId": "ch02_w06_s05-06",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 6,
+      "session": "05-06",
+      "dates": [
+        "2026-06-26",
+        "2026-06-27"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "2.4.1 Limitations of Bohr's Model, Radius, Energy"
+      ],
+      "file": "chapters/ch02/week06/session05-06.html"
+    },
+    {
+      "sessionId": "ch02_w07_s01-02",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 7,
+      "session": "01-02",
+      "dates": [
+        "2026-06-29",
+        "2026-06-30"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "2.5 Quantum Mechanical Model, Dual Behaviour of Matter"
+      ],
+      "file": "chapters/ch02/week07/session01-02.html"
+    },
+    {
+      "sessionId": "ch02_w07_s03-04",
+      "chapter": 2,
+      "chapterName": "Atomic Structure",
+      "week": 7,
+      "session": "03-04",
+      "dates": [
+        "2026-07-01",
+        "2026-07-02"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "2.5.2 Heisenberg Uncertainty Principle"
+      ],
+      "file": "chapters/ch02/week07/session03-04.html"
+    },
+    {
+      "sessionId": "ch03_w08_s01-02",
+      "chapter": 3,
+      "chapterName": "Classification of Elements and Periodicity",
+      "week": 8,
+      "session": "01-02",
+      "dates": [
+        "2026-07-06",
+        "2026-07-07"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "2.6 Orbitals, Quantum Numbers, Shapes (completes Ch2)"
+      ],
+      "file": "chapters/ch03/week08/session01-02.html"
+    },
+    {
+      "sessionId": "ch03_w08_s03-04",
+      "chapter": 3,
+      "chapterName": "Classification of Elements and Periodicity",
+      "week": 8,
+      "session": "03-04",
+      "dates": [
+        "2026-07-08",
+        "2026-07-09"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "3.1-3.2 Genesis of Periodic Classification"
+      ],
+      "file": "chapters/ch03/week08/session03-04.html"
+    },
+    {
+      "sessionId": "ch03_w08_s05-06",
+      "chapter": 3,
+      "chapterName": "Classification of Elements and Periodicity",
+      "week": 8,
+      "session": "05-06",
+      "dates": [
+        "2026-07-10",
+        "2026-07-11"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "3.3 Modern Periodic Law, Present Periodic Table"
+      ],
+      "file": "chapters/ch03/week08/session05-06.html"
+    },
+    {
+      "sessionId": "ch03_w09_s01-02",
+      "chapter": 3,
+      "chapterName": "Classification of Elements and Periodicity",
+      "week": 9,
+      "session": "01-02",
+      "dates": [
+        "2026-07-13",
+        "2026-07-14"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "3.4-3.5 Nomenclature of Elements Z>100, Electronic Configuration"
+      ],
+      "file": "chapters/ch03/week09/session01-02.html"
+    },
+    {
+      "sessionId": "ch04_w09_s03-04",
+      "chapter": 4,
+      "chapterName": "Chemical Bonding and Molecular Structure",
+      "week": 9,
+      "session": "03-04",
+      "dates": [
+        "2026-07-15",
+        "2026-07-16"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "3.6-3.7 s,p,d,f Blocks, Atomic Radius (completes Ch3)"
+      ],
+      "file": "chapters/ch04/week09/session03-04.html"
+    },
+    {
+      "sessionId": "ch04_w09_s05-06",
+      "chapter": 4,
+      "chapterName": "Chemical Bonding and Molecular Structure",
+      "week": 9,
+      "session": "05-06",
+      "dates": [
+        "2026-07-17",
+        "2026-07-18"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "4.1 Kossel-Lewis Approach, Octet Rule, Covalent Bond"
+      ],
+      "file": "chapters/ch04/week09/session05-06.html"
+    },
+    {
+      "sessionId": "ch04_w10_s01-02",
+      "chapter": 4,
+      "chapterName": "Chemical Bonding and Molecular Structure",
+      "week": 10,
+      "session": "01-02",
+      "dates": [
+        "2026-07-20",
+        "2026-07-21"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "4.1.3-4.1.5 Lewis Structures, Formal Charge"
+      ],
+      "file": "chapters/ch04/week10/session01-02.html"
+    },
+    {
+      "sessionId": "ch04_w10_s03-04",
+      "chapter": 4,
+      "chapterName": "Chemical Bonding and Molecular Structure",
+      "week": 10,
+      "session": "03-04",
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "4.2 Ionic Bond, Lattice Energy, Fajans Rules"
+      ],
+      "file": "chapters/ch04/week10/session03-04.html"
+    },
+    {
+      "sessionId": "ch04_w10_s05-06",
+      "chapter": 4,
+      "chapterName": "Chemical Bonding and Molecular Structure",
+      "week": 10,
+      "session": "05-06",
+      "dates": [
+        "2026-07-24",
+        "2026-07-25"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "4.3 Bond Parameters, Resonance, Dipole Moment"
+      ],
+      "file": "chapters/ch04/week10/session05-06.html"
+    },
+    {
+      "sessionId": "ch04_w11_s01-02",
+      "chapter": 4,
+      "chapterName": "Chemical Bonding and Molecular Structure",
+      "week": 11,
+      "session": "01-02",
+      "dates": [
+        "2026-07-27",
+        "2026-07-28"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "4.4 VSEPR Theory"
+      ],
+      "file": "chapters/ch04/week11/session01-02.html"
+    },
+    {
+      "sessionId": "ch04_w11_s03-04",
+      "chapter": 4,
+      "chapterName": "Chemical Bonding and Molecular Structure",
+      "week": 11,
+      "session": "03-04",
+      "dates": [
+        "2026-07-29",
+        "2026-07-30"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "4.5 Valence Bond Theory, Sigma and Pi Bonds"
+      ],
+      "file": "chapters/ch04/week11/session03-04.html"
+    },
+    {
+      "sessionId": "ch04_w11_s05-06",
+      "chapter": 4,
+      "chapterName": "Chemical Bonding and Molecular Structure",
+      "week": 11,
+      "session": "05-06",
+      "dates": [
+        "2026-07-31"
+      ],
+      "days": [
+        "FRI"
+      ],
+      "topics": [
+        "4.6 Hybridisation: SP, SP2, SP3"
+      ],
+      "file": "chapters/ch04/week11/session05-06.html"
+    },
+    {
+      "sessionId": "ch04_w12_s01-02",
+      "chapter": 4,
+      "chapterName": "Chemical Bonding and Molecular Structure",
+      "week": 12,
+      "session": "01-02",
+      "dates": [
+        "2026-08-03",
+        "2026-08-04"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "4.6.3 Hybridisation with d-orbitals"
+      ],
+      "file": "chapters/ch04/week12/session01-02.html"
+    },
+    {
+      "sessionId": "ch05_w12_s03-04",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 12,
+      "session": "03-04",
+      "dates": [
+        "2026-08-05",
+        "2026-08-06"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "4.7 Molecular Orbital Theory, LCAO"
+      ],
+      "file": "chapters/ch05/week12/session03-04.html"
+    },
+    {
+      "sessionId": "ch05_w12_s05-06",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 12,
+      "session": "05-06",
+      "dates": [
+        "2026-08-07",
+        "2026-08-08"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "4.7.4-4.9 MOT Energy Diagrams, Hydrogen Bonding (completes Ch4)"
+      ],
+      "file": "chapters/ch05/week12/session05-06.html"
+    },
+    {
+      "sessionId": "ch05_w13_s01-02",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 13,
+      "session": "01-02",
+      "dates": [
+        "2026-08-10",
+        "2026-08-11"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "5.1 Thermodynamic Terms, Internal Energy"
+      ],
+      "file": "chapters/ch05/week13/session01-02.html"
+    },
+    {
+      "sessionId": "ch05_w13_s03-04",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 13,
+      "session": "03-04",
+      "dates": [
+        "2026-08-12",
+        "2026-08-14"
+      ],
+      "days": [
+        "WED",
+        "FRI"
+      ],
+      "topics": [
+        "5.2 First Law, Work, Heat, Free Expansion"
+      ],
+      "file": "chapters/ch05/week13/session03-04.html"
+    },
+    {
+      "sessionId": "ch05_w13_s05-06",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 13,
+      "session": "05-06",
+      "dates": [
+        "2026-08-17",
+        "2026-08-18"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "5.2.2 Enthalpy, Cp-Cv, Bomb Calorimeter"
+      ],
+      "file": "chapters/ch05/week13/session05-06.html"
+    },
+    {
+      "sessionId": "ch05_w14_s01-02",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 14,
+      "session": "01-02",
+      "dates": [
+        "2026-08-19",
+        "2026-08-20"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "5.4 Enthalpy of Reaction, Standard States"
+      ],
+      "file": "chapters/ch05/week14/session01-02.html"
+    },
+    {
+      "sessionId": "ch05_w14_s03-04",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 14,
+      "session": "03-04",
+      "dates": [
+        "2026-08-22",
+        "2026-08-24"
+      ],
+      "days": [
+        "SAT",
+        "MON"
+      ],
+      "topics": [
+        "5.4(e) Hess's Law and Numericals"
+      ],
+      "file": "chapters/ch05/week14/session03-04.html"
+    },
+    {
+      "sessionId": "ch05_w14_s05-06",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 14,
+      "session": "05-06",
+      "dates": [
+        "2026-08-25",
+        "2026-08-26"
+      ],
+      "days": [
+        "TUE",
+        "WED"
+      ],
+      "topics": [
+        "5.5 Enthalpies: Combustion, Atomisation, Bond"
+      ],
+      "file": "chapters/ch05/week14/session05-06.html"
+    },
+    {
+      "sessionId": "ch05_w15_s01-02",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 15,
+      "session": "01-02",
+      "dates": [
+        "2026-08-26",
+        "2026-08-27"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "5.5(d-f) Lattice Enthalpy, Solution, Dilution"
+      ],
+      "file": "chapters/ch05/week15/session01-02.html"
+    },
+    {
+      "sessionId": "ch05_w15_s03-04",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 15,
+      "session": "03-04",
+      "dates": [
+        "2026-08-28",
+        "2026-08-29"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "5.6 Spontaneity, Entropy"
+      ],
+      "file": "chapters/ch05/week15/session03-04.html"
+    },
+    {
+      "sessionId": "ch05_w15_s05-06",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 15,
+      "session": "05-06",
+      "dates": [
+        "2026-08-31",
+        "2026-09-01"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "5.7 Gibbs Energy, Equilibrium Constant"
+      ],
+      "file": "chapters/ch05/week15/session05-06.html"
+    },
+    {
+      "sessionId": "ch05_w16_s01-02",
+      "chapter": 5,
+      "chapterName": "Thermodynamics",
+      "week": 16,
+      "session": "01-02",
+      "dates": [
+        "2026-09-03",
+        "2026-09-04"
+      ],
+      "days": [
+        "THU",
+        "FRI"
+      ],
+      "topics": [
+        "5.7 Gibbs Energy Numericals (completes Ch5)"
+      ],
+      "file": "chapters/ch05/week16/session01-02.html"
+    },
+    {
+      "sessionId": "ch06_w16_s03-04",
+      "chapter": 6,
+      "chapterName": "Chemical Equilibrium",
+      "week": 16,
+      "session": "03-04",
+      "dates": [
+        "2026-09-07",
+        "2026-09-08"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "6.1 Equilibrium in Physical Processes"
+      ],
+      "file": "chapters/ch06/week16/session03-04.html"
+    },
+    {
+      "sessionId": "ch06_w16_s05-06",
+      "chapter": 6,
+      "chapterName": "Chemical Equilibrium",
+      "week": 16,
+      "session": "05-06",
+      "dates": [
+        "2026-09-09",
+        "2026-09-10"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "6.2-6.3 Chemical Equilibrium, Law of Mass Action"
+      ],
+      "file": "chapters/ch06/week16/session05-06.html"
+    },
+    {
+      "sessionId": "ch06_w17_s01-02",
+      "chapter": 6,
+      "chapterName": "Chemical Equilibrium",
+      "week": 17,
+      "session": "01-02",
+      "dates": [
+        "2026-09-14",
+        "2026-09-15"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "6.4-6.5 Homogeneous, Heterogeneous Equilibria"
+      ],
+      "file": "chapters/ch06/week17/session01-02.html"
+    },
+    {
+      "sessionId": "ch06_w17_s03-04",
+      "chapter": 6,
+      "chapterName": "Chemical Equilibrium",
+      "week": 17,
+      "session": "03-04",
+      "dates": [
+        "2026-09-16",
+        "2026-09-17"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "6.6 Applications of Equilibrium Constants"
+      ],
+      "file": "chapters/ch06/week17/session03-04.html"
+    },
+    {
+      "sessionId": "ch06_w17_s05-06",
+      "chapter": 6,
+      "chapterName": "Chemical Equilibrium",
+      "week": 17,
+      "session": "05-06",
+      "dates": [
+        "2026-09-18",
+        "2026-09-19"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "6.8 Le Chatelier's Principle, Factors"
+      ],
+      "file": "chapters/ch06/week17/session05-06.html"
+    },
+    {
+      "sessionId": "ch06_w18_s01-02",
+      "chapter": 6,
+      "chapterName": "Chemical Equilibrium",
+      "week": 18,
+      "session": "01-02",
+      "dates": [
+        "2026-09-21",
+        "2026-09-22"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "6.8.3-6.8.5 Inert Gas, Temperature, Catalyst (completes Ch6)"
+      ],
+      "file": "chapters/ch06/week18/session01-02.html"
+    },
+    {
+      "sessionId": "ch07_w18_s03-04",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 18,
+      "session": "03-04",
+      "dates": [
+        "2026-09-23",
+        "2026-09-24"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "6.9-6.10 Ionic Equilibrium, Arrhenius, Bronsted-Lowry"
+      ],
+      "file": "chapters/ch07/week18/session03-04.html"
+    },
+    {
+      "sessionId": "ch07_w18_s05-06",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 18,
+      "session": "05-06",
+      "dates": [
+        "2026-09-25",
+        "2026-09-26"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "6.10.2-6.10.3 Bronsted-Lowry, Lewis Acids/Bases"
+      ],
+      "file": "chapters/ch07/week18/session05-06.html"
+    },
+    {
+      "sessionId": "ch07_w19_s01-02",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 19,
+      "session": "01-02",
+      "dates": [
+        "2026-09-28",
+        "2026-09-29"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "6.11 Ionisation, pH Scale"
+      ],
+      "file": "chapters/ch07/week19/session01-02.html"
+    },
+    {
+      "sessionId": "ch07_w19_s03-04",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 19,
+      "session": "03-04",
+      "dates": [
+        "2026-09-30",
+        "2026-10-01"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "6.11.3-6.11.4 Ka, Kb"
+      ],
+      "file": "chapters/ch07/week19/session03-04.html"
+    },
+    {
+      "sessionId": "ch07_w19_s05-06",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 19,
+      "session": "05-06",
+      "dates": [
+        "2026-10-03",
+        "2026-10-05"
+      ],
+      "days": [
+        "SAT",
+        "MON"
+      ],
+      "topics": [
+        "6.11.6-6.11.7 Polybasic Acids"
+      ],
+      "file": "chapters/ch07/week19/session05-06.html"
+    },
+    {
+      "sessionId": "ch07_w20_s01-02",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 20,
+      "session": "01-02",
+      "dates": [
+        "2026-10-05",
+        "2026-10-06"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "6.11.8 Common Ion Effect"
+      ],
+      "file": "chapters/ch07/week20/session01-02.html"
+    },
+    {
+      "sessionId": "ch07_w20_s03-04",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 20,
+      "session": "03-04",
+      "dates": [
+        "2026-10-07",
+        "2026-10-08"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "6.11.9 Hydrolysis of Salts"
+      ],
+      "file": "chapters/ch07/week20/session03-04.html"
+    },
+    {
+      "sessionId": "ch07_w20_s05-06",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 20,
+      "session": "05-06",
+      "dates": [
+        "2026-10-09",
+        "2026-10-10"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "6.12 Buffer Solutions"
+      ],
+      "file": "chapters/ch07/week20/session05-06.html"
+    },
+    {
+      "sessionId": "ch07_w21_s01-02",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 21,
+      "session": "01-02",
+      "dates": [
+        "2026-10-19",
+        "2026-10-20"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "6.9.1 Solubility Product"
+      ],
+      "file": "chapters/ch07/week21/session01-02.html"
+    },
+    {
+      "sessionId": "ch07_w21_s03-04",
+      "chapter": 7,
+      "chapterName": "Ionic Equilibrium",
+      "week": 21,
+      "session": "03-04",
+      "dates": [
+        "2026-10-21",
+        "2026-10-22"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "6.9.2 Common Ion Effect, Numericals (completes Ch7)"
+      ],
+      "file": "chapters/ch07/week21/session03-04.html"
+    },
+    {
+      "sessionId": "ch08_w24_s01-02",
+      "chapter": 8,
+      "chapterName": "Redox Reactions",
+      "week": 24,
+      "session": "01-02",
+      "dates": [
+        "2026-10-26",
+        "2026-10-28"
+      ],
+      "days": [
+        "MON",
+        "WED"
+      ],
+      "topics": [
+        "7.1-7.3 Classical Redox, Oxidation Numbers"
+      ],
+      "file": "chapters/ch08/week24/session01-02.html"
+    },
+    {
+      "sessionId": "ch08_w24_s03-04",
+      "chapter": 8,
+      "chapterName": "Redox Reactions",
+      "week": 24,
+      "session": "03-04",
+      "dates": [
+        "2026-10-29",
+        "2026-10-30"
+      ],
+      "days": [
+        "THU",
+        "FRI"
+      ],
+      "topics": [
+        "7.3.2 Balancing Redox Equations (Acidic Medium)"
+      ],
+      "file": "chapters/ch08/week24/session03-04.html"
+    },
+    {
+      "sessionId": "ch08_w24_s05-06",
+      "chapter": 8,
+      "chapterName": "Redox Reactions",
+      "week": 24,
+      "session": "05-06",
+      "dates": [
+        "2026-10-31",
+        "2026-11-02"
+      ],
+      "days": [
+        "SAT",
+        "MON"
+      ],
+      "topics": [
+        "7.3.2 Balancing Redox Equations (Basic Medium)"
+      ],
+      "file": "chapters/ch08/week24/session05-06.html"
+    },
+    {
+      "sessionId": "ch08_w25_s01-02",
+      "chapter": 8,
+      "chapterName": "Redox Reactions",
+      "week": 25,
+      "session": "01-02",
+      "dates": [
+        "2026-11-02",
+        "2026-11-03"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "7.3.3-7.4 Redox Titrations, Electrode Processes (completes Ch8)"
+      ],
+      "file": "chapters/ch08/week25/session01-02.html"
+    },
+    {
+      "sessionId": "ch09_w25_s03-04",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 25,
+      "session": "03-04",
+      "dates": [
+        "2026-11-04",
+        "2026-11-05"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "8.1-8.3 Tetravalency of Carbon, Structural Representations"
+      ],
+      "file": "chapters/ch09/week25/session03-04.html"
+    },
+    {
+      "sessionId": "ch09_w25_s05-06",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 25,
+      "session": "05-06",
+      "dates": [
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "8.4-8.5 Classification, Nomenclature (Basic)"
+      ],
+      "file": "chapters/ch09/week25/session05-06.html"
+    },
+    {
+      "sessionId": "ch09_w26_s01-02",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 26,
+      "session": "01-02",
+      "dates": [
+        "2026-11-11",
+        "2026-11-12"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "8.5.3-8.5.4 Nomenclature with Functional Groups"
+      ],
+      "file": "chapters/ch09/week26/session01-02.html"
+    },
+    {
+      "sessionId": "ch09_w26_s03-04",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 26,
+      "session": "03-04",
+      "dates": [
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "8.6 Isomerism"
+      ],
+      "file": "chapters/ch09/week26/session03-04.html"
+    },
+    {
+      "sessionId": "ch09_w26_s05-06",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 26,
+      "session": "05-06",
+      "dates": [
+        "2026-11-16"
+      ],
+      "days": [
+        "MON"
+      ],
+      "topics": [
+        "8.7 Reaction Mechanism"
+      ],
+      "file": "chapters/ch09/week26/session05-06.html"
+    },
+    {
+      "sessionId": "ch09_w27_s01-02",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 27,
+      "session": "01-02",
+      "dates": [
+        "2026-11-16",
+        "2026-11-17"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "8.7.3-8.7.9 Electronic Effects, Hyperconjugation"
+      ],
+      "file": "chapters/ch09/week27/session01-02.html"
+    },
+    {
+      "sessionId": "ch09_w27_s03-04",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 27,
+      "session": "03-04",
+      "dates": [
+        "2026-11-18",
+        "2026-11-19"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "8.7.10 Types of Organic Reactions"
+      ],
+      "file": "chapters/ch09/week27/session03-04.html"
+    },
+    {
+      "sessionId": "ch09_w27_s05-06",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 27,
+      "session": "05-06",
+      "dates": [
+        "2026-11-20",
+        "2026-11-21"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "8.8 Purification, Chromatography"
+      ],
+      "file": "chapters/ch09/week27/session05-06.html"
+    },
+    {
+      "sessionId": "ch09_w28_s01-02",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 28,
+      "session": "01-02",
+      "dates": [
+        "2026-11-25",
+        "2026-11-26"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "8.9 Qualitative Analysis"
+      ],
+      "file": "chapters/ch09/week28/session01-02.html"
+    },
+    {
+      "sessionId": "ch09_w28_s03-04",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 28,
+      "session": "03-04",
+      "dates": [
+        "2026-11-27",
+        "2026-11-28"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "8.10 Quantitative Analysis (completes Ch9)"
+      ],
+      "file": "chapters/ch09/week28/session03-04.html"
+    },
+    {
+      "sessionId": "ch09_w29_s01-02",
+      "chapter": 9,
+      "chapterName": "Organic Chemistry: Basic Principles and Techniques",
+      "week": 29,
+      "session": "01-02",
+      "dates": [
+        "2026-12-01",
+        "2026-12-02"
+      ],
+      "days": [
+        "TUE",
+        "WED"
+      ],
+      "topics": [
+        "9.2 Alkanes: Nomenclature, Isomerism, Conformations"
+      ],
+      "file": "chapters/ch09/week29/session01-02.html"
+    },
+    {
+      "sessionId": "ch10_w29_s03-04",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 29,
+      "session": "03-04",
+      "dates": [
+        "2026-12-03",
+        "2026-12-04"
+      ],
+      "days": [
+        "THU",
+        "FRI"
+      ],
+      "topics": [
+        "9.2.2-9.2.3 Preparation, Properties, Halogenation"
+      ],
+      "file": "chapters/ch10/week29/session03-04.html"
+    },
+    {
+      "sessionId": "ch10_w29_s05-06",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 29,
+      "session": "05-06",
+      "dates": [
+        "2026-12-05",
+        "2026-12-07"
+      ],
+      "days": [
+        "SAT",
+        "MON"
+      ],
+      "topics": [
+        "9.3 Alkenes: Nomenclature, Preparation"
+      ],
+      "file": "chapters/ch10/week29/session05-06.html"
+    },
+    {
+      "sessionId": "ch10_w30_s01-02",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 30,
+      "session": "01-02",
+      "dates": [
+        "2026-12-07",
+        "2026-12-08"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "9.3.5 Alkene Reactions, Markovnikov's Rule"
+      ],
+      "file": "chapters/ch10/week30/session01-02.html"
+    },
+    {
+      "sessionId": "ch10_w30_s03-04",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 30,
+      "session": "03-04",
+      "dates": [
+        "2026-12-09",
+        "2026-12-10"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "9.3 Ozonolysis, Polymerisation"
+      ],
+      "file": "chapters/ch10/week30/session03-04.html"
+    },
+    {
+      "sessionId": "ch10_w30_s05-06",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 30,
+      "session": "05-06",
+      "dates": [
+        "2026-12-11",
+        "2026-12-12"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "9.4 Alkynes: Nomenclature, Acetylene Preparation"
+      ],
+      "file": "chapters/ch10/week30/session05-06.html"
+    },
+    {
+      "sessionId": "ch10_w31_s01-02",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 31,
+      "session": "01-02",
+      "dates": [
+        "2026-12-14",
+        "2026-12-15"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "9.4.4 Alkyne Reactions"
+      ],
+      "file": "chapters/ch10/week31/session01-02.html"
+    },
+    {
+      "sessionId": "ch10_w31_s03-04",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 31,
+      "session": "03-04",
+      "dates": [
+        "2026-12-16",
+        "2026-12-17"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "9.5 Aromatic Hydrocarbons, Benzene Structure"
+      ],
+      "file": "chapters/ch10/week31/session03-04.html"
+    },
+    {
+      "sessionId": "ch10_w31_s05-06",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 31,
+      "session": "05-06",
+      "dates": [
+        "2026-12-18",
+        "2026-12-19"
+      ],
+      "days": [
+        "FRI",
+        "SAT"
+      ],
+      "topics": [
+        "9.5.3-9.5.4 Aromaticity, Benzene Preparation"
+      ],
+      "file": "chapters/ch10/week31/session05-06.html"
+    },
+    {
+      "sessionId": "ch10_w32_s01-02",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 32,
+      "session": "01-02",
+      "dates": [
+        "2026-12-21",
+        "2026-12-22"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "9.5.5 Electrophilic Substitution Mechanism"
+      ],
+      "file": "chapters/ch10/week32/session01-02.html"
+    },
+    {
+      "sessionId": "ch10_w32_s03-04",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 32,
+      "session": "03-04",
+      "dates": [
+        "2026-12-23",
+        "2026-12-24"
+      ],
+      "days": [
+        "WED",
+        "THU"
+      ],
+      "topics": [
+        "9.5.6 Directive Influence of Substituents"
+      ],
+      "file": "chapters/ch10/week32/session03-04.html"
+    },
+    {
+      "sessionId": "ch10_w32_s05-06",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 32,
+      "session": "05-06",
+      "dates": [
+        "2026-12-26",
+        "2026-12-28"
+      ],
+      "days": [
+        "SAT",
+        "MON"
+      ],
+      "topics": [
+        "9.6 Carcinogenicity and Toxicity"
+      ],
+      "file": "chapters/ch10/week32/session05-06.html"
+    },
+    {
+      "sessionId": "ch10_w33_s01-02",
+      "chapter": 10,
+      "chapterName": "Hydrocarbons",
+      "week": 33,
+      "session": "01-02",
+      "dates": [
+        "2026-12-28",
+        "2026-12-29"
+      ],
+      "days": [
+        "MON",
+        "TUE"
+      ],
+      "topics": [
+        "9.5 Final Revision, Exam Archive (completes Ch10)"
+      ],
+      "file": "chapters/ch10/week33/session01-02.html"
+    }
+  ]
+}

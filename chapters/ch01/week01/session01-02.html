@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch01 W01 S01-02 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 01 | Week 1 | Session 1–2</div>
+    <div class="session-title">Some Basic Concepts of Chemistry</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<!-- Slide 1: Title Card -->
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 1 | Week 1 | Session 1-2 | May 21-22, 2026</div>
+    <h1>SOME BASIC CONCEPTS OF CHEMISTRY</h1>
+    <div class="topics">
+      Topics covered today:<br>
+      1.1 Importance of Chemistry<br>
+      1.2 Nature of Matter<br>
+      1.2.1 States of Matter<br>
+      1.2.2 Classification of Matter
+    </div>
+  </div>
+</div>
+
+<!-- Slide 2: story -->
+<div class="slide" data-type="story" data-config='{
+  "setting": "Medieval Europe, 1300–1600 CE",
+  "narrative": "Alchemists had one obsession: turn iron into GOLD. They called it the Philosopher's Stone. They also hunted for the Elixir of Life — a drink granting immortality. They spent centuries failing at both. But in failing — measuring, heating, dissolving, recording — they invented the art of precise observation. India had its own parallel tradition: Charaka Samhita described bhasma, metal preparations with nanoparticles. Chemistry did not begin with success. It began with obsession and failure.",
+  "reveal": "Chemistry was born not from success — but from the question: WHY did that not work?",
+  "visual": "alchemist-lab"
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 3: known-unknown -->
+<div class="slide" data-type="known-unknown" data-config='{
+  "known": { "label": "YOU ALREADY KNOW THIS", "text": "Iron is solid. Water is liquid. Oxygen is a gas. You have known this your entire life — without ever being taught it." },
+  "bridge": { "label": "BUT HERE IS THE REAL QUESTION", "text": "Iron and oxygen are both just atoms. So WHY is one solid and the other a gas at room temperature? What is actually different about them?" },
+  "unknown": { "label": "TODAY'S ANSWER", "text": "It is about how particles are arranged and how fast they move. Chemistry gives us the language and tools to answer questions we never thought to ask." }
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 4: experiment-sim -->
+<div class="slide" data-type="experiment-sim" data-config='{
+  "mode": "states-of-matter",
+  "initialState": "solid",
+  "particleColor": "#00B4CC",
+  "particleCount": 64,
+  "caption": "Click HEAT to add energy. Watch particle arrangement and speed change. Click COOL to reverse.",
+  "labels": {
+    "solid": "SOLID — Particles locked in position. Can only vibrate. Fixed shape. Fixed volume.",
+    "liquid": "LIQUID — Particles close together but free to slide past each other. Fixed volume. No fixed shape.",
+    "gas": "GAS — Particles far apart, moving fast in all directions. No fixed shape. No fixed volume."
+  }
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 5: analogy -->
+<div class="slide" data-type="analogy" data-config='{
+  "realWorld": { "label": "A CRICKET STADIUM", "visual": "stadium-crowd", "fact": "Premium stand: people packed tight, barely moving. General stand: people shuffling, some movement. Outside the stadium: people scattered, walking freely in all directions." },
+  "chemistry": { "label": "THE THREE STATES OF MATTER", "visual": "mole-atoms", "fact": "Solid: particles packed, vibrating only. Liquid: particles close but flowing. Gas: particles far apart, moving fast and freely." },
+  "bridge": "Crowd density and freedom of movement = particle arrangement and kinetic energy. Heat the system = give particles more energy = they move like people leaving a crowded stadium."
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 6: visual-explain -->
+<div class="slide" data-type="visual-explain" data-config='{
+  "diagram": "matter-classification-tree",
+  "revealSteps": true,
+  "caption": "Click REVEAL to build the classification tree one level at a time. After each click: where does milk fit? Iron? Air? Saltwater?"
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 7: gamification -->
+<div class="slide" data-type="gamification" data-config='{
+  "instruction": "Drag each substance into the correct category. Think before you drop.",
+  "items": ["Iron", "Salt Water", "Sugar (C12H22O11)", "Gold", "Air", "Water (H2O)", "Sand + Gravel", "Diamond", "Brass (Cu+Zn)"],
+  "categories": ["Element", "Compound", "Homogeneous Mixture", "Heterogeneous Mixture"],
+  "answers": {
+    "Iron": "Element",
+    "Salt Water": "Homogeneous Mixture",
+    "Sugar (C12H22O11)": "Compound",
+    "Gold": "Element",
+    "Air": "Homogeneous Mixture",
+    "Water (H2O)": "Compound",
+    "Sand + Gravel": "Heterogeneous Mixture",
+    "Diamond": "Element",
+    "Brass (Cu+Zn)": "Homogeneous Mixture"
+  }
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 8: riddle -->
+<div class="slide" data-type="riddle" data-config='{
+  "question": "I have mass. I occupy space. I have no definite shape and no definite volume. I completely fill whatever container I am placed in. I am all around you right now. What state of matter am I?",
+  "hint": "You are breathing me right now.",
+  "answer": "A GAS",
+  "explanation": "Gases have no fixed shape (unlike solids) and no fixed volume (unlike liquids). They expand to fill their container completely. Every breath of air in this classroom is a gas doing exactly this."
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 9: mnemonic -->
+<div class="slide" data-type="mnemonic" data-config='{
+  "mnemonic": "My Pure Elements Can Combine",
+  "breakdown": [
+    "My → Matter (has mass, occupies space)",
+    "Pure → Pure Substances (fixed, uniform composition)",
+    "Elements → Elements (one type of atom only)",
+    "Can → Compounds (two+ elements, chemically bonded)",
+    "Combine → Also: Mixtures exist (physically combined, variable ratio)"
+  ],
+  "rule": "Matter divides into Pure Substances and Mixtures. Pure Substances are either Elements or Compounds. Mixtures can be Homogeneous or Heterogeneous.",
+  "tip": "Quick test: Can it be separated by physical methods alone? YES → Mixture. NO → Pure Substance."
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 10: comic-strip -->
+<div class="slide" data-type="comic-strip" data-config='{
+  "panels": [
+    { "character": "student", "expression": "neutral", "speech": "Sir, hydrogen burns and oxygen supports combustion. So water — H2O — should be explosive, right?", "caption": "A perfectly logical but wrong conclusion" },
+    { "character": "scientist", "expression": "happy", "speech": "That is brilliant thinking! And completely wrong. This is exactly WHY chemistry matters — compounds are NOT just the sum of their elements.", "caption": "The teacher's favourite kind of question" },
+    { "character": "atom-character", "expression": "happy", "speech": "When hydrogen and oxygen bond with me, something entirely new is born. New properties. New identity. That is the magic of chemical combination.", "caption": "Compounds have properties DIFFERENT from their constituent elements" }
+  ]
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 11: experiment-sim (heating curve) -->
+<div class="slide" data-type="experiment-sim" data-config='{
+  "mode": "heating-curve",
+  "initialState": "solid",
+  "particleColor": "#FFD740",
+  "particleCount": 50,
+  "caption": "This time we are watching H2O. Click HEAT to go from ICE → WATER → STEAM. Notice where temperature pauses — that is a phase transition.",
+  "labels": {
+    "solid": "ICE — Water molecules locked in hexagonal crystal lattice. Rigid, fixed shape.",
+    "liquid": "WATER — Molecules still close, hydrogen bonds breaking and reforming. Flows freely.",
+    "gas": "STEAM — Molecules moving fast and far apart. Fills all available space."
+  }
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 12: known-unknown (closing bridge) -->
+<div class="slide" data-type="known-unknown" data-config='{
+  "known": { "label": "WHAT WE STARTED WITH", "text": "Iron is solid. Water is liquid. Air is a gas. You knew this at the start of the period." },
+  "bridge": { "label": "WHAT YOU NOW KNOW", "text": "WHY they are different states — particle arrangement and kinetic energy. You now have a scientific explanation for something you have observed your whole life." },
+  "unknown": { "label": "NEXT SESSION", "text": "We will now measure these substances precisely. What units do scientists use? How is mass different from weight? What exactly is density? SI units and measurement — next class." }
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 13: Summary Card -->
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul>
+      <li>Matter = anything with mass that occupies space</li>
+      <li>3 states: Solid (fixed shape + volume), Liquid (fixed volume), Gas (neither)</li>
+      <li>Matter → Pure Substances OR Mixtures</li>
+      <li>Pure Substances → Elements (one atom type) OR Compounds (two+ elements, chemically bonded)</li>
+      <li>Mixtures → Homogeneous (uniform) OR Heterogeneous (non-uniform)</li>
+      <li>Compounds have DIFFERENT properties from their constituent elements</li>
+    </ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 1.1-1, 1.3-3, 1.4-5, 7, 9, 11, 13, 15, 17<br>
+      Assignment: 1.2-2, 1.3-4, 1.4-6, 8, 10, 12, 14, 16
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 13</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script>
+const SESSION_ID = 'ch01_w01_s01-02';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(1, 1, '01-02');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

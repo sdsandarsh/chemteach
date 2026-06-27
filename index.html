@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChemTeach — Vidyanidhi Group | IVTJ JEE 2026-27</title>
+<link rel="stylesheet" href="assets/design-tokens.css">
+<link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="logo">ChemTeach</div>
+  <div class="date" id="header-date"></div>
+  <button class="reset-link" id="btn-reset">Reset Progress</button>
+</header>
+
+<div id="today-banner-slot"></div>
+
+<main class="dashboard">
+  <div class="chapter-grid" id="chapter-grid"></div>
+</main>
+
+<footer class="app-footer">ChemTeach | Vidyanidhi Group | IVTJ JEE 2026–27</footer>
+
+<script src="progress.js"></script>
+<script>
+const CHAPTERS = [
+  { num: 1, name: "Some Basic Concepts of Chemistry" },
+  { num: 2, name: "Atomic Structure" },
+  { num: 3, name: "Classification of Elements & Periodicity" },
+  { num: 4, name: "Chemical Bonding & Molecular Structure" },
+  { num: 5, name: "Thermodynamics" },
+  { num: 6, name: "Chemical Equilibrium" },
+  { num: 7, name: "Ionic Equilibrium" },
+  { num: 8, name: "Redox Reactions" },
+  { num: 9, name: "Organic Chemistry: Basic Principles & Techniques" },
+  { num: 10, name: "Hydrocarbons" }
+];
+
+function fmtDate(d) {
+  return d.toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function todayISO() {
+  const d = new Date();
+  const tz = d.getTimezoneOffset() * 60000;
+  return new Date(d - tz).toISOString().slice(0, 10);
+}
+
+async function main() {
+  document.getElementById('header-date').textContent = fmtDate(new Date());
+
+  const res = await fetch('SCHEDULE.json');
+  const data = await res.json();
+  const sessions = data.sessions;
+  const state = ChemProgress.load();
+  const today = todayISO();
+  const lastOpened = state.lastOpened;
+
+  renderTodayBanner(sessions, today);
+  renderChapterGrid(sessions, state, today, lastOpened);
+
+  document.getElementById('btn-reset').onclick = () => {
+    if (confirm('Reset ALL progress? This clears completion marks and notes for every session. This cannot be undone.')) {
+      ChemProgress.reset();
+      location.reload();
+    }
+  };
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.weeks-panel.expanded').forEach(p => p.classList.remove('expanded'));
+    }
+  });
+}
+
+function renderTodayBanner(sessions, today) {
+  const slot = document.getElementById('today-banner-slot');
+  const match = sessions.find(s => s.dates.includes(today));
+  const banner = document.createElement('div');
+  banner.className = 'today-banner' + (match ? '' : ' no-session');
+  if (match) {
+    banner.innerHTML = `
+      <div>
+        <div class="label">TODAY'S SESSION</div>
+        <div class="topic">${match.topics[0]}</div>
+      </div>
+      <a class="go-btn" href="${match.file}">GO TO SESSION</a>
+    `;
+  } else {
+    banner.innerHTML = `<div class="topic">No session today — rest well!</div>`;
+  }
+  slot.appendChild(banner);
+}
+
+function renderChapterGrid(sessions, state, today, lastOpened) {
+  const grid = document.getElementById('chapter-grid');
+  CHAPTERS.forEach(ch => {
+    const chSessions = sessions.filter(s => s.chapter === ch.num);
+    const total = chSessions.length;
+    const completed = chSessions.filter(s => state.sessions[s.sessionId]?.completed).length;
+    const percent = total ? Math.round((completed / total) * 100) : 0;
+
+    const card = document.createElement('div');
+    card.className = 'chapter-card';
+    card.innerHTML = `
+      <div class="ch-top">
+        <div class="ch-num">${String(ch.num).padStart(2, '0')}</div>
+      </div>
+      <div class="ch-name">${ch.name}</div>
+      <div class="ch-count">${completed} of ${total} sessions</div>
+      <div class="progress-bar-track"><div class="progress-bar-fill" style="width:${percent}%"></div></div>
+      <div class="weeks-panel"></div>
+    `;
+
+    const weeksPanel = card.querySelector('.weeks-panel');
+    const weeks = [...new Set(chSessions.map(s => s.week))].sort((a, b) => a - b);
+    weeks.forEach(w => {
+      const weekSessions = chSessions.filter(s => s.week === w);
+      const block = document.createElement('div');
+      block.className = 'week-block';
+      const title = document.createElement('div');
+      title.className = 'week-title';
+      title.textContent = `Week ${w}`;
+      block.appendChild(title);
+
+      weekSessions.forEach(s => {
+        const entry = document.createElement('div');
+        const isComplete = !!state.sessions[s.sessionId]?.completed;
+        const hasNote = !!state.sessions[s.sessionId]?.notes;
+        const isToday = s.dates.includes(today);
+        const isLastOpened = lastOpened && lastOpened.chapter === s.chapter && lastOpened.week === s.week && lastOpened.session === s.session;
+        entry.className = 'session-entry' + (isLastOpened ? ' last-opened' : '');
+        entry.innerHTML = `
+          <span class="status-icon ${isComplete ? 'complete' : 'incomplete'}">${isComplete ? '✓' : '○'}</span>
+          <span class="info">
+            <span class="topic">${s.topics[0]}</span>
+            ${isToday ? '<span class="today-badge">TODAY</span>' : ''}
+            <div class="dates">${s.dates.join(', ')}</div>
+          </span>
+          ${hasNote ? '<span class="note-icon">📝</span>' : ''}
+          <a class="go-btn" href="${s.file}">GO</a>
+        `;
+        block.appendChild(entry);
+      });
+      weeksPanel.appendChild(block);
+    });
+
+    card.querySelector('.ch-top').addEventListener('click', () => {
+      weeksPanel.classList.toggle('expanded');
+    });
+    card.querySelector('.ch-name').addEventListener('click', () => {
+      weeksPanel.classList.toggle('expanded');
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+main();
+</script>
+</body>
+</html>

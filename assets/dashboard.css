@@ -1,0 +1,219 @@
+/* ChemTeach — dashboard styles */
+
+body { padding-top: 64px; padding-bottom: 40px; }
+
+header.app-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  height: 64px;
+  background: rgba(13, 27, 42, 0.98);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+
+header.app-header .logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-highlight);
+}
+
+header.app-header .date {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+header.app-header .reset-link {
+  color: var(--color-error);
+  font-size: 13px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.today-banner {
+  margin: 16px 28px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+  border-radius: var(--radius);
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.today-banner .label {
+  color: #042027;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.today-banner .topic {
+  color: #042027;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.today-banner.no-session {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+}
+
+.today-banner.no-session .topic { color: var(--color-text-muted); }
+
+.today-banner .go-btn {
+  background: #042027;
+  color: var(--color-highlight);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(4,32,39,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(4,32,39,0); }
+}
+
+main.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .chapter-grid { grid-template-columns: 1fr; }
+}
+
+.chapter-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.chapter-card:hover {
+  border-color: var(--color-border-active);
+  background: var(--color-card-hover);
+}
+
+.chapter-card .ch-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.chapter-card .ch-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+.chapter-card .ch-name {
+  font-size: 16px;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.chapter-card .ch-count {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}
+
+.progress-bar-track {
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.weeks-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.weeks-panel.expanded { max-height: 3000px; }
+
+.week-block { margin-top: 16px; }
+
+.week-title {
+  color: var(--color-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.session-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease;
+}
+
+.session-entry:hover { background: var(--color-card-hover); }
+
+.session-entry.last-opened { border: 1px solid var(--color-accent); }
+
+.session-entry .status-icon { font-size: 16px; width: 20px; text-align: center; }
+.session-entry .status-icon.complete { color: var(--color-success); }
+.session-entry .status-icon.incomplete { color: var(--color-text-muted); }
+
+.session-entry .info { flex: 1; }
+.session-entry .dates { color: var(--color-text-muted); font-size: 12px; }
+.session-entry .topic { color: var(--color-text-body); font-size: 14px; }
+
+.session-entry .note-icon { font-size: 13px; opacity: 0.8; }
+
+.session-entry .today-badge {
+  background: var(--color-accent);
+  color: #042027;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.session-entry .go-btn {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.session-entry .go-btn:hover { background: var(--color-highlight); }
+
+footer.app-footer {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  margin-top: 40px;
+  padding: 20px;
+}

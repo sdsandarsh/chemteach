@@ -1,0 +1,181 @@
+/* ChemTeach — shared session slide-deck styles */
+
+.slide {
+  display: none;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  padding: 90px 24px 110px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.slide.active {
+  display: flex;
+  opacity: 1;
+}
+
+.slide-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(13, 27, 42, 0.95);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.slide-header .crumb {
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.slide-header .session-title {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.top-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.top-controls button {
+  background: transparent;
+  border: 1px solid var(--color-border-active);
+  color: var(--color-text);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+
+.top-controls button:hover { background: var(--color-card-hover); }
+
+#btn-complete.is-complete {
+  color: var(--color-success) !important;
+  border-color: var(--color-success) !important;
+}
+
+.component-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px 24px;
+}
+
+.slide h1 {
+  font-size: 44px;
+  color: var(--color-text);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.slide h2 {
+  font-size: 24px;
+  color: var(--color-accent);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.slide-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(13, 27, 42, 0.95);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.slide-nav button {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.slide-nav button:hover { background: var(--color-highlight); }
+.slide-nav button:disabled { opacity: 0.3; cursor: default; }
+
+#slide-counter {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-family: var(--font-mono);
+}
+
+.title-card {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title-card .meta {
+  color: var(--color-accent);
+  font-size: 15px;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+}
+
+.title-card h1 { font-size: 40px; margin-bottom: 24px; }
+
+.title-card .topics {
+  color: var(--color-text-body);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.summary-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid var(--color-border);
+}
+
+.summary-card h1 {
+  color: var(--color-success);
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.summary-card ul {
+  color: var(--color-text-body);
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0 0 24px 20px;
+}
+
+.summary-card .mcq-block {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .slide h1 { font-size: 28px; }
+  .title-card h1 { font-size: 26px; }
+  .slide-header { padding: 10px 14px; }
+  .component-container { padding: 20px 12px; }
+}
+
+@media print {
+  .slide-nav, .slide-header { display: none; }
+  .slide { display: block; opacity: 1; min-height: auto; page-break-after: always; padding: 20px; }
+}
