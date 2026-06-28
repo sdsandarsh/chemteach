@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch07 W19 S05-06 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 07 | Week 19 | Session 5-6</div>
+    <div class="session-title">Ionic Equilibrium</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 7 | Week 19 | Session 5-6 | October 3-5, 2026</div>
+    <h1>POLYBASIC ACIDS</h1>
+    <div class="topics">Topics covered today:<br>6.11.6-6.11.7 Polybasic Acids</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Acetic acid has just ONE ionizable proton \u2014 it ionizes in a single, simple step with one Ka value."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "Acids like H2CO3 (carbonic acid) or H3PO4 (phosphoric acid) have MULTIPLE ionizable protons. Do they all ionize equally easily, in one combined step?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "No \u2014 polybasic acids ionize in SEPARATE, sequential steps, each with its own Ka value (Ka1, Ka2, Ka3...), and each successive ionization is progressively WEAKER than the one before."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "acid-base-conjugate", "revealSteps": true, "caption": "Click REVEAL to build the stepwise ionization of H3PO4: Ka1 (first H+, easiest) \u2192 Ka2 (second H+, harder) \u2192 Ka3 (third H+, hardest) \u2014 each step weaker than the last."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "For phosphoric acid H3PO4, Ka1 \u2248 7.5\u00d710^-3, Ka2 \u2248 6.2\u00d710^-8, Ka3 \u2248 4.2\u00d710^-13 \u2014 each successive Ka is drastically smaller. Why does removing each successive proton become progressively HARDER?", "hint": "Think about the charge on the ion losing the next proton.", "answer": "Because removing a proton from an increasingly NEGATIVELY CHARGED species becomes harder \u2014 the negative charge holds onto the remaining positive H+ more strongly", "explanation": "After losing the first proton, H3PO4 becomes H2PO4\u207b (negatively charged). Pulling a second positive H+ away from an already-negative ion requires overcoming stronger electrostatic attraction. After losing the second proton, HPO4\u00b2\u207b is even MORE negative, making the third ionization the hardest of all. Each step faces progressively stronger resistance from increasing negative charge."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "First Easy, Second Harder, Third Hardest", "breakdown": ["First Easy \u2192 Ka1 is always the largest (easiest ionization, neutral starting species)", "Second Harder \u2192 Ka2 is smaller (removing H+ from a negatively charged ion is harder)", "Third Hardest \u2192 Ka3 is smallest of all (removing H+ from a doubly-negative ion is hardest)"], "rule": "Typical pattern: each successive Ka is roughly 10^4 to 10^5 times smaller than the previous one.", "tip": "For most calculations involving polybasic acids, Ka1 alone is usually sufficient to estimate [H+] and pH, since Ka2 and Ka3 contribute negligibly by comparison."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Order the ionization steps of H3PO4 from Strongest to Weakest ionization constant.", "items": ["Ka1 (H3PO4 \u2192 H2PO4-)", "Ka2 (H2PO4- \u2192 HPO4 2-)", "Ka3 (HPO4 2- \u2192 PO4 3-)"], "categories": ["Strongest (1st)", "Middle (2nd)", "Weakest (3rd)"], "answers": {"Ka1 (H3PO4 \u2192 H2PO4-)": "Strongest (1st)", "Ka2 (H2PO4- \u2192 HPO4 2-)": "Middle (2nd)", "Ka3 (HPO4 2- \u2192 PO4 3-)": "Weakest (3rd)"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Polybasic acids ionize in sequential steps, each with its own Ka (Ka1, Ka2, Ka3...)</li><li>Each successive ionization constant is progressively smaller (weaker)</li><li>This happens because removing H+ from an increasingly negative ion is progressively harder</li><li>Ka1 alone usually dominates pH calculations for polybasic acids</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 6.11-11, 12, 13<br>
+      Assignment: 6.11-14, 15
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch07_w19_s05-06';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(7, 19, '05-06');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

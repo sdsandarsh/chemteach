@@ -1,1 +1,152 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch07 W20 S01-02 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 07 | Week 20 | Session 1-2</div>
+    <div class="session-title">Ionic Equilibrium</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 7 | Week 20 | Session 1-2 | October 5-6, 2026</div>
+    <h1>THE COMMON ION EFFECT</h1>
+    <div class="topics">Topics covered today:<br>6.11.8 Common Ion Effect</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Le Chatelier's Principle (Chapter 6): adding more of a product to an equilibrium shifts it backward, toward reactants."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "Acetic acid ionizes into H+ and acetate ion. If you add MORE acetate ion (from a different source, like sodium acetate) to the same solution, what happens to acetic acid's own ionization?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "The extra acetate ion is a 'common ion' already involved in the equilibrium \u2014 by Le Chatelier's Principle, it suppresses further ionization of acetic acid, reducing [H+] and raising pH."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "acid-base-conjugate", "revealSteps": true, "caption": "Click REVEAL to build: HA \u21cc H+ + A- equilibrium \u2192 adding extra A- (from another source) \u2192 equilibrium shifts backward \u2192 [H+] decreases, ionization suppressed."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="analogy" data-config='{"realWorld": {"label": "A CROWDED BUS STOP", "visual": "stadium-crowd", "fact": "If a bus stop is already crowded with people waiting, adding even MORE people to that same stop makes it harder for anyone new to comfortably 'fit in' \u2014 the crowding actively discourages more arrivals."}, "chemistry": {"label": "COMMON ION EFFECT", "visual": "mole-atoms", "fact": "Adding more of an ion ALREADY present in an equilibrium (like acetate ion to an acetic acid solution) suppresses further ionization \u2014 the system is already 'crowded' with that ion."}, "bridge": "Just as a crowded bus stop discourages new arrivals, a solution already rich in a particular ion discourages a related equilibrium from producing more of that same ion."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Adding sodium acetate (NaCH3COO) to a solution of acetic acid (CH3COOH) decreases the acid's ionization and RAISES the solution's pH, even though you haven't added any base directly. Why does this happen without adding any actual base?", "hint": "Sodium acetate fully dissociates, releasing acetate ion \u2014 the SAME ion produced by acetic acid's own ionization.", "answer": "Because the acetate ion from sodium acetate is a COMMON ION that suppresses the acid's own ionization equilibrium, reducing [H+] and therefore raising pH", "explanation": "Sodium acetate dissociates completely, flooding the solution with extra acetate ions. By Le Chatelier's Principle, this excess acetate (a product of acetic acid's ionization) pushes the acetic acid equilibrium backward, reducing how much acetic acid ionizes and lowering [H+] \u2014 raising pH, all without adding a single hydroxide ion."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Same Ion Added, Ionization Subtracted", "breakdown": ["Same Ion Added \u2192 adding an ion already present in an equilibrium (from a different, fully-dissociating source)", "Ionization Subtracted \u2192 suppresses further ionization of the weak acid/base via Le Chatelier's Principle"], "rule": "Common ion effect always REDUCES the degree of ionization of a weak acid or base, never increases it.", "tip": "This is the exact principle that makes buffer solutions work \u2014 coming up next class."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each addition as Causing or Not Causing a common ion effect on acetic acid (CH3COOH) ionization.", "items": ["Adding sodium acetate", "Adding sodium chloride", "Adding acetic acid itself", "Adding sodium nitrate"], "categories": ["Causes Common Ion Effect", "No Common Ion Effect"], "answers": {"Adding sodium acetate": "Causes Common Ion Effect", "Adding sodium chloride": "No Common Ion Effect", "Adding acetic acid itself": "Causes Common Ion Effect", "Adding sodium nitrate": "No Common Ion Effect"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Common ion effect: adding an ion already present in equilibrium suppresses further ionization</li><li>Based directly on Le Chatelier's Principle applied to ionic equilibria</li><li>Always reduces degree of ionization of the weak acid/base</li><li>Forms the basis for how buffer solutions resist pH change</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 6.11-16, 17<br>
+      Assignment: 6.11-18, 19
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 8</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch07_w20_s01-02';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(7, 20, '01-02');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

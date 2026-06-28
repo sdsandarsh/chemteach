@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch07 W19 S01-02 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 07 | Week 19 | Session 1-2</div>
+    <div class="session-title">Ionic Equilibrium</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 7 | Week 19 | Session 1-2 | September 28-29, 2026</div>
+    <h1>IONISATION & THE pH SCALE</h1>
+    <div class="topics">Topics covered today:<br>6.11 Ionisation, pH Scale</div>
+  </div>
+</div>
+
+<div class="slide" data-type="story" data-config='{"setting": "Denmark, 1909", "narrative": "Soren Sorensen, working at a Danish brewery lab, faced a practical problem: hydrogen ion concentrations in beer brewing were absurdly small numbers like 0.0000001, awkward to write and compare. He proposed a simple mathematical trick \u2014 take the negative logarithm of the concentration \u2014 turning that tiny, clumsy number into a single clean digit: 7. The pH scale was born from solving a brewery's bookkeeping problem.", "reveal": "One of chemistry's most famous scales exists because writing tiny decimal numbers repeatedly was simply too annoying.", "visual": "modern-lab"}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "titration-curve", "revealSteps": true, "caption": "Click REVEAL to build: pH = -log[H+] \u2192 pH scale 0-14 \u2192 pH<7 acidic, pH=7 neutral, pH>7 basic \u2192 relationship to [H+] and [OH-]."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "A solution has pH 3, and another has pH 6. The difference is only 3 pH units \u2014 yet the [H+] concentration differs by a factor of 1000, not 3. Why does such a small difference in pH represent such a huge difference in actual concentration?", "hint": "pH is a LOGARITHMIC scale.", "answer": "Because pH = -log[H+], each WHOLE NUMBER change in pH represents a TENFOLD change in [H+] concentration", "explanation": "Since pH is defined as -log[H+], a difference of 3 pH units corresponds to a difference of 10\u00b3 = 1000 in actual [H+] concentration. This is exactly why even small pH differences (like the difference between pH 6 and pH 3 \u2014 both seemingly close on a 0-14 scale) represent massive real differences in acidity."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Negative Log Hides Tiny Numbers", "breakdown": ["Negative Log Hides Tiny Numbers \u2192 pH = -log[H+], turning tiny decimal concentrations into simple whole numbers", "0 to 14 \u2192 standard pH scale range at 25\u00b0C (though values outside this range are possible)", "pH + pOH = 14 \u2192 at 25\u00b0C, since Kw = [H+][OH-] = 10^-14"], "rule": "pH < 7: acidic. pH = 7: neutral. pH > 7: basic. Lower pH = more acidic = higher [H+].", "tip": "Each single pH unit change = 10x change in actual [H+] concentration \u2014 never think of the pH scale as linear in concentration."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each pH value as Acidic, Neutral, or Basic.", "items": ["pH 2", "pH 7", "pH 10", "pH 5", "pH 13"], "categories": ["Acidic", "Neutral", "Basic"], "answers": {"pH 2": "Acidic", "pH 7": "Neutral", "pH 10": "Basic", "pH 5": "Acidic", "pH 13": "Basic"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>pH = -log[H+]; a logarithmic scale invented by Sorensen for practical convenience</li><li>pH < 7 acidic, pH = 7 neutral, pH > 7 basic (at 25°C)</li><li>pH + pOH = 14 at 25°C (since Kw = 10^-14)</li><li>Each whole pH unit represents a 10-fold change in [H+] concentration</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 6.11-1, 2, 3<br>
+      Assignment: 6.11-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch07_w19_s01-02';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(7, 19, '01-02');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

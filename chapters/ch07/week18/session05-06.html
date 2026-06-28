@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch07 W18 S05-06 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 07 | Week 18 | Session 5-6</div>
+    <div class="session-title">Ionic Equilibrium</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 7 | Week 18 | Session 5-6 | September 25-26, 2026</div>
+    <h1>LEWIS ACIDS & BASES</h1>
+    <div class="topics">Topics covered today:<br>6.10.2-6.10.3 Bronsted-Lowry, Lewis Acids/Bases</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Bronsted-Lowry theory defines acids/bases by proton transfer \u2014 already a big improvement over Arrhenius. But it still requires a PROTON to be involved."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "BF3 (boron trifluoride) reacts readily with NH3 in a clear acid-base-like reaction \u2014 yet BF3 has no proton to donate or accept at all. How can this still be called an acid-base reaction?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Lewis theory generalizes even further: an acid is ANY electron-pair ACCEPTOR, a base is ANY electron-pair DONOR \u2014 no protons required at all. BF3 accepts an electron pair from NH3, making it a Lewis acid."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "acid-base-conjugate", "revealSteps": true, "caption": "Click REVEAL to compare the three theories side by side: Arrhenius (H+/OH- in water) \u2192 Bronsted-Lowry (proton transfer) \u2192 Lewis (electron pair transfer) \u2014 each one broader than the last."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Every Bronsted-Lowry base is automatically a Lewis base too (it needs an electron pair to grab the proton with). But is every Lewis acid automatically a Bronsted-Lowry acid?", "hint": "Think about whether BF3 (a Lewis acid) has any proton to donate.", "answer": "NO \u2014 Lewis acids are a much BROADER category than Bronsted-Lowry acids", "explanation": "A Bronsted-Lowry base must accept a proton, which requires having an available electron pair \u2014 so it automatically qualifies as a Lewis base too. But a Lewis acid only needs to ACCEPT an electron pair \u2014 it doesn't need a proton at all. BF3 is a perfect example: a Lewis acid (accepts an electron pair from NH3) that has no proton to donate, so it can never be classified as a Bronsted-Lowry acid."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Lewis Loves Electrons, Not Protons", "breakdown": ["Lewis Acid \u2192 electron pair ACCEPTOR (e.g. BF3, Al3+, H+)", "Lewis Base \u2192 electron pair DONOR (e.g. NH3, H2O, Cl-)", "Broadest Theory \u2192 Lewis theory covers everything Bronsted-Lowry covers, PLUS reactions with no protons at all"], "rule": "Theory hierarchy by scope: Arrhenius (narrowest, water only) \u2282 Bronsted-Lowry (proton transfer, any solvent) \u2282 Lewis (electron pair transfer, broadest of all).", "tip": "Metal ions (like Al3+, Fe3+) are classic Lewis acids \u2014 they accept electron pairs from surrounding water molecules or other ligands."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Match each species to its role as a Lewis acid or Lewis base.", "items": ["BF3", "NH3", "Al3+", "Cl-"], "categories": ["Lewis Acid (accepts e- pair)", "Lewis Base (donates e- pair)"], "answers": {"BF3": "Lewis Acid (accepts e- pair)", "NH3": "Lewis Base (donates e- pair)", "Al3+": "Lewis Acid (accepts e- pair)", "Cl-": "Lewis Base (donates e- pair)"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Lewis acid: any electron-pair acceptor (no proton required)</li><li>Lewis base: any electron-pair donor</li><li>Lewis theory is the broadest of the three: Arrhenius ⊂ Bronsted-Lowry ⊂ Lewis</li><li>BF3 + NH3 is a classic Lewis acid-base reaction with no protons involved</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 6.10-1, 2, 3<br>
+      Assignment: 6.10-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch07_w18_s05-06';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(7, 18, '05-06');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

@@ -1,1 +1,152 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch07 W20 S05-06 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 07 | Week 20 | Session 5-6</div>
+    <div class="session-title">Ionic Equilibrium</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 7 | Week 20 | Session 5-6 | October 9-10, 2026</div>
+    <h1>BUFFER SOLUTIONS</h1>
+    <div class="topics">Topics covered today:<br>6.12 Buffer Solutions</div>
+  </div>
+</div>
+
+<div class="slide" data-type="story" data-config='{"setting": "Inside the Human Body, Right Now", "narrative": "Your blood's pH must stay within an incredibly narrow range \u2014 roughly 7.35 to 7.45 \u2014 or cellular proteins begin to malfunction catastrophically. Yet every day, you produce acids from metabolism, eat acidic and basic foods, and exercise, all of which should send your blood pH swinging wildly. It doesn't. A carefully balanced mixture of a weak acid and its conjugate base, dissolved in your blood right now, absorbs these constant chemical shocks almost completely.", "reveal": "Your survival depends on a buffer system working silently, every second, to resist pH change no matter what you eat or how hard you exercise.", "visual": "modern-lab"}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "The common ion effect (earlier this week): a weak acid's own conjugate base suppresses its ionization, controlling pH."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "Can this same idea be deliberately engineered into a solution that actively RESISTS pH change, even when acid or base is added to it?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Yes \u2014 a buffer solution is exactly this: a deliberate mixture of a weak acid and its conjugate base (or weak base and conjugate acid) that resists pH change by absorbing added H+ or OH- through the common ion equilibrium."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "titration-curve", "revealSteps": true, "caption": "Click REVEAL to build the buffer mechanism: weak acid + conjugate base mixture \u2192 added H+ reacts with conjugate base \u2192 added OH- reacts with weak acid \u2192 pH stays nearly constant."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "A buffer solution made of acetic acid + sodium acetate can absorb a SMALL amount of added strong acid or base with almost no pH change. But if you add a LARGE excess of strong acid, the buffer eventually fails and pH changes dramatically. Why does the buffer have a limit?", "hint": "Think about what the buffer's components are actually doing \u2014 and what happens if one of them runs out.", "answer": "Because the buffer's CAPACITY is limited by the actual AMOUNT of weak acid and conjugate base present \u2014 once one is used up, the buffering mechanism stops working", "explanation": "A buffer works by having its weak acid neutralize added base, and its conjugate base neutralize added acid. But these components exist in FINITE amounts. Once enough strong acid is added to consume essentially all the conjugate base (or vice versa), there's nothing left to absorb further additions, and pH then changes rapidly and uncontrollably \u2014 this is called exceeding the buffer capacity."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Weak Acid Buddies With Its Conjugate Base", "breakdown": ["Weak Acid Buddies With Its Conjugate Base \u2192 buffer = weak acid + its own conjugate base (or weak base + conjugate acid) mixed together", "Henderson-Hasselbalch \u2192 pH = pKa + log([conjugate base]/[weak acid]) \u2014 calculates buffer pH directly", "Buffer Capacity \u2192 the maximum amount of acid/base a buffer can absorb before pH changes significantly"], "rule": "Buffers work best (most resistant to pH change) when [weak acid] \u2248 [conjugate base], i.e., when pH \u2248 pKa.", "tip": "This completes the practical toolkit of ionic equilibrium \u2014 common ion effect, hydrolysis, and now buffers, all built on the same underlying equilibrium principles."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Match each buffer component pair to its type.", "items": ["Acetic acid + Sodium acetate", "Ammonia + Ammonium chloride"], "categories": ["Acidic Buffer (weak acid + conjugate base)", "Basic Buffer (weak base + conjugate acid)"], "answers": {"Acetic acid + Sodium acetate": "Acidic Buffer (weak acid + conjugate base)", "Ammonia + Ammonium chloride": "Basic Buffer (weak base + conjugate acid)"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Buffer solution: weak acid + conjugate base (or weak base + conjugate acid) mixture</li><li>Resists pH change by absorbing added H+ or OH- via the common ion equilibrium</li><li>Henderson-Hasselbalch equation: pH = pKa + log([conjugate base]/[weak acid])</li><li>Buffer capacity is finite — exceeding it causes rapid pH change</li><li>Blood pH is maintained within a narrow range by natural buffer systems</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 6.12-1, 2, 3<br>
+      Assignment: 6.12-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 8</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch07_w20_s05-06';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(7, 20, '05-06');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>
