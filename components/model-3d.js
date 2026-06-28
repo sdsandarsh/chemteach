@@ -4,8 +4,8 @@
  * config: { model, labels, rotatable, caption }
  */
 window.Model3D = (() => {
-  function atom(x, y, z, size, color, label) {
-    return { type: 'atom', x, y, z, size, color, label };
+  function atom(x, y, z, size, color, label, orbit) {
+    return { type: 'atom', x, y, z, size, color, label, orbit };
   }
   function bond(x1, y1, z1, x2, y2, z2, color) {
     return { type: 'bond', x1, y1, z1, x2, y2, z2, color };
@@ -20,13 +20,16 @@ window.Model3D = (() => {
       
       // Orbit n=1
       els.push(ring(0, 0, 0, 70, 'rgba(0, 180, 204, 0.4)'));
-      for (let i = 0; i < 2; i++) els.push(atom(Math.cos(i * 3) * 70, Math.sin(i * 3) * 70, 0, 12, '#00B4CC', 'e-'));
+      for (let i = 0; i < 2; i++) {
+        const a = i * Math.PI;
+        els.push(atom(0, 0, 0, 12, '#00B4CC', 'e-', { radius: 70, angle: a, speed: 0.02 }));
+      }
       
       // Orbit n=2
       els.push(ring(0, 0, 0, 130, 'rgba(0, 180, 204, 0.4)'));
       for (let i = 0; i < 8; i++) {
         const a = (i / 8) * Math.PI * 2;
-        els.push(atom(Math.cos(a) * 130, Math.sin(a) * 130, 0, 10, '#00E5FF', 'e-'));
+        els.push(atom(0, 0, 0, 10, '#00E5FF', 'e-', { radius: 130, angle: a, speed: 0.01 }));
       }
       return els;
     },
@@ -130,9 +133,7 @@ window.Model3D = (() => {
     scene.style.left = '50%';
     scene.style.transformStyle = 'preserve-3d';
 
-    function render() {
-      scene.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-    }
+
 
     elements.forEach(el => {
       if (el.type === 'atom') {
@@ -142,6 +143,10 @@ window.Model3D = (() => {
         dot.style.height = el.size + 'px';
         dot.style.borderRadius = '50%';
         dot.style.background = el.color;
+        if (el.orbit) {
+          el.x = Math.cos(el.orbit.angle) * el.orbit.radius;
+          el.y = Math.sin(el.orbit.angle) * el.orbit.radius;
+        }
         dot.style.left = (el.x - el.size / 2) + 'px';
         dot.style.top = (el.y - el.size / 2) + 'px';
         dot.style.transform = `translateZ(${el.z}px)`;
@@ -158,6 +163,7 @@ window.Model3D = (() => {
         lbl.style.display = showLabels ? 'block' : 'none';
         dot.appendChild(lbl);
         dot.dataset.labelEl = '1';
+        el.domElement = dot;
         scene.appendChild(dot);
       } else if (el.type === 'ring') {
         const rEl = document.createElement('div');
@@ -232,7 +238,7 @@ window.Model3D = (() => {
     });
     window.addEventListener('mouseup', () => { dragging = false; stage.style.cursor = 'grab'; });
 
-    resetBtn.onclick = () => { rotX = -20; rotY = 20; render(); };
+    resetBtn.onclick = () => { rotX = -20; rotY = 20; };
     labelBtn.onclick = () => {
       showLabels = !showLabels;
       scene.querySelectorAll('.model3d-label').forEach(l => {
@@ -240,7 +246,25 @@ window.Model3D = (() => {
       });
     };
 
-    render();
+    function renderLoop() {
+      if (!document.body.contains(scene)) return; // Stop animation if removed
+      
+      scene.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+      
+      elements.forEach(el => {
+        if (el.type === 'atom' && el.orbit && el.domElement) {
+          el.orbit.angle += el.orbit.speed;
+          el.x = Math.cos(el.orbit.angle) * el.orbit.radius;
+          el.y = Math.sin(el.orbit.angle) * el.orbit.radius;
+          el.domElement.style.left = (el.x - el.size / 2) + 'px';
+          el.domElement.style.top = (el.y - el.size / 2) + 'px';
+        }
+      });
+      
+      requestAnimationFrame(renderLoop);
+    }
+    
+    renderLoop();
   }
 
   return { init: build };
