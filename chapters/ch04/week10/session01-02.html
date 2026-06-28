@@ -1,1 +1,144 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch04 W10 S01-02 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 04 | Week 10 | Session 1-2</div>
+    <div class="session-title">Chemical Bonding and Molecular Structure</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 4 | Week 10 | Session 1-2 | July 20-21, 2026</div>
+    <h1>LEWIS STRUCTURES & FORMAL CHARGE</h1>
+    <div class="topics">Topics covered today:<br>4.1.3-4.1.5 Lewis Structures, Formal Charge</div>
+  </div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "acid-base-conjugate", "revealSteps": true, "caption": "Click REVEAL to build a Lewis structure step by step: count valence electrons \u2192 place central atom \u2192 distribute bonding pairs \u2192 fill remaining as lone pairs \u2192 check octets."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Two different Lewis structures can be drawn for the same molecule, both satisfying the octet rule. How do chemists decide which structure is the more accurate (more likely) representation?", "hint": "There's a calculation that estimates how 'comfortable' each atom is with its assigned electrons.", "answer": "By calculating FORMAL CHARGE on each atom \u2014 the structure with formal charges closest to zero (and negative charges on the more electronegative atom) is preferred", "explanation": "Formal charge = (valence electrons) \u2212 (non-bonding electrons) \u2212 (1/2 \u00d7 bonding electrons). The most stable, realistic Lewis structure is generally the one where formal charges are minimized and any negative charge sits on the more electronegative atom."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Valence Minus Lone Minus Half the Bonds", "breakdown": ["Valence \u2192 number of valence electrons the free atom would normally have", "Minus Lone \u2192 subtract the non-bonding (lone pair) electrons assigned to that atom", "Minus Half the Bonds \u2192 subtract half of all bonding electrons around that atom", "Formula \u2192 FC = V \u2212 L \u2212 B/2"], "rule": "Sum of formal charges on all atoms in a structure must equal the overall charge of the molecule/ion.", "tip": "Lower (closer to zero) formal charges generally indicate a more stable, more likely Lewis structure."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Match each Lewis structure rule to its purpose.", "items": ["Count total valence electrons", "Place least electronegative atom in center", "Distribute electrons to satisfy octets", "Calculate formal charge"], "categories": ["Step 1: setup", "Step 2: structure skeleton", "Step 3: electron placement", "Step 4: validate structure"], "answers": {"Count total valence electrons": "Step 1: setup", "Place least electronegative atom in center": "Step 2: structure skeleton", "Distribute electrons to satisfy octets": "Step 3: electron placement", "Calculate formal charge": "Step 4: validate structure"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Lewis structures show valence electrons as dots, bonding pairs as shared dots/lines</li><li>Method: count valence e- → skeleton → distribute to satisfy octets → verify</li><li>Formal charge = V − L − B/2, helps choose the most accurate structure</li><li>Most stable structure: formal charges near zero, negative charge on most electronegative atom</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 4.1-6, 7, 8<br>
+      Assignment: 4.1-9, 10
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 6</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch04_w10_s01-02';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(4, 10, '01-02');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

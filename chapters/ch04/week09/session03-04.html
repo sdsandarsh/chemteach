@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch04 W09 S03-04 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 04 | Week 9 | Session 3-4</div>
+    <div class="session-title">Chemical Bonding and Molecular Structure</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 3-4 Bridge | Week 9 | Session 3-4 | July 15-16, 2026</div>
+    <h1>s, p, d, f BLOCKS & ATOMIC RADIUS</h1>
+    <div class="topics">Topics covered today:<br>3.6-3.7 s,p,d,f Blocks, Atomic Radius (completes Chapter 3)</div>
+  </div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "periodic-table-blocks", "revealSteps": true, "caption": "Click REVEAL to colour in the periodic table by block: s-block (groups 1-2), p-block (13-18), d-block (3-12), f-block (lanthanides/actinides)."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="analogy" data-config='{"realWorld": {"label": "APARTMENT FLOORS IN A BUILDING", "visual": "stadium-crowd", "fact": "Ground floor residents step outside fastest; top floor residents have the farthest walk. Distance from the entrance changes how 'reachable' you are."}, "chemistry": {"label": "ATOMIC RADIUS ACROSS A PERIOD/GROUP", "visual": "mole-atoms", "fact": "Moving down a group, atomic radius increases (more shells, like climbing floors away from the nucleus). Moving across a period, atomic radius decreases (more nuclear charge pulls electrons closer)."}, "bridge": "Just as floor number changes your distance from the entrance, shell number and nuclear charge together determine how close an atom's outer electrons sit to its nucleus."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Sodium (Na) has atomic radius larger than Chlorine (Cl), even though both are in Period 3 and Cl has MORE protons. Why does Cl's stronger nuclear pull result in a SMALLER atom?", "hint": "Both atoms have the same number of shells. What differs is how strongly the nucleus pulls those same shells inward.", "answer": "Cl has a higher effective nuclear charge pulling its electrons in tighter, despite having the same number of shells as Na", "explanation": "Across a period, electrons are added to the SAME shell while protons increase. The stronger positive pull from more protons draws the entire electron cloud inward, shrinking atomic radius \u2014 this is why radius decreases left to right across a period, even as atomic number increases."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Down Grows, Across Shrinks", "breakdown": ["Down Grows \u2192 atomic radius increases down a group (more electron shells added)", "Across Shrinks \u2192 atomic radius decreases across a period (more nuclear charge, same shell)"], "rule": "s-block: groups 1-2 (filling s orbitals). p-block: groups 13-18 (filling p orbitals). d-block: groups 3-12, transition metals (filling d orbitals). f-block: lanthanides and actinides (filling f orbitals).", "tip": "s and p blocks together are called 'main group' elements; d-block elements are the 'transition metals'."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each element group to its correct block.", "items": ["Alkali metals (Group 1)", "Halogens (Group 17)", "Transition metals", "Lanthanides"], "categories": ["s-block", "p-block", "d-block", "f-block"], "answers": {"Alkali metals (Group 1)": "s-block", "Halogens (Group 17)": "p-block", "Transition metals": "d-block", "Lanthanides": "f-block"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Periodic table divided into s, p, d, f blocks based on which orbital is being filled</li><li>Atomic radius increases down a group (more shells)</li><li>Atomic radius decreases across a period (increasing nuclear charge pulls electrons inward)</li><li>This completes Chapter 3 entirely — next we explore why and how atoms bond</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 3.7-1, 2, 3<br>
+      Assignment: 3.7-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch04_w09_s03-04';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(4, 9, '03-04');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

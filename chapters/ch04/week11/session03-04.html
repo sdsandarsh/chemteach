@@ -1,1 +1,152 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch04 W11 S03-04 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 04 | Week 11 | Session 3-4</div>
+    <div class="session-title">Chemical Bonding and Molecular Structure</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 4 | Week 11 | Session 3-4 | July 29-30, 2026</div>
+    <h1>VALENCE BOND THEORY: SIGMA & PI BONDS</h1>
+    <div class="topics">Topics covered today:<br>4.5 Valence Bond Theory, Sigma and Pi Bonds</div>
+  </div>
+</div>
+
+<div class="slide" data-type="model-3d" data-config='{"model": "ethene-planar", "labels": true, "rotatable": true, "caption": "Drag to rotate. Ethene (C2H4): one sigma bond (head-on overlap) plus one pi bond (sideways overlap of unhybridized p-orbitals) forms the C=C double bond."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "energy-level-diagram", "revealSteps": true, "caption": "Click REVEAL to build: orbital overlap (Valence Bond Theory) \u2192 sigma bond (head-on, strong) \u2192 pi bond (sideways, weaker) \u2192 why double/triple bonds combine both."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="analogy" data-config='{"realWorld": {"label": "SHAKING HANDS vs HIGH-FIVING", "visual": "lock-key", "fact": "A handshake (palms directly facing, gripping head-on) is a strong, stable connection. A high-five (palms brushing sideways) is a lighter, less stable touch."}, "chemistry": {"label": "SIGMA vs PI BONDS", "visual": "mole-atoms", "fact": "A sigma bond forms from direct, head-on orbital overlap along the bond axis \u2014 strong, like a handshake. A pi bond forms from sideways overlap of parallel p-orbitals \u2014 weaker, like a high-five."}, "bridge": "Head-on contact (handshake/sigma) is always stronger than sideways contact (high-five/pi) \u2014 which is exactly why pi bonds break more easily than sigma bonds in reactions."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "A double bond (C=C) is described as 'one sigma plus one pi bond'. Why can there NEVER be two sigma bonds between the same pair of atoms, even in a triple bond?", "hint": "Think about the direction each type of bond forms along.", "answer": "Because only ONE orbital overlap can occur directly along the bond axis \u2014 additional bonds must use sideways (pi) overlap instead", "explanation": "A sigma bond by definition is the head-on overlap directly along the axis connecting two nuclei \u2014 there is only one such axis. Any additional bonding (double or triple bonds) must come from p-orbitals overlapping sideways, above and below (or around) that axis \u2014 these are necessarily pi bonds, never additional sigma bonds."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Sigma Head-On Strong, Pi Sideways Weak", "breakdown": ["Sigma Head-On Strong \u2192 sigma bonds form by direct end-to-end orbital overlap; strongest bond type, free rotation allowed", "Pi Sideways Weak \u2192 pi bonds form by parallel/sideways p-orbital overlap; weaker, and PREVENTS free rotation around the bond"], "rule": "Single bond = 1 sigma. Double bond = 1 sigma + 1 pi. Triple bond = 1 sigma + 2 pi.", "tip": "Because pi bonds block rotation, molecules with double bonds (like ethene) are rigid and planar \u2014 this matters hugely in organic chemistry (cis/trans isomerism)."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Match each bond type to its sigma/pi composition.", "items": ["Single bond (C-C)", "Double bond (C=C)", "Triple bond (C\u2261C)"], "categories": ["1 sigma only", "1 sigma + 1 pi", "1 sigma + 2 pi"], "answers": {"Single bond (C-C)": "1 sigma only", "Double bond (C=C)": "1 sigma + 1 pi", "Triple bond (C\u2261C)": "1 sigma + 2 pi"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Valence Bond Theory: bonds form from overlap of atomic orbitals</li><li>Sigma bond: head-on overlap, strong, allows free rotation</li><li>Pi bond: sideways overlap of parallel p-orbitals, weaker, prevents free rotation</li><li>Single = 1σ, Double = 1σ+1π, Triple = 1σ+2π</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 4.5-1, 2, 3<br>
+      Assignment: 4.5-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 8</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch04_w11_s03-04';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(4, 11, '03-04');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>
