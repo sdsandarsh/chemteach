@@ -128,18 +128,50 @@ main.dashboard {
   filter: drop-shadow(0 0 6px var(--card-accent, var(--color-accent)));
 }
 
-.chapter-card .ch-icon .orbit {
-  animation: chOrbitSpin 6s linear infinite;
-  transform-origin: 50% 50%;
-}
+/* ── Reusable concept-icon motion primitives ──
+   Each icon's SVG is built from these shared animation classes, applied to
+   different shapes/elements per concept so the MOTION vocabulary is small
+   but the resulting icon silhouette and meaning differ chapter to chapter. */
 
-.chapter-card .ch-icon .electron {
-  animation: chElectronPulse 1.6s ease-in-out infinite;
-  transform-origin: center;
-}
-
+.orbit { animation: chOrbitSpin 6s linear infinite; transform-box: fill-box; transform-origin: 50% 50%; }
+.electron { animation: chElectronPulse 1.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 @keyframes chOrbitSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes chElectronPulse { 0%, 100% { opacity: 0.55; r: 3.2; } 50% { opacity: 1; r: 4.4; } }
+
+.anim-bob { animation: bobFloat 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes bobFloat { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-11px); opacity: 0; } }
+
+.anim-pulse { animation: pulseFade 1.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes pulseFade { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+
+.anim-dash { stroke-dasharray: 6 4; animation: dashTravel 1.3s linear infinite; }
+@keyframes dashTravel { to { stroke-dashoffset: -20; } }
+
+.anim-swing { animation: swingRotate 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: 24px 14px; }
+@keyframes swingRotate { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
+
+.anim-swing-big { animation: swingRotateBig 2.1s ease-in-out infinite; transform-box: fill-box; transform-origin: 24px 14px; }
+@keyframes swingRotateBig { 0%, 100% { transform: rotate(-15deg); } 50% { transform: rotate(15deg); } }
+
+.anim-flicker { animation: flicker 1s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom center; }
+@keyframes flicker { 0%, 100% { transform: scaleY(1) scaleX(1); } 50% { transform: scaleY(1.18) scaleX(0.9); } }
+
+.anim-scale { animation: scaleBreathe 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes scaleBreathe { 0%, 100% { transform: scale(0.88); opacity: 0.65; } 50% { transform: scale(1.1); opacity: 1; } }
+
+.anim-jitter { animation: jitter 1.1s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes jitter {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 1px); }
+  75% { transform: translate(1px, 2px); }
+}
+
+.anim-needle { animation: needleSwing 2.2s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom center; }
+@keyframes needleSwing { 0%, 100% { transform: rotate(-20deg); } 50% { transform: rotate(20deg); } }
+
+.anim-drip { animation: dripFall 1.8s ease-in infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes dripFall { 0% { transform: translateY(-2px); opacity: 1; } 100% { transform: translateY(10px); opacity: 0; } }
 
 .chapter-card .ch-num {
   font-size: 28px;

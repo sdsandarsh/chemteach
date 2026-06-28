@@ -38,20 +38,287 @@ const CHAPTERS = [
   { num: 10, name: "Hydrocarbons" }
 ];
 
-function atomIconSVG(orbitClass, electronClass, size) {
-  return `<svg viewBox="0 0 48 48" class="${size === 'sm' ? '' : ''}" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="24" cy="24" r="4" fill="currentColor"/>
-    <g class="${orbitClass}">
-      <ellipse cx="24" cy="24" rx="20" ry="8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-      <circle class="${electronClass}" cx="44" cy="24" r="3.5" fill="currentColor"/>
+/* ══════════════════════════════════════════════════════════
+   ICON LIBRARY — one detailed, animated SVG per chemistry concept.
+   Every icon shares a small set of CSS motion primitives (anim-bob,
+   anim-pulse, anim-dash, anim-swing, anim-flicker, anim-scale, anim-jitter,
+   anim-needle, anim-drip, orbit/electron) but the SHAPE differs per concept,
+   so chapter cards and session rows visually reflect their actual content.
+   ══════════════════════════════════════════════════════════ */
+const SVG_OPEN = `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">`;
+const SVG_CLOSE = `</svg>`;
+
+const ICONS = {
+  // Ch1 default — conical flask with rising bubbles (states of matter / general chemistry)
+  flaskBubble: () => `${SVG_OPEN}
+    <path d="M19 5h10v9l9 20a4 4 0 0 1-4 6H14a4 4 0 0 1-4-6l9-20V5z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M17 5h14" stroke="currentColor" stroke-width="2"/>
+    <path d="M11.5 33h25" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+    <circle class="anim-bob" cx="20" cy="31" r="2" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-bob" cx="27" cy="34" r="1.6" fill="currentColor" style="animation-delay:.5s"/>
+    <circle class="anim-bob" cx="23" cy="28" r="1.3" fill="currentColor" style="animation-delay:1s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch1 variant — balance scale (mole concept / stoichiometric mass)
+  scaleBalance: () => `${SVG_OPEN}
+    <line x1="24" y1="6" x2="24" y2="14" stroke="currentColor" stroke-width="2"/>
+    <g class="anim-swing">
+      <line x1="7" y1="14" x2="41" y2="14" stroke="currentColor" stroke-width="2"/>
+      <line x1="7" y1="14" x2="7" y2="23" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="41" y1="14" x2="41" y2="23" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M2 23a5 5 0 0 0 10 0z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M36 23a5 5 0 0 0 10 0z" fill="none" stroke="currentColor" stroke-width="1.5"/>
     </g>
-    <g class="${orbitClass}" style="animation-delay:-1.5s; transform-origin:50% 50%;" transform="rotate(60 24 24)">
+    <line x1="24" y1="14" x2="24" y2="37" stroke="currentColor" stroke-width="2"/>
+    <path d="M14 37h20l-3 5H17z" fill="currentColor" opacity="0.85"/>
+  ${SVG_CLOSE}`,
+
+  // Ch1 variant — graduated measuring cylinder (stoichiometry / quantitative calc)
+  measuringBeaker: () => `${SVG_OPEN}
+    <rect x="16" y="6" width="16" height="36" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M16 24h16" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+    <path d="M16 31h16" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+    <rect class="anim-pulse" x="17.5" y="26" width="13" height="14.5" fill="currentColor" opacity="0.5"/>
+    <path class="anim-bob" d="M24 4l-3 5h6z" fill="currentColor" style="animation-delay:.3s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch2 default — Bohr atom: nucleus cluster + two electron orbits
+  bohrAtom: () => `${SVG_OPEN}
+    <circle cx="22" cy="24" r="1.8" fill="currentColor"/>
+    <circle cx="26" cy="23" r="1.8" fill="currentColor" opacity="0.7"/>
+    <circle cx="24" cy="27" r="1.8" fill="currentColor" opacity="0.7"/>
+    <g class="orbit">
+      <ellipse cx="24" cy="24" rx="20" ry="8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+      <circle class="electron" cx="44" cy="24" r="3.2" fill="currentColor"/>
+    </g>
+    <g class="orbit" style="animation-delay:-2s;" transform="rotate(60 24 24)">
+      <ellipse cx="24" cy="24" rx="20" ry="8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+      <circle class="electron" cx="44" cy="24" r="3.2" fill="currentColor" style="animation-delay:-1s"/>
+    </g>
+    <g class="orbit" style="animation-delay:-4s;" transform="rotate(120 24 24)">
       <ellipse cx="24" cy="24" rx="20" ry="8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
     </g>
-    <g class="${orbitClass}" style="animation-delay:-3s; transform-origin:50% 50%;" transform="rotate(120 24 24)">
-      <ellipse cx="24" cy="24" rx="20" ry="8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+  ${SVG_CLOSE}`,
+
+  // Ch2 variant — travelling light wave with a photon (EM radiation / photoelectric effect)
+  lightWave: () => `${SVG_OPEN}
+    <path class="anim-dash" d="M3 24c4-10 8-10 12 0s8 10 12 0 8-10 12 0 4 10 6 6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle class="anim-bob" cx="9" cy="18" r="2.4" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-bob" cx="27" cy="18" r="2.4" fill="currentColor" style="animation-delay:.6s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch2 variant — orbital probability cloud (quantum mechanical model / uncertainty)
+  orbitalCloud: () => `${SVG_OPEN}
+    <circle cx="24" cy="24" r="2.2" fill="currentColor"/>
+    <ellipse class="anim-scale" cx="24" cy="24" rx="18" ry="8" fill="currentColor" opacity="0.18" style="animation-delay:0s"/>
+    <ellipse class="anim-scale" cx="24" cy="24" rx="8" ry="18" fill="currentColor" opacity="0.18" style="animation-delay:.5s"/>
+    <ellipse class="anim-scale" cx="24" cy="24" rx="13" ry="13" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.5" style="animation-delay:.9s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch3 default — periodic table grid with a travelling highlighted cell
+  periodicGrid: () => `${SVG_OPEN}
+    ${[0,1,2].map(r => [0,1,2].map(c => `<rect x="${8+c*11}" y="${8+r*11}" width="9" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.45"/>`).join('')).join('')}
+    <rect class="anim-pulse" x="8" y="8" width="9" height="9" rx="1.5" fill="currentColor" style="animation-delay:0s"/>
+    <rect class="anim-pulse" x="19" y="19" width="9" height="9" rx="1.5" fill="currentColor" style="animation-delay:.5s"/>
+    <rect class="anim-pulse" x="30" y="30" width="9" height="9" rx="1.5" fill="currentColor" style="animation-delay:1s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch4 default — two atoms sharing a covalent electron pair
+  bondPair: () => `${SVG_OPEN}
+    <circle cx="14" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="34" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="20" y1="24" x2="28" y2="24" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+    <circle class="anim-pulse" cx="22.5" cy="24" r="2" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-pulse" cx="25.5" cy="24" r="2" fill="currentColor" style="animation-delay:.4s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch4 variant — ionic crystal lattice of alternating charges
+  ionicLattice: () => `${SVG_OPEN}
+    ${[0,1,2].map(r => [0,1,2].map(c => {
+      const isPos = (r+c) % 2 === 0;
+      const delay = ((r*3+c) * 0.18).toFixed(2);
+      return `<circle class="anim-pulse" cx="${10+c*14}" cy="${10+r*14}" r="${isPos?3.6:5}" fill="currentColor" opacity="${isPos?'1':'0.45'}" style="animation-delay:${delay}s"/>`;
+    }).join('')).join('')}
+  ${SVG_CLOSE}`,
+
+  // Ch4 variant — overlapping hybrid orbital lobes (VSEPR / hybridisation / sigma-pi)
+  orbitalOverlap: () => `${SVG_OPEN}
+    <ellipse cx="17" cy="24" rx="13" ry="7" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(-10 17 24)"/>
+    <ellipse cx="31" cy="24" rx="13" ry="7" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(10 31 24)"/>
+    <ellipse class="anim-pulse" cx="24" cy="24" rx="5" ry="5" fill="currentColor" opacity="0.6"/>
+  ${SVG_CLOSE}`,
+
+  // Ch5 default — thermometer + flame (heat, internal energy, first law)
+  thermoFlame: () => `${SVG_OPEN}
+    <rect x="21" y="6" width="6" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="24" cy="36" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <rect class="anim-pulse" x="22.5" y="14" width="3" height="17" fill="currentColor" style="animation-delay:0s"/>
+    <circle cx="24" cy="36" r="3" fill="currentColor"/>
+    <path class="anim-flicker" d="M37 30c3-4 1-8-1-10 0 4-3 4-3 8 0 3 2 5 4 5s3-2 0-3z" fill="currentColor" opacity="0.85"/>
+  ${SVG_CLOSE}`,
+
+  // Ch5 variant — order scattering into disorder (entropy / spontaneity)
+  entropyScatter: () => `${SVG_OPEN}
+    ${[0,1,2].map(r => [0,1].map(c => `<circle cx="${9+c*7}" cy="${9+r*7}" r="2" fill="currentColor" opacity="0.7"/>`).join('')).join('')}
+    <path d="M22 24h6" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+    <circle class="anim-jitter" cx="33" cy="10" r="2" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-jitter" cx="40" cy="16" r="2" fill="currentColor" style="animation-delay:.3s"/>
+    <circle class="anim-jitter" cx="35" cy="24" r="2" fill="currentColor" style="animation-delay:.6s"/>
+    <circle class="anim-jitter" cx="42" cy="30" r="2" fill="currentColor" style="animation-delay:.2s"/>
+    <circle class="anim-jitter" cx="33" cy="36" r="2" fill="currentColor" style="animation-delay:.5s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch5 variant — flask with delta-H arrow (enthalpy / Hess's law / calorimetry)
+  enthalpyFlask: () => `${SVG_OPEN}
+    <path d="M19 8h10v8l8 18a4 4 0 0 1-4 6H15a4 4 0 0 1-4-6l8-18V8z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <text x="24" y="30" font-size="11" font-weight="800" fill="currentColor" text-anchor="middle">ΔH</text>
+    <path class="anim-bob" d="M24 4v-4m-3 3l3-3 3 3" stroke="currentColor" stroke-width="2" fill="none" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch6 default — forward/reverse harpoon arrows in balance (chemical equilibrium)
+  equilibriumArrows: () => `${SVG_OPEN}
+    <path class="anim-pulse" d="M7 19h30m-6-5l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2.2" style="animation-delay:0s"/>
+    <path class="anim-pulse" d="M41 29H11m6 5l-6-5 6-5" fill="none" stroke="currentColor" stroke-width="2.2" style="animation-delay:.8s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch6 variant — scale tilting and re-levelling (Le Chatelier's principle)
+  leChatelierTilt: () => `${SVG_OPEN}
+    <line x1="24" y1="6" x2="24" y2="14" stroke="currentColor" stroke-width="2"/>
+    <g class="anim-swing-big">
+      <line x1="7" y1="14" x2="41" y2="14" stroke="currentColor" stroke-width="2"/>
+      <path d="M2 14a5 5 0 0 0 10 0z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M36 14a5 5 0 0 0 10 0z" fill="none" stroke="currentColor" stroke-width="1.5"/>
     </g>
-  </svg>`;
+    <line x1="24" y1="14" x2="24" y2="37" stroke="currentColor" stroke-width="2"/>
+    <path d="M14 37h20l-3 5H17z" fill="currentColor" opacity="0.85"/>
+  ${SVG_CLOSE}`,
+
+  // Ch7 default — water droplet with H+/OH- ions (ionic equilibrium)
+  dropletIons: () => `${SVG_OPEN}
+    <path d="M24 5C24 5 11 23 11 31a13 13 0 0026 0C37 23 24 5 24 5z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <text class="anim-bob" x="19" y="29" font-size="10" font-weight="800" fill="currentColor" style="animation-delay:0s">H+</text>
+    <text class="anim-bob" x="22" y="36" font-size="9" font-weight="800" fill="currentColor" opacity="0.75" style="animation-delay:.6s">OH⁻</text>
+  ${SVG_CLOSE}`,
+
+  // Ch7 variant — pH dial with swinging needle
+  phMeterDial: () => `${SVG_OPEN}
+    <path d="M6 32a18 18 0 0 1 36 0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <line class="anim-needle" x1="24" y1="32" x2="24" y2="14" stroke="currentColor" stroke-width="2"/>
+    <circle cx="24" cy="32" r="2.4" fill="currentColor"/>
+    <text x="24" y="44" font-size="9" font-weight="800" fill="currentColor" text-anchor="middle">pH</text>
+  ${SVG_CLOSE}`,
+
+  // Ch7 variant — crystal dissolving into ions (solubility product / Ksp)
+  dissolvingCrystal: () => `${SVG_OPEN}
+    <rect x="18" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M24 18C24 18 14 30 14 35a10 10 0 0020 0c0-5-10-17-10-17z" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.6"/>
+    <circle class="anim-drip" cx="20" cy="22" r="1.8" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-drip" cx="27" cy="20" r="1.8" fill="currentColor" style="animation-delay:.5s"/>
+    <circle class="anim-drip" cx="24" cy="26" r="1.8" fill="currentColor" style="animation-delay:1s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch8 default — electron transferring between two atoms (oxidation/reduction)
+  electronTransfer: () => `${SVG_OPEN}
+    <circle cx="12" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="36" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path class="anim-dash" d="M19 18c5-6 12-6 17 0" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle class="anim-bob" cx="22" cy="14" r="2" fill="currentColor" style="animation-delay:0s"/>
+    <text x="12" y="28" font-size="9" font-weight="800" fill="currentColor" text-anchor="middle">-</text>
+    <text x="36" y="28" font-size="9" font-weight="800" fill="currentColor" text-anchor="middle">+</text>
+  ${SVG_CLOSE}`,
+
+  // Ch8 variant — battery / electrode cell (redox titration, electrode processes)
+  batteryCell: () => `${SVG_OPEN}
+    <line x1="14" y1="12" x2="14" y2="36" stroke="currentColor" stroke-width="3"/>
+    <line x1="34" y1="8" x2="34" y2="40" stroke="currentColor" stroke-width="1.5"/>
+    <path class="anim-dash" d="M14 24h20" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <text x="14" y="6" font-size="9" font-weight="800" fill="currentColor" text-anchor="middle">−</text>
+    <text x="34" y="6" font-size="9" font-weight="800" fill="currentColor" text-anchor="middle">+</text>
+  ${SVG_CLOSE}`,
+
+  // Ch9 default — carbon skeletal chain with a functional group
+  carbonChain: () => `${SVG_OPEN}
+    <path d="M6 32l8-14 8 14 8-14 8 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle class="anim-pulse" cx="38" cy="18" r="3.2" fill="currentColor" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch9 variant — mirrored isomer pair
+  isomerMirror: () => `${SVG_OPEN}
+    <line x1="24" y1="4" x2="24" y2="44" stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="3 3"/>
+    <path class="anim-bob" d="M6 30l6-12 6 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="animation-delay:0s"/>
+    <path class="anim-bob" d="M42 30l-6-12-6 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="animation-delay:.4s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch9 variant — curved mechanism arrow over a bond
+  mechanismArrow: () => `${SVG_OPEN}
+    <circle cx="14" cy="28" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="34" cy="28" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="20" y1="28" x2="28" y2="28" stroke="currentColor" stroke-width="2"/>
+    <path class="anim-dash" d="M16 22c4-8 12-8 16 0" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path class="anim-pulse" d="M30 16l3 3-4 1z" fill="currentColor" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch10 default — benzene ring with alternating delocalized bonds glowing in turn
+  benzeneRing: () => {
+    const pts = [0,1,2,3,4,5].map(i => {
+      const a = (Math.PI/3)*i - Math.PI/2;
+      return [24+16*Math.cos(a), 24+16*Math.sin(a)];
+    });
+    const lines = pts.map((p,i) => {
+      const n = pts[(i+1)%6];
+      const delay = (i*0.25).toFixed(2);
+      return `<line class="anim-pulse" x1="${p[0].toFixed(1)}" y1="${p[1].toFixed(1)}" x2="${n[0].toFixed(1)}" y2="${n[1].toFixed(1)}" stroke="currentColor" stroke-width="2.4" style="animation-delay:${delay}s"/>`;
+    }).join('');
+    return `${SVG_OPEN}<circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.45"/>${lines}${SVG_CLOSE}`;
+  },
+
+  // Ch10 variant — saturated single-bond chain (alkanes, substitution)
+  alkaneChain: () => `${SVG_OPEN}
+    <path class="anim-jitter" d="M5 30l8-13 8 13 8-13 8 13 8-13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+
+  // Ch10 variant — alkene/alkyne chain with a glowing multiple bond (addition reactions)
+  alkeneChain: () => `${SVG_OPEN}
+    <path d="M5 30l8-13 8 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="anim-pulse" d="M21 17l8 13" stroke="currentColor" stroke-width="2.4" style="animation-delay:0s"/>
+    <path class="anim-pulse" d="M23 19l8 13" stroke="currentColor" stroke-width="2.4" style="animation-delay:.3s" opacity="0.6"/>
+    <path d="M29 30l8-13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <circle class="anim-bob" cx="40" cy="12" r="2.4" fill="currentColor" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+};
+
+/* Chapter default icon (index matches CHAPTERS array order, ch 1-10) */
+const CHAPTER_BASE_ICON = [
+  'flaskBubble', 'bohrAtom', 'periodicGrid', 'bondPair', 'thermoFlame',
+  'equilibriumArrows', 'dropletIons', 'electronTransfer', 'carbonChain', 'benzeneRing'
+];
+
+/* Keyword-matched session-level variants, checked in order against the
+   lowercased topic text — falls back to the chapter's base icon. */
+const CHAPTER_VARIANTS = [
+  [ { kw: ['mole', 'mass'], icon: 'scaleBalance' }, { kw: ['stoichiometry', 'limiting', 'empirical', 'percentage', 'si units', 'measurement'], icon: 'measuringBeaker' } ],
+  [ { kw: ['photoelectric', 'wave', 'radiation', 'spectra', 'spectrum'], icon: 'lightWave' }, { kw: ['quantum', 'orbital', 'uncertainty', 'heisenberg', 'dual'], icon: 'orbitalCloud' } ],
+  [ { kw: ['atomic number', 'isotope', 'electronic config'], icon: 'bohrAtom' } ],
+  [ { kw: ['ionic bond', 'lattice', 'fajans'], icon: 'ionicLattice' }, { kw: ['vsepr', 'hybridisation', 'sigma', 'pi bond', 'molecular orbital', 'valence bond'], icon: 'orbitalOverlap' } ],
+  [ { kw: ['entropy', 'spontaneity', 'gibbs'], icon: 'entropyScatter' }, { kw: ['enthalpy', 'hess', 'calorimeter', 'combustion', 'atomisation', 'bond enthalp'], icon: 'enthalpyFlask' } ],
+  [ { kw: ['le chatelier', 'inert gas', 'catalyst'], icon: 'leChatelierTilt' } ],
+  [ { kw: ['ph scale', 'ph,', 'buffer', 'ka', 'kb'], icon: 'phMeterDial' }, { kw: ['solubility', 'ksp', 'common ion'], icon: 'dissolvingCrystal' } ],
+  [ { kw: ['electrode', 'titration'], icon: 'batteryCell' } ],
+  [ { kw: ['isomerism'], icon: 'isomerMirror' }, { kw: ['mechanism', 'electronic effect', 'hyperconjugation'], icon: 'mechanismArrow' } ],
+  [ { kw: ['alkane', 'halogenation', 'wurtz'], icon: 'alkaneChain' }, { kw: ['alkene', 'alkyne', 'addition', 'markovnikov', 'ozonolysis', 'polymer'], icon: 'alkeneChain' } ],
+];
+
+function iconKeyFor(chapterIdx, topicsText) {
+  const lower = topicsText.toLowerCase();
+  const variants = CHAPTER_VARIANTS[chapterIdx] || [];
+  for (const v of variants) {
+    if (v.kw.some(k => lower.includes(k))) return v.icon;
+  }
+  return CHAPTER_BASE_ICON[chapterIdx];
+}
+
+function renderIcon(iconKey) {
+  return (ICONS[iconKey] || ICONS.flaskBubble)();
 }
 
 function fmtDate(d) {
@@ -124,7 +391,7 @@ function renderChapterGrid(sessions, state, today, lastOpened) {
     card.style.setProperty('--card-accent', accentVar);
     card.innerHTML = `
       <div class="ch-top">
-        <div class="ch-icon" style="color:${accentVar}">${atomIconSVG('orbit', 'electron')}</div>
+        <div class="ch-icon" style="color:${accentVar}">${renderIcon(CHAPTER_BASE_ICON[idx])}</div>
         <div class="ch-num">${String(ch.num).padStart(2, '0')}</div>
       </div>
       <div class="ch-name">${ch.name}</div>
@@ -151,9 +418,10 @@ function renderChapterGrid(sessions, state, today, lastOpened) {
         const isToday = s.dates.includes(today);
         const isLastOpened = lastOpened && lastOpened.chapter === s.chapter && lastOpened.week === s.week && lastOpened.session === s.session;
         entry.className = 'session-entry' + (isLastOpened ? ' last-opened' : '');
+        const sessIconKey = iconKeyFor(idx, s.topics.join(' '));
         entry.innerHTML = `
           <span class="status-icon ${isComplete ? 'complete' : 'incomplete'}">${isComplete ? '✓' : '○'}</span>
-          <span class="session-icon" style="color:${accentVar}">${atomIconSVG('s-orbit', 's-electron')}</span>
+          <span class="session-icon" style="color:${accentVar}">${renderIcon(sessIconKey)}</span>
           <span class="info">
             <span class="topic">${s.topics[0]}</span>
             ${isToday ? '<span class="today-badge">TODAY</span>' : ''}
