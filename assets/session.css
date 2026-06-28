@@ -197,7 +197,35 @@
   .slide { padding-top: 150px; }
 }
 
+/* Accessibility */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 @media print {
-  .slide-nav, .slide-header { display: none; }
-  .slide { display: block; opacity: 1; min-height: auto; page-break-after: always; padding: 20px; }
+  /* Hide UI chrome */
+  .slide-nav, .slide-header, #btn-home, #btn-complete, #btn-fullscreen { display: none !important; }
+  
+  /* Reset layout for paper */
+  body, html { background: white !important; color: black !important; }
+  .slide { 
+    display: block !important; 
+    opacity: 1 !important; 
+    min-height: auto !important; 
+    page-break-after: always; 
+    padding: 20px; 
+    box-shadow: none !important;
+    background: none !important;
+  }
+  
+  /* Force dark text for readability on paper */
+  * { color: black !important; text-shadow: none !important; border-color: #ccc !important; }
+  
+  /* Ensure images and components don't overflow */
+  img { max-width: 100% !important; page-break-inside: avoid; }
+  .component-container { page-break-inside: avoid; box-shadow: none !important; }
+  
+  /* Reveal hidden interactive content */
+  .hidden { display: block !important; opacity: 1 !important; visibility: visible !important; }
 }

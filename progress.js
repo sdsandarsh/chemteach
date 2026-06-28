@@ -122,6 +122,30 @@ const ChemProgress = (() => {
     return true;
   }
 
+  function exportData() {
+    const state = load();
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
+    const dlAnchorElem = document.createElement('a');
+    dlAnchorElem.setAttribute("href", dataStr);
+    dlAnchorElem.setAttribute("download", "chemteach_progress_backup.json");
+    dlAnchorElem.click();
+    dlAnchorElem.remove();
+  }
+
+  function importData(jsonString) {
+    try {
+      const newState = JSON.parse(jsonString);
+      if (newState && newState.sessions) {
+        save(newState);
+        return true;
+      }
+      return false;
+    } catch(e) {
+      console.error("ChemProgress: Failed to parse import data", e);
+      return false;
+    }
+  }
+
   return {
     load,
     save,
@@ -135,6 +159,8 @@ const ChemProgress = (() => {
     getLastSlide,
     isComplete,
     chapterProgress,
-    reset
+    reset,
+    exportData,
+    importData
   };
 })();

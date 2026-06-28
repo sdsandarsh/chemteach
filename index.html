@@ -14,8 +14,11 @@
   <div class="logo">ChemTeach</div>
   <div class="date" id="header-date"></div>
   <div class="header-actions">
-    <button class="theme-toggle-btn" onclick="ChemTheme.toggle()">☀️ Light Mode</button>
-    <button class="reset-link" id="btn-reset">Reset Progress</button>
+    <button class="theme-toggle-btn" aria-label="Toggle Theme" onclick="ChemTheme.toggle()">🌗 Light Mode</button>
+    <button class="reset-link" id="btn-export" aria-label="Export Progress">Export</button>
+    <label class="reset-link" for="btn-import" style="cursor:pointer;" aria-label="Import Progress">Import</label>
+    <input type="file" id="btn-import" accept=".json" style="display:none;">
+    <button class="reset-link" id="btn-reset" aria-label="Reset Progress">Reset</button>
   </div>
 </header>
 
@@ -867,6 +870,26 @@ async function main() {
       ChemProgress.reset();
       location.reload();
     }
+  };
+
+  document.getElementById('btn-export').onclick = () => {
+    ChemProgress.exportData();
+  };
+
+  document.getElementById('btn-import').onchange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      if (ChemProgress.importData(event.target.result)) {
+        alert('Progress imported successfully!');
+        location.reload();
+      } else {
+        alert('Failed to import progress. Invalid file format.');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
   };
 
   document.addEventListener('keydown', e => {
