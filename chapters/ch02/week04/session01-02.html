@@ -1,1 +1,152 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch02 W04 S01-02 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 02 | Week 4 | Session 1-2</div>
+    <div class="session-title">Atomic Structure</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 2 | Week 4 | Session 1-2 | June 8-9, 2026</div>
+    <h1>DISCOVERY OF SUB-ATOMIC PARTICLES</h1>
+    <div class="topics">Topics covered today:<br>2.1 Discovery of Sub-atomic Particles</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Dalton said atoms are the smallest, indivisible particles of matter \u2014 solid, unbreakable spheres."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "If atoms are truly indivisible, why do some materials conduct electricity and others don't? What is actually flowing in a wire?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Atoms are NOT indivisible. They contain even smaller charged particles \u2014 electrons, protons, neutrons \u2014 discovered through clever experiments with electricity and radiation."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="story" data-config='{"setting": "Cambridge, England, 1897", "narrative": "J.J. Thomson passed electricity through a near-vacuum glass tube and noticed a glowing beam bending toward a positive plate. Whatever was in that beam was negatively charged, and it was the same \u2014 regardless of what gas filled the tube, or what metal made the electrode. Thomson had stumbled onto something inside the atom that nobody believed could exist: a particle smaller than the atom itself.", "reveal": "The 'indivisible' atom had just lost its first secret \u2014 the electron.", "visual": "modern-lab"}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "energy-level-diagram", "revealSteps": true, "caption": "(Used to anchor stepwise reveal.) Click REVEAL to trace the discovery timeline: cathode ray tube \u2192 electron (Thomson) \u2192 gold foil scattering \u2192 proton (Goldstein/Rutherford) \u2192 neutron (Chadwick)."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Negative Tom, Positive Gold, Neutral Chad", "breakdown": ["Negative Tom \u2192 Thomson discovered the electron (negative charge) using cathode ray tubes", "Positive Gold \u2192 Goldstein discovered the proton (positive charge) using discharge tube experiments", "Neutral Chad \u2192 Chadwick discovered the neutron (no charge) much later, in 1932"], "rule": "Electron: charge -1, mass ~0 (negligible). Proton: charge +1, mass ~1u. Neutron: charge 0, mass ~1u.", "tip": "Cathode rays always travel from cathode (-) to anode (+) \u2014 proof the particles inside are negatively charged."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Cathode rays bend toward a positively charged plate placed near the tube. What does this single observation tell you about the charge of the particles in the beam?", "hint": "Opposite charges attract.", "answer": "The particles are NEGATIVELY CHARGED", "explanation": "A negative particle is attracted toward a positive plate. Since the cathode ray beam bends toward the positive plate, the particles making up the beam \u2014 electrons \u2014 must carry negative charge."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Match each scientist to their discovery.", "items": ["J.J. Thomson", "Goldstein", "James Chadwick", "Rutherford (gold foil)"], "categories": ["Electron", "Proton (anode rays)", "Neutron", "Nucleus"], "answers": {"J.J. Thomson": "Electron", "Goldstein": "Proton (anode rays)", "James Chadwick": "Neutron", "Rutherford (gold foil)": "Nucleus"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Cathode ray tube experiments revealed the electron (negative, near-zero mass)</li><li>Anode/canal ray experiments revealed the proton (positive, ~1u mass)</li><li>Chadwick later discovered the neutron (neutral, ~1u mass)</li><li>Atoms are divisible — built from these three sub-atomic particles</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 2.1-1, 2<br>
+      Assignment: 2.1-3, 4
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 8</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch02_w04_s01-02';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(2, 4, '01-02');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

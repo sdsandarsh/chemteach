@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch02 W06 S05-06 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 02 | Week 6 | Session 5-6</div>
+    <div class="session-title">Atomic Structure</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 2 | Week 6 | Session 5-6 | June 26-27, 2026</div>
+    <h1>LIMITATIONS OF BOHR'S MODEL: RADIUS & ENERGY</h1>
+    <div class="topics">Topics covered today:<br>2.4.1 Limitations of Bohr's Model, Radius, Energy</div>
+  </div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "energy-level-diagram", "revealSteps": true, "caption": "Click REVEAL to walk through the formulas: radius of orbit n (rn = 0.529 \u00d7 n\u00b2/Z \u00c5) and energy of orbit n (En = -13.6 Z\u00b2/n\u00b2 eV)."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Bohr's model explained hydrogen's spectrum perfectly. But when applied to helium (2 electrons) or any multi-electron atom, its predictions failed completely. Why might a model built around a SINGLE orbiting electron break down with two or more electrons?", "hint": "Think about what additional forces exist once there is more than one electron.", "answer": "Bohr's model IGNORED electron-electron repulsion, which doesn't exist in single-electron hydrogen", "explanation": "Bohr's calculations only accounted for the attraction between the nucleus and a single electron. With multiple electrons, repulsive forces between electrons themselves significantly change the energy levels \u2014 something Bohr's simple model had no way to include."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "WHAT BOHR'S MODEL EXPLAINED WELL", "text": "Hydrogen's line spectrum, energy levels, and orbit radii \u2014 all matched experimental results almost perfectly for this one simplest atom."}, "bridge": {"label": "BUT WHERE IT BROKE DOWN", "text": "It failed for multi-electron atoms, couldn't explain the fine splitting of spectral lines seen with strong magnetic fields (Zeeman effect), and treated electrons as particles orbiting in fixed paths \u2014 ignoring their wave nature entirely."}, "unknown": {"label": "WHAT COMES NEXT", "text": "A more powerful model is needed \u2014 one that treats electrons as both particle AND wave, and replaces fixed orbits with probability. That is the quantum mechanical model, our next topic."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "One Electron Good, Many Electrons Bad", "breakdown": ["One Electron Good \u2192 Bohr's model worked perfectly for hydrogen-like single-electron systems", "Many Electrons Bad \u2192 failed for multi-electron atoms due to ignored electron-electron repulsion", "Also failed \u2192 could not explain Zeeman effect (magnetic field splitting) or Stark effect (electric field splitting)", "Also failed \u2192 violated Heisenberg's uncertainty principle by assuming fixed orbits and exact electron paths"], "rule": "rn = 0.529 \u00d7 (n\u00b2/Z) \u00c5 and En = -13.6 \u00d7 (Z\u00b2/n\u00b2) eV \u2014 valid only for hydrogen-like (single electron) species.", "tip": "Whenever a model 'assumes fixed paths' for very small particles, suspect it will eventually conflict with quantum uncertainty."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each statement as something Bohr's model EXPLAINED or FAILED to explain.", "items": ["Hydrogen line spectrum", "Multi-electron atom spectra", "Energy of hydrogen's orbits", "Zeeman effect (magnetic splitting)", "Wave nature of electrons"], "categories": ["Explained", "Failed to Explain"], "answers": {"Hydrogen line spectrum": "Explained", "Multi-electron atom spectra": "Failed to Explain", "Energy of hydrogen's orbits": "Explained", "Zeeman effect (magnetic splitting)": "Failed to Explain", "Wave nature of electrons": "Failed to Explain"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Bohr's formulas: rn = 0.529(n²/Z) Å, En = -13.6(Z²/n²) eV — valid for hydrogen-like atoms only</li><li>Limitation 1: fails for multi-electron atoms (ignores electron-electron repulsion)</li><li>Limitation 2: cannot explain Zeeman effect or Stark effect (spectral line splitting)</li><li>Limitation 3: contradicts wave nature of electrons and Heisenberg's uncertainty principle</li><li>These gaps motivated the quantum mechanical model</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 2.4-6, 7, 8<br>
+      Assignment: 2.4-9, 10
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch02_w06_s05-06';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(2, 6, '05-06');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

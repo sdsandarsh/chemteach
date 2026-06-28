@@ -1,1 +1,152 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch02 W06 S03-04 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 02 | Week 6 | Session 3-4</div>
+    <div class="session-title">Atomic Structure</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 2 | Week 6 | Session 3-4 | June 24-25, 2026</div>
+    <h1>BOHR'S MODEL & THE HYDROGEN SPECTRUM EXPLAINED</h1>
+    <div class="topics">Topics covered today:<br>2.4 Bohr's Model, Hydrogen Spectrum</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Hydrogen's spectrum has sharp, discrete lines \u2014 proving energy in the atom is quantized, not continuous. Rutherford's model could not explain why."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "What EXACT rule decides which energy levels are allowed and which are forbidden? Why these specific lines and no others?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Niels Bohr proposed that electrons orbit the nucleus only in certain fixed, quantized orbits \u2014 and jumping between these orbits releases or absorbs EXACTLY the energy seen in the spectral lines."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="model-3d" data-config='{"model": "atom-bohr", "labels": true, "rotatable": true, "caption": "Drag to rotate. Bohr's model: electrons confined to specific circular orbits (energy levels n=1,2,3...), never in between."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="animation" data-config='{"sequence": "electron-transition", "steps": ["An electron sits in a low energy orbit (e.g. n=2), its normal stable state.", "It absorbs a photon of exactly the right energy and jumps to a higher orbit (e.g. n=4).", "The electron is now in an unstable, excited state and cannot stay there.", "It falls back down, releasing a photon of energy exactly equal to the gap between the two orbits \u2014 producing one specific spectral line."], "stepByStep": true, "caption": "Click PLAY, then NEXT STEP to see how electron transitions between Bohr orbits produce the hydrogen spectral lines."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "According to Bohr, an electron in orbit does NOT radiate energy continuously, even though it is constantly changing direction (accelerating). This directly contradicts classical electromagnetic theory. Why did Bohr make this assumption anyway?", "hint": "Think about what would happen to the atom if classical theory were followed exactly.", "answer": "Because classical theory predicted the atom would COLLAPSE instantly \u2014 which clearly does not happen", "explanation": "If electrons radiated energy continuously while orbiting (as classical physics demands for any accelerating charge), they would spiral into the nucleus in a fraction of a second. Since atoms are stable, Bohr simply declared certain orbits 'allowed' and stable by postulate \u2014 a bold assumption that worked perfectly for hydrogen, even though it broke classical rules."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Orbits Are Fixed, Jumps Make Light", "breakdown": ["Orbits Are Fixed \u2192 electrons exist only in specific, quantized circular orbits (n=1,2,3...)", "No radiation while orbiting \u2192 electrons in these orbits do not lose energy", "Jumps Make Light \u2192 transitions between orbits absorb or emit photons of exact energy \u0394E = h\u03bd"], "rule": "Energy of orbit n: En = -13.6/n^2 eV for hydrogen. Larger n = higher energy = farther from nucleus.", "tip": "Emission happens when an electron falls to a LOWER orbit. Absorption happens when it jumps to a HIGHER orbit."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each event as Emission or Absorption.", "items": ["Electron falls from n=3 to n=2", "Electron jumps from n=1 to n=3", "Electron falls from n=4 to n=1", "Electron jumps from n=2 to n=4"], "categories": ["Emission (releases energy)", "Absorption (gains energy)"], "answers": {"Electron falls from n=3 to n=2": "Emission (releases energy)", "Electron jumps from n=1 to n=3": "Absorption (gains energy)", "Electron falls from n=4 to n=1": "Emission (releases energy)", "Electron jumps from n=2 to n=4": "Absorption (gains energy)"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Bohr's model: electrons orbit only in specific, quantized energy levels (n=1,2,3...)</li><li>Electrons in allowed orbits do not radiate energy — they are stable</li><li>Transitions between orbits emit/absorb photons of exact energy, explaining the line spectrum</li><li>Energy of orbit n in hydrogen: En = -13.6/n² eV</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 2.4-1, 2, 3<br>
+      Assignment: 2.4-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 8</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch02_w06_s03-04';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(2, 6, '03-04');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

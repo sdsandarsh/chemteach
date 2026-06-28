@@ -1,1 +1,152 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch02 W06 S01-02 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 02 | Week 6 | Session 1-2</div>
+    <div class="session-title">Atomic Structure</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 2 | Week 6 | Session 1-2 | June 22-23, 2026</div>
+    <h1>ATOMIC SPECTRA & THE HYDROGEN LINE SPECTRUM</h1>
+    <div class="topics">Topics covered today:<br>2.3.3 Atomic Spectra, Line Spectrum of Hydrogen</div>
+  </div>
+</div>
+
+<div class="slide" data-type="story" data-config='{"setting": "A Spectroscopy Lab, 1880s", "narrative": "Pass white light through a prism, and you get a smooth, continuous rainbow. But heat hydrogen gas and pass ITS light through a prism, and something strange appears: not a rainbow, but a few sharp, isolated lines of colour against total darkness \u2014 as if hydrogen could only ever emit a few exact, forbidden colours and nothing in between. No theory at the time could explain why.", "reveal": "Hydrogen's light wasn't random \u2014 it was a fingerprint, and that fingerprint contained a hidden code about the structure of the atom itself.", "visual": "modern-lab"}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "energy-level-diagram", "revealSteps": true, "caption": "Click REVEAL to build the hydrogen line spectrum: continuous spectrum \u2192 line spectrum \u2192 series (Lyman, Balmer, Paschen) at specific wavelengths only."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="analogy" data-config='{"realWorld": {"label": "A FINGERPRINT", "visual": "lock-key", "fact": "Every person's fingerprint is unique and identifiable \u2014 no two are alike, and a fingerprint immediately reveals identity."}, "chemistry": {"label": "ATOMIC EMISSION SPECTRUM", "visual": "mole-atoms", "fact": "Every element produces its own unique pattern of spectral lines when heated \u2014 no two elements share the same pattern, making spectra an identification tool."}, "bridge": "Just as a fingerprint identifies a person instantly, a line spectrum identifies an element instantly \u2014 this is literally how astronomers know what stars are made of."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "A continuous spectrum shows every colour blending smoothly. Hydrogen's spectrum shows only a few sharp, separated lines. What does the EXISTENCE of gaps between the lines suggest about energy in the atom?", "hint": "Gaps mean some values are forbidden, not just rare.", "answer": "Energy in the atom is QUANTIZED \u2014 only certain specific energy values are allowed", "explanation": "If energy could take any value, the spectrum would be continuous, just like sunlight through a prism. The fact that only specific lines appear (and nothing in between) means electrons can only exist at certain fixed energy levels \u2014 proof of energy quantization, the key idea Bohr would soon build on."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Lines Mean Limits", "breakdown": ["Lines \u2192 discrete spectral lines, not a continuous rainbow", "Mean \u2192 indicate that energy changes happen in fixed amounts", "Limits \u2192 only specific, allowed energy levels exist within the atom"], "rule": "Each spectral line corresponds to an electron transition between two specific, fixed energy levels in the atom.", "tip": "Lyman series = transitions ending at n=1 (UV). Balmer series = transitions ending at n=2 (visible). Both are seen in hydrogen's spectrum."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each spectrum type to its correct description.", "items": ["Continuous Spectrum", "Line Spectrum", "Lyman Series", "Balmer Series"], "categories": ["Smooth, unbroken rainbow", "Discrete, separated lines", "Transitions ending at n=1", "Transitions ending at n=2"], "answers": {"Continuous Spectrum": "Smooth, unbroken rainbow", "Line Spectrum": "Discrete, separated lines", "Lyman Series": "Transitions ending at n=1", "Balmer Series": "Transitions ending at n=2"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Continuous spectrum: all wavelengths blend smoothly (e.g. sunlight through a prism)</li><li>Line spectrum: only specific, discrete wavelengths appear — unique to each element</li><li>Hydrogen's line spectrum revealed quantized energy levels within the atom</li><li>Spectral series (Lyman, Balmer, Paschen) correspond to transitions ending at specific energy levels</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 2.3-11, 12<br>
+      Assignment: 2.3-13, 14
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 8</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch02_w06_s01-02';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(2, 6, '01-02');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch02 W05 S05-06 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 02 | Week 5 | Session 5-6</div>
+    <div class="session-title">Atomic Structure</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 2 | Week 5 | Session 5-6 | June 19-20, 2026</div>
+    <h1>PHOTOELECTRIC EFFECT & DUAL BEHAVIOUR OF RADIATION</h1>
+    <div class="topics">Topics covered today:<br>2.3.2 Photoelectric Effect, Dual Behaviour of Radiation</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Light behaves as a wave \u2014 it has wavelength, frequency, and follows c = \u03bd\u03bb, as you learned last class."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "If you shine VERY BRIGHT red light on a metal, no electrons are ejected at all. But even a DIM beam of violet light ejects electrons instantly. How can brightness fail where dimness succeeds?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Light isn't just a wave \u2014 it also behaves as discrete packets of energy called photons. Only photons above a minimum energy (set by frequency, not brightness) can knock out electrons. This is the photoelectric effect."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="animation" data-config='{"sequence": "electron-transition", "steps": ["A photon of light strikes the metal surface.", "If the photon's energy (h\u03bd) is below the metal's threshold, nothing happens \u2014 no matter how bright the light.", "If the photon's energy exceeds the threshold, it transfers all its energy to one electron instantly.", "The electron is ejected immediately, with kinetic energy equal to the excess: KE = h\u03bd \u2212 h\u03bd0."], "stepByStep": true, "caption": "Click PLAY, then NEXT STEP to walk through the photoelectric effect one stage at a time."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="analogy" data-config='{"realWorld": {"label": "KNOCKING DOWN A WALL WITH PING-PONG BALLS vs ONE BOWLING BALL", "visual": "see-saw", "fact": "A thousand gentle ping-pong balls thrown at a wall do nothing. One bowling ball thrown hard enough knocks a brick loose instantly \u2014 it's about the energy of a SINGLE hit, not the total number of hits."}, "chemistry": {"label": "PHOTOELECTRIC EFFECT", "visual": "mole-atoms", "fact": "A million low-energy (red) photons cannot eject an electron. One sufficiently energetic (violet/UV) photon does it instantly \u2014 what matters is energy PER photon, not total light intensity."}, "bridge": "Intensity (more balls, brighter light) cannot substitute for the energy of a single, well-aimed hit (one bowling ball, one high-frequency photon)."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Doubling the intensity (brightness) of light below the threshold frequency still ejects zero electrons. But increasing the frequency even slightly above the threshold ejects electrons instantly. What does this prove about light's behaviour here?", "hint": "Brightness = more photons. Frequency = energy per photon.", "answer": "Light behaves as PARTICLES (photons), each carrying a fixed energy h\u03bd", "explanation": "If light were purely a wave, more intensity should always eventually free electrons given enough time. Instead, only frequency (energy per photon) matters \u2014 proving each photon acts as a discrete energy packet that either has enough energy to do the job, or doesn't, regardless of how many photons arrive."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Energy Equals H Nu, Threshold or Nothing", "breakdown": ["Energy Equals H Nu \u2192 E = h\u03bd (Planck's relation, h = Planck's constant)", "Threshold \u2192 minimum frequency (\u03bd0) needed to eject an electron from a given metal", "Or Nothing \u2192 below threshold frequency, NO electrons are ejected regardless of intensity"], "rule": "Maximum kinetic energy of ejected electron: KE = h\u03bd \u2212 h\u03bd0 = h\u03bd \u2212 W0 (work function).", "tip": "Light shows wave behaviour (interference, diffraction) AND particle behaviour (photoelectric effect) \u2014 this is wave-particle duality."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Photoelectric effect: light ejects electrons from a metal surface only above a threshold frequency</li><li>Einstein explained this using photons: E = hν, discrete energy packets</li><li>Brightness (intensity) increases photon count, not photon energy — frequency alone determines ejection</li><li>This proved light has dual nature: wave AND particle behaviour</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 2.3-6, 7, 8<br>
+      Assignment: 2.3-9, 10
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch02_w05_s05-06';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(2, 5, '05-06');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>
