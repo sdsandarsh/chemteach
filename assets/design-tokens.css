@@ -27,6 +27,18 @@
   --transition: 0.3s ease;
   --shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
   --shadow-glow: 0 0 24px rgba(37, 99, 255, 0.35);
+
+  /* Spectral palette — cycles per chapter/session card, echoing emission-line colours */
+  --spec-1: #FF3D6E;
+  --spec-2: #FF8A3D;
+  --spec-3: #FFD60A;
+  --spec-4: #00E676;
+  --spec-5: #00D4FF;
+  --spec-6: #2563FF;
+  --spec-7: #B347FF;
+  --spec-8: #FF3DC6;
+  --spec-9: #3DFFD1;
+  --spec-10: #FFB13D;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
