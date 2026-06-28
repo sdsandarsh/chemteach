@@ -41,6 +41,61 @@
   --spec-10: #FFB13D;
 }
 
+/* ── Light theme override ──
+   Toggled via document.documentElement.setAttribute('data-theme','light')
+   (see assets/theme.js). Every component/session reads the same variable
+   names, so switching theme re-colours chrome, text, borders and panels
+   everywhere automatically — deliberate per-slide illustration colours
+   (e.g. comic characters, molecule atom colours) are untouched by design. */
+[data-theme="light"] {
+  --color-bg: #F3F5FC;
+  --color-card: #FFFFFF;
+  --color-card-hover: #EBF0FE;
+  --color-accent: #2554E0;
+  --color-highlight: #8B2FE0;
+  --color-secondary: #0090B8;
+  --color-text: #11182C;
+  --color-text-muted: #475569;
+  --color-text-body: #1E293B;
+  --color-border: rgba(37, 84, 224, 0.18);
+  --color-border-active: rgba(37, 84, 224, 0.45);
+  --color-success: #0E9F55;
+  --color-error: #D6304F;
+  --color-warning: #A6720A;
+  --color-overlay: rgba(243, 245, 252, 0.92);
+  --color-panel-green: #E7F8EE;
+  --color-panel-amber: #FDF3DC;
+  --color-panel-cyan: #E5F7FC;
+  --shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+  --shadow-glow: 0 0 18px rgba(37, 84, 224, 0.18);
+}
+
+[data-theme="light"] body::before {
+  background-image:
+    radial-gradient(ellipse 75% 50% at 12% 5%, rgba(37, 99, 255, 0.10) 0%, transparent 62%),
+    radial-gradient(ellipse 60% 45% at 88% 12%, rgba(179, 71, 255, 0.09) 0%, transparent 62%),
+    radial-gradient(ellipse 65% 50% at 50% 105%, rgba(0, 212, 255, 0.07) 0%, transparent 62%),
+    radial-gradient(ellipse 40% 30% at 70% 60%, rgba(255, 61, 198, 0.04) 0%, transparent 60%);
+}
+
+[data-theme="light"] .btn { color: #FFFFFF; }
+
+/* The spectral palette is tuned for thin icon strokes on a dark card.
+   On a white card those light/bright hues (gold, mint, cyan) lose contrast,
+   so light mode uses darker, more saturated versions of the same hues. */
+[data-theme="light"] {
+  --spec-1: #D6304F;
+  --spec-2: #C2611A;
+  --spec-3: #A6720A;
+  --spec-4: #0E9F55;
+  --spec-5: #0090B8;
+  --spec-6: #2554E0;
+  --spec-7: #8B2FE0;
+  --spec-8: #B0238A;
+  --spec-9: #0E9A82;
+  --spec-10: #B8761E;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body { height: 100%; }

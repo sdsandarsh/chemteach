@@ -6,13 +6,17 @@
 <title>ChemTeach | IVTJ JEE 2026-27</title>
 <link rel="stylesheet" href="assets/design-tokens.css">
 <link rel="stylesheet" href="assets/dashboard.css">
+<script src="assets/theme.js"></script>
 </head>
 <body>
 
 <header class="app-header">
   <div class="logo">ChemTeach</div>
   <div class="date" id="header-date"></div>
-  <button class="reset-link" id="btn-reset">Reset Progress</button>
+  <div class="header-actions">
+    <button class="theme-toggle-btn" onclick="ChemTheme.toggle()">☀️ Light Mode</button>
+    <button class="reset-link" id="btn-reset">Reset Progress</button>
+  </div>
 </header>
 
 <div id="today-banner-slot"></div>
@@ -277,13 +281,430 @@ const ICONS = {
     <path class="anim-jitter" d="M5 30l8-13 8 13 8-13 8 13 8-13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0s"/>
   ${SVG_CLOSE}`,
 
-  // Ch10 variant — alkene/alkyne chain with a glowing multiple bond (addition reactions)
+  // Ch10 variant — alkene chain forming a new double bond (alkene nomenclature/preparation)
   alkeneChain: () => `${SVG_OPEN}
     <path d="M5 30l8-13 8 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
     <path class="anim-pulse" d="M21 17l8 13" stroke="currentColor" stroke-width="2.4" style="animation-delay:0s"/>
     <path class="anim-pulse" d="M23 19l8 13" stroke="currentColor" stroke-width="2.4" style="animation-delay:.3s" opacity="0.6"/>
     <path d="M29 30l8-13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
     <circle class="anim-bob" cx="40" cy="12" r="2.4" fill="currentColor" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+
+  /* ── Ch1 additions ── */
+  // physical vs chemical change — ice cube transforming into a liquid drop
+  changeCompare: () => `${SVG_OPEN}
+    <rect x="6" y="14" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path class="anim-bob" d="M24 21h8m-3-3l3 3-3 3" stroke="currentColor" stroke-width="2" fill="none" style="animation-delay:0s"/>
+    <path d="M36 14c0 0-6 9-6 13a6 6 0 0012 0c0-4-6-13-6-13z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle class="anim-pulse" cx="36" cy="26" r="2" fill="currentColor" style="animation-delay:.4s"/>
+  ${SVG_CLOSE}`,
+  // laws of chemical combination / Dalton's atomic theory — identical discrete spheres
+  daltonSpheres: () => `${SVG_OPEN}
+    ${[0,1,2,3].map((i) => `<circle class="anim-pulse" cx="${8+i*11}" cy="24" r="4.5" fill="none" stroke="currentColor" stroke-width="2" style="animation-delay:${(i*0.25).toFixed(2)}s"/>`).join('')}
+    <path d="M12.5 24h26" stroke="currentColor" stroke-width="1.2" opacity="0.4" stroke-dasharray="2 3"/>
+  ${SVG_CLOSE}`,
+  // percentage composition — pie chart with one slice pulsing
+  percentYield: () => `${SVG_OPEN}
+    <circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+    <path class="anim-pulse" d="M24 24V8a16 16 0 0 1 13.86 8z" fill="currentColor" style="animation-delay:0s"/>
+    <text x="24" y="42" font-size="9" font-weight="800" fill="currentColor" text-anchor="middle">%</text>
+  ${SVG_CLOSE}`,
+  // stoichiometry / limiting reagent — unequal reactant streams meeting a stop line
+  limitingArrow: () => `${SVG_OPEN}
+    <path class="anim-dash" d="M4 16h16" stroke="currentColor" stroke-width="2.2"/>
+    <path class="anim-dash" d="M4 32h26" stroke="currentColor" stroke-width="2.2" style="animation-delay:.3s"/>
+    <line x1="22" y1="9" x2="22" y2="23" stroke="currentColor" stroke-width="2.5"/>
+    <circle class="anim-pulse" cx="22" cy="16" r="3" fill="currentColor" style="animation-delay:.5s"/>
+  ${SVG_CLOSE}`,
+
+  /* ── Ch2 additions ── */
+  // discovery of sub-atomic particles / charge-mass ratio — cathode ray tube
+  cathodeRayTube: () => `${SVG_OPEN}
+    <rect x="4" y="16" width="40" height="16" rx="8" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="10" y1="24" x2="14" y2="24" stroke="currentColor" stroke-width="3"/>
+    <path class="anim-dash" d="M16 24h22" stroke="currentColor" stroke-width="1.8"/>
+    <circle class="anim-bob" cx="36" cy="24" r="2" fill="currentColor" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+  // Thomson/Rutherford atomic models — alpha particles deflecting off a dense nucleus
+  rutherfordScatter: () => `${SVG_OPEN}
+    <circle cx="24" cy="24" r="4" fill="currentColor"/>
+    <path class="anim-dash" d="M4 8c8 4 14 10 16 16" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path class="anim-dash" d="M4 24h16" fill="none" stroke="currentColor" stroke-width="1.6" style="animation-delay:.2s"/>
+    <path class="anim-dash" d="M44 12c-8 4-13 8-16 12" fill="none" stroke="currentColor" stroke-width="1.6" style="animation-delay:.4s"/>
+    <path d="M27 21l9-9m-2 9l2-2-2-2" stroke="currentColor" stroke-width="1.4" fill="none" opacity="0.7"/>
+  ${SVG_CLOSE}`,
+  // atomic spectra — vertical emission lines of varying height
+  spectraLines: () => `${SVG_OPEN}
+    ${[0,1,2,3,4,5].map((i) => `<rect class="anim-pulse" x="${5+i*7}" y="${10+(i%3)*6}" width="3.5" height="${28-(i%3)*6}" fill="currentColor" opacity="${0.5+0.1*i}" style="animation-delay:${(i*0.15).toFixed(2)}s"/>`).join('')}
+  ${SVG_CLOSE}`,
+  // photoelectric effect — photon striking a surface and ejecting an electron
+  photonEject: () => `${SVG_OPEN}
+    <path class="anim-dash" d="M5 10l14 14" stroke="currentColor" stroke-width="2"/>
+    <line x1="4" y1="32" x2="44" y2="32" stroke="currentColor" stroke-width="2.5"/>
+    <circle class="anim-bob" cx="22" cy="20" r="2.6" fill="currentColor" style="animation-delay:0s"/>
+    <path class="anim-bob" d="M26 18l8-6m-7 1l7-1-1 7" stroke="currentColor" stroke-width="1.6" fill="none" style="animation-delay:.2s"/>
+  ${SVG_CLOSE}`,
+  // Heisenberg uncertainty — a fuzzy, blurred position marker
+  uncertaintyBlur: () => `${SVG_OPEN}
+    <circle class="anim-scale" cx="24" cy="24" r="4" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-scale" cx="24" cy="24" r="10" fill="currentColor" opacity="0.18" style="animation-delay:.3s"/>
+    <circle class="anim-scale" cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.4" style="animation-delay:.6s"/>
+    <text x="24" y="6" font-size="8" font-weight="800" fill="currentColor" text-anchor="middle" opacity="0.7">Δx·Δp</text>
+  ${SVG_CLOSE}`,
+
+  /* ── Ch3 additions ── */
+  // genesis of periodic classification — index cards sorting into order
+  cardSort: () => `${SVG_OPEN}
+    <rect class="anim-bob" x="6" y="20" width="11" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8" style="animation-delay:0s"/>
+    <rect class="anim-bob" x="19" y="14" width="11" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8" style="animation-delay:.3s"/>
+    <rect class="anim-bob" x="32" y="20" width="11" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8" style="animation-delay:.6s"/>
+    <path d="M9 25h5m-5 4h5m6-9h5m-5 4h5m6 1h5m-5 4h5" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+  ${SVG_CLOSE}`,
+  // nomenclature of elements Z>100 — element tile with a name tag
+  elementNameTag: () => `${SVG_OPEN}
+    <rect x="9" y="9" width="22" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+    <text x="20" y="25" font-size="11" font-weight="800" fill="currentColor" text-anchor="middle">Z</text>
+    <path class="anim-pulse" d="M33 24h9l-3-3m3 3l-3 3" stroke="currentColor" stroke-width="1.8" fill="none" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+
+  /* ── Ch4 additions ── */
+  // s,p,d,f blocks / atomic radius — grid with a radius arrow
+  radiusArrowGrid: () => `${SVG_OPEN}
+    <rect x="6" y="6" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.5"/>
+    <rect x="20" y="6" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.5"/>
+    <rect x="6" y="20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.5"/>
+    <rect x="20" y="20" width="14" height="14" fill="currentColor" opacity="0.18"/>
+    <path class="anim-dash" d="M36 27h8" stroke="currentColor" stroke-width="2"/>
+  ${SVG_CLOSE}`,
+  // Lewis structures / formal charge — atom with dot-pair valence electrons
+  dotStructure: () => `${SVG_OPEN}
+    <text x="24" y="29" font-size="14" font-weight="800" fill="currentColor" text-anchor="middle">X</text>
+    <circle class="anim-pulse" cx="13" cy="18" r="1.8" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-pulse" cx="17" cy="18" r="1.8" fill="currentColor" style="animation-delay:.1s"/>
+    <circle class="anim-pulse" cx="31" cy="18" r="1.8" fill="currentColor" style="animation-delay:.2s"/>
+    <circle class="anim-pulse" cx="35" cy="18" r="1.8" fill="currentColor" style="animation-delay:.3s"/>
+    <circle class="anim-pulse" cx="13" cy="32" r="1.8" fill="currentColor" style="animation-delay:.4s"/>
+    <circle class="anim-pulse" cx="17" cy="32" r="1.8" fill="currentColor" style="animation-delay:.5s"/>
+  ${SVG_CLOSE}`,
+  // bond parameters / resonance / dipole — double arrow between two resonance forms
+  resonanceArrow: () => `${SVG_OPEN}
+    <circle cx="10" cy="24" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="22" cy="24" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path class="anim-dash" d="M28 21h12m-4-3l4 3-4 3" stroke="currentColor" stroke-width="1.8" fill="none"/>
+    <circle cx="34" cy="27" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="44" cy="27" r="5" fill="none" stroke="currentColor" stroke-width="1.8" opacity="0.6"/>
+  ${SVG_CLOSE}`,
+  // VSEPR theory — tetrahedral electron-pair cluster around a centre
+  vseprShape: () => `${SVG_OPEN}
+    <circle cx="24" cy="22" r="3" fill="currentColor"/>
+    <circle class="anim-pulse" cx="24" cy="7" r="2.6" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-pulse" cx="9" cy="30" r="2.6" fill="currentColor" style="animation-delay:.2s"/>
+    <circle class="anim-pulse" cx="39" cy="30" r="2.6" fill="currentColor" style="animation-delay:.4s"/>
+    <circle class="anim-pulse" cx="24" cy="40" r="2.6" fill="currentColor" style="animation-delay:.6s"/>
+    <path d="M24 22V7M24 22L9 30M24 22l15 8M24 22v18" stroke="currentColor" stroke-width="1.3" opacity="0.45"/>
+  ${SVG_CLOSE}`,
+  // hybridisation sp/sp2/sp3 — three hybrid lobes fanning from a centre
+  hybridOrbitals: () => `${SVG_OPEN}
+    <circle cx="24" cy="24" r="2.4" fill="currentColor"/>
+    <ellipse class="anim-pulse" cx="24" cy="11" rx="6" ry="11" fill="currentColor" opacity="0.35" style="animation-delay:0s"/>
+    <ellipse class="anim-pulse" cx="11" cy="32" rx="6" ry="11" fill="currentColor" opacity="0.35" transform="rotate(-60 11 32)" style="animation-delay:.3s"/>
+    <ellipse class="anim-pulse" cx="37" cy="32" rx="6" ry="11" fill="currentColor" opacity="0.35" transform="rotate(60 37 32)" style="animation-delay:.6s"/>
+  ${SVG_CLOSE}`,
+  // hybridisation with d-orbitals — five/six lobe expanded-octet star
+  expandedOctet: () => `${SVG_OPEN}
+    <circle cx="24" cy="24" r="2.4" fill="currentColor"/>
+    ${[0,1,2,3,4].map((i) => {
+      const a = (Math.PI*2/5)*i - Math.PI/2;
+      const x = 24+15*Math.cos(a), y = 24+15*Math.sin(a);
+      return `<circle class="anim-pulse" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.6" fill="currentColor" style="animation-delay:${(i*0.18).toFixed(2)}s"/><line x1="24" y1="24" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>`;
+    }).join('')}
+  ${SVG_CLOSE}`,
+
+  /* ── Ch5 additions ── */
+  // MOT / LCAO — energy level bars building up from combined orbitals
+  moBuildup: () => `${SVG_OPEN}
+    <line x1="6" y1="38" x2="6" y2="10" stroke="currentColor" stroke-width="1.3" opacity="0.4"/>
+    <rect x="9" y="30" width="9" height="3" fill="currentColor" opacity="0.5"/>
+    <rect x="9" y="14" width="9" height="3" fill="currentColor" opacity="0.5"/>
+    <rect class="anim-pulse" x="29" y="22" width="13" height="3.4" fill="currentColor" style="animation-delay:0s"/>
+    <path class="anim-dash" d="M19 23h9" stroke="currentColor" stroke-width="1.5"/>
+  ${SVG_CLOSE}`,
+  // MOT energy diagrams / hydrogen bonding — dotted intermolecular bond between two molecules
+  hBondDots: () => `${SVG_OPEN}
+    <circle cx="11" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="11" cy="20" r="2" fill="currentColor"/>
+    <circle cx="37" cy="28" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="37" cy="28" r="2" fill="currentColor"/>
+    <path class="anim-dash" d="M16 23l16 2" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 3"/>
+  ${SVG_CLOSE}`,
+  // first law / work / heat — piston compressing in a cylinder
+  pistonWork: () => `${SVG_OPEN}
+    <rect x="10" y="12" width="28" height="26" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+    <rect class="anim-bob" x="13" y="24" width="22" height="6" fill="currentColor" opacity="0.6" style="animation-delay:0s"/>
+    <line x1="24" y1="6" x2="24" y2="12" stroke="currentColor" stroke-width="2.5"/>
+  ${SVG_CLOSE}`,
+  // enthalpy / Cp-Cv / bomb calorimeter — a sealed pressurised vessel
+  calorimeterBomb: () => `${SVG_OPEN}
+    <circle cx="24" cy="26" r="14" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <line x1="24" y1="6" x2="24" y2="12" stroke="currentColor" stroke-width="2"/>
+    <circle class="anim-pulse" cx="24" cy="26" r="5" fill="currentColor" opacity="0.5" style="animation-delay:0s"/>
+    <text x="24" y="40" font-size="8" font-weight="800" fill="currentColor" text-anchor="middle">qv</text>
+  ${SVG_CLOSE}`,
+  // Hess's law — triangular thermochemical cycle
+  hessCycle: () => `${SVG_OPEN}
+    <circle cx="10" cy="34" r="3" fill="currentColor"/>
+    <circle cx="38" cy="34" r="3" fill="currentColor"/>
+    <circle cx="24" cy="10" r="3" fill="currentColor"/>
+    <path class="anim-dash" d="M13 34h22" stroke="currentColor" stroke-width="1.8" fill="none"/>
+    <path class="anim-dash" d="M11 31l11-19" stroke="currentColor" stroke-width="1.6" fill="none" style="animation-delay:.3s"/>
+    <path class="anim-dash" d="M26 12l11 19" stroke="currentColor" stroke-width="1.6" fill="none" style="animation-delay:.6s"/>
+  ${SVG_CLOSE}`,
+  // combustion / atomisation / bond enthalpy — flame breaking a bond apart
+  bondBreakFlame: () => `${SVG_OPEN}
+    <circle cx="12" cy="28" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="30" cy="28" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="18" y1="28" x2="24" y2="28" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2" opacity="0.6"/>
+    <path class="anim-flicker" d="M38 24c3-3 1-7-1-9 0 4-3 4-3 7 0 3 2 4 4 4s2-1 0-2z" fill="currentColor"/>
+  ${SVG_CLOSE}`,
+  // lattice / solution / dilution enthalpy — ion surrounded by a hydration shell
+  hydrationShell: () => `${SVG_OPEN}
+    <circle cx="24" cy="24" r="5" fill="currentColor"/>
+    ${[0,1,2,3,4,5].map((i) => {
+      const a = (Math.PI/3)*i;
+      const x = 24+13*Math.cos(a), y = 24+13*Math.sin(a);
+      return `<circle class="anim-pulse" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2" fill="currentColor" opacity="0.6" style="animation-delay:${(i*0.15).toFixed(2)}s"/>`;
+    }).join('')}
+  ${SVG_CLOSE}`,
+  // Gibbs energy / equilibrium constant — ΔG balance tipping toward products
+  gibbsBalance: () => `${SVG_OPEN}
+    <text x="24" y="20" font-size="11" font-weight="800" fill="currentColor" text-anchor="middle">ΔG</text>
+    <line x1="24" y1="24" x2="24" y2="28" stroke="currentColor" stroke-width="1.8"/>
+    <g class="anim-swing">
+      <line x1="9" y1="28" x2="39" y2="28" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M5 28a4 4 0 0 0 8 0z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M35 28a4 4 0 0 0 8 0z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    </g>
+  ${SVG_CLOSE}`,
+
+  /* ── Ch6 additions ── */
+  // equilibrium in physical processes — liquid/vapour double arrow
+  phaseEquilibrium: () => `${SVG_OPEN}
+    <path d="M8 38h32" stroke="currentColor" stroke-width="1.6" opacity="0.5"/>
+    <rect x="8" y="30" width="32" height="8" fill="currentColor" opacity="0.25"/>
+    <path class="anim-bob" d="M20 28c0 0-3-6 0-10 3 4 0 10 0 10z" fill="currentColor" opacity="0.6" style="animation-delay:0s"/>
+    <path class="anim-bob" d="M30 24c0 0-2-5 0-8 2 3 0 8 0 8z" fill="currentColor" opacity="0.6" style="animation-delay:.5s"/>
+  ${SVG_CLOSE}`,
+  // homogeneous/heterogeneous equilibria — two distinct phase boxes
+  homHeteroBoxes: () => `${SVG_OPEN}
+    <rect x="5" y="14" width="16" height="20" rx="2" fill="currentColor" opacity="0.18"/>
+    <text x="13" y="26" font-size="7" font-weight="800" fill="currentColor" text-anchor="middle">gas</text>
+    <rect x="27" y="14" width="8" height="20" fill="currentColor" opacity="0.45"/>
+    <rect x="37" y="14" width="6" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path class="anim-dash" d="M22 24h4" stroke="currentColor" stroke-width="1.4"/>
+  ${SVG_CLOSE}`,
+  // applications of equilibrium constants — Q vs K comparison gauge
+  qVsKGauge: () => `${SVG_OPEN}
+    <path d="M6 32a18 18 0 0 1 36 0" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <line class="anim-needle" x1="24" y1="32" x2="24" y2="16" stroke="currentColor" stroke-width="2"/>
+    <text x="11" y="42" font-size="8" font-weight="800" fill="currentColor">Q</text>
+    <text x="33" y="42" font-size="8" font-weight="800" fill="currentColor">K</text>
+  ${SVG_CLOSE}`,
+  // inert gas / temperature / catalyst — three small effect badges
+  factorsTrio: () => `${SVG_OPEN}
+    <circle class="anim-pulse" cx="10" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="1.8" style="animation-delay:0s"/>
+    <circle class="anim-pulse" cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="1.8" style="animation-delay:.3s"/>
+    <circle class="anim-pulse" cx="38" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="1.8" style="animation-delay:.6s"/>
+  ${SVG_CLOSE}`,
+
+  /* ── Ch7 additions ── */
+  // Arrhenius / Bronsted-Lowry — proton transferring between two molecules
+  bronstedLowryProton: () => `${SVG_OPEN}
+    <circle cx="11" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="37" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path class="anim-dash" d="M17 21c4-4 10-4 14 0" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <text class="anim-bob" x="24" y="13" font-size="9" font-weight="800" fill="currentColor" text-anchor="middle" style="animation-delay:0s">H+</text>
+  ${SVG_CLOSE}`,
+  // Lewis acids/bases — arrow donating an electron pair
+  lewisAcidBase: () => `${SVG_OPEN}
+    <text x="10" y="28" font-size="11" font-weight="800" fill="currentColor">B</text>
+    <circle class="anim-pulse" cx="20" cy="22" r="1.8" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-pulse" cx="20" cy="26" r="1.8" fill="currentColor" style="animation-delay:.2s"/>
+    <path class="anim-dash" d="M23 24h12" stroke="currentColor" stroke-width="1.8" fill="none"/>
+    <text x="40" y="28" font-size="11" font-weight="800" fill="currentColor">A</text>
+  ${SVG_CLOSE}`,
+  // Ka/Kb — stepped dissociation ladder with equilibrium arrows
+  dissociationLadder: () => `${SVG_OPEN}
+    <path class="anim-pulse" d="M5 18h14m-4-4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" style="animation-delay:0s"/>
+    <path class="anim-pulse" d="M19 28H5m4-4l-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.8" style="animation-delay:.4s"/>
+    <text x="30" y="16" font-size="9" font-weight="800" fill="currentColor">Ka</text>
+    <text x="30" y="34" font-size="9" font-weight="800" fill="currentColor">Kb</text>
+  ${SVG_CLOSE}`,
+  // polybasic acids — stepwise ladder losing protons one at a time
+  polybasicSteps: () => `${SVG_OPEN}
+    <rect x="4" y="28" width="10" height="10" fill="currentColor" opacity="0.7"/>
+    <rect x="18" y="18" width="10" height="10" fill="currentColor" opacity="0.45"/>
+    <rect x="32" y="8" width="10" height="10" fill="currentColor" opacity="0.25"/>
+    <path class="anim-bob" d="M14 30l4-4m-4 0l4 4" stroke="currentColor" stroke-width="1.6" fill="none" style="animation-delay:0s"/>
+    <path class="anim-bob" d="M28 20l4-4m-4 0l4 4" stroke="currentColor" stroke-width="1.6" fill="none" style="animation-delay:.3s"/>
+  ${SVG_CLOSE}`,
+  // common ion effect — two ion droplets merging
+  commonIonMerge: () => `${SVG_OPEN}
+    <circle class="anim-bob" cx="16" cy="22" r="9" fill="currentColor" opacity="0.3" style="animation-delay:0s"/>
+    <circle class="anim-bob" cx="30" cy="26" r="9" fill="currentColor" opacity="0.3" style="animation-delay:.3s"/>
+    <text x="23" y="27" font-size="10" font-weight="800" fill="currentColor" text-anchor="middle">+</text>
+  ${SVG_CLOSE}`,
+  // hydrolysis of salts — salt splitting into ions that react with water
+  hydrolysisSplit: () => `${SVG_OPEN}
+    <rect x="18" y="6" width="12" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path class="anim-drip" d="M20 18l-6 10" stroke="currentColor" stroke-width="1.6" style="animation-delay:0s"/>
+    <path class="anim-drip" d="M28 18l6 10" stroke="currentColor" stroke-width="1.6" style="animation-delay:.4s"/>
+    <path d="M24 28C24 28 14 35 14 39a10 10 0 0020 0c0-4-10-11-10-11z" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.5"/>
+  ${SVG_CLOSE}`,
+  // buffer solutions — stable droplet balanced between acid and base
+  bufferIcon: () => `${SVG_OPEN}
+    <path d="M24 5C24 5 11 23 11 31a13 13 0 0026 0C37 23 24 5 24 5z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="11" y1="31" x2="37" y2="31" stroke="currentColor" stroke-width="1.4" opacity="0.5"/>
+    <circle class="anim-pulse" cx="18" cy="29" r="2" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-pulse" cx="30" cy="29" r="2" fill="currentColor" style="animation-delay:.4s"/>
+  ${SVG_CLOSE}`,
+
+  /* ── Ch8 additions ── */
+  // balancing redox in acidic medium — H+ flowing into the equation
+  acidicBalanceFlow: () => `${SVG_OPEN}
+    <path class="anim-dash" d="M5 24h16" stroke="currentColor" stroke-width="2"/>
+    <text x="26" y="28" font-size="10" font-weight="800" fill="currentColor">H+</text>
+    <path class="anim-dash" d="M34 24h9" stroke="currentColor" stroke-width="2" style="animation-delay:.3s"/>
+  ${SVG_CLOSE}`,
+  // balancing redox in basic medium — OH- flowing into the equation
+  basicBalanceFlow: () => `${SVG_OPEN}
+    <path class="anim-dash" d="M5 24h12" stroke="currentColor" stroke-width="2"/>
+    <text x="19" y="28" font-size="9" font-weight="800" fill="currentColor">OH⁻</text>
+    <path class="anim-dash" d="M38 24h5" stroke="currentColor" stroke-width="2" style="animation-delay:.3s"/>
+  ${SVG_CLOSE}`,
+
+  /* ── Ch9 additions ── */
+  // classification / basic nomenclature — molecule with a name tag
+  nameTagMolecule: () => `${SVG_OPEN}
+    <path d="M6 30l8-12 8 12 8-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect class="anim-pulse" x="30" y="10" width="14" height="9" rx="2" fill="currentColor" opacity="0.4" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+  // nomenclature with functional groups — highlighted group on a chain
+  functionalGroupTag: () => `${SVG_OPEN}
+    <path d="M5 30l8-12 8 12 8-12 8 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle class="anim-pulse" cx="21" cy="18" r="4" fill="none" stroke="currentColor" stroke-width="1.8" style="animation-delay:0s"/>
+  ${SVG_CLOSE}`,
+  // electronic effects / hyperconjugation — sigma bond donating into adjacent empty orbital
+  hyperconjugationDonate: () => `${SVG_OPEN}
+    <circle cx="14" cy="26" r="2.4" fill="currentColor"/>
+    <path d="M14 26l10-4" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="24" cy="22" r="2.4" fill="currentColor"/>
+    <ellipse cx="36" cy="18" rx="7" ry="4" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.6"/>
+    <path class="anim-dash" d="M26 21c3-2 6-2 8-1" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  ${SVG_CLOSE}`,
+  // types of organic reactions — three small reaction-arrow icons
+  reactionTypesTrio: () => `${SVG_OPEN}
+    <path class="anim-pulse" d="M4 12h10" stroke="currentColor" stroke-width="2" style="animation-delay:0s"/>
+    <path class="anim-pulse" d="M4 24h10m-4-4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" style="animation-delay:.3s"/>
+    <path class="anim-pulse" d="M4 36h10" stroke="currentColor" stroke-width="2" style="animation-delay:.6s"/>
+    <text x="18" y="15" font-size="6" font-weight="800" fill="currentColor">SUB</text>
+    <text x="18" y="27" font-size="6" font-weight="800" fill="currentColor">ADD</text>
+    <text x="18" y="39" font-size="6" font-weight="800" fill="currentColor">ELIM</text>
+  ${SVG_CLOSE}`,
+  // purification / chromatography — column with separating bands
+  chromatographyColumn: () => `${SVG_OPEN}
+    <rect x="18" y="6" width="12" height="36" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+    <rect class="anim-bob" x="19" y="30" width="10" height="4" fill="currentColor" opacity="0.7" style="animation-delay:0s"/>
+    <rect class="anim-bob" x="19" y="20" width="10" height="4" fill="currentColor" opacity="0.5" style="animation-delay:.4s"/>
+    <rect class="anim-bob" x="19" y="11" width="10" height="4" fill="currentColor" opacity="0.3" style="animation-delay:.8s"/>
+  ${SVG_CLOSE}`,
+  // qualitative analysis — Lassaigne fusion test tube
+  lassaigneTest: () => `${SVG_OPEN}
+    <path d="M18 6h12v22l-6 12-6-12V6z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <rect class="anim-pulse" x="19" y="22" width="10" height="6" fill="currentColor" opacity="0.6" style="animation-delay:0s"/>
+    <path class="anim-flicker" d="M30 38c2-2 1-5-1-6 0 3-2 3-2 5 0 2 1 3 2 3s1.5-1 1-2z" fill="currentColor"/>
+  ${SVG_CLOSE}`,
+  // quantitative analysis — combustion tube capturing CO2/H2O
+  combustionTube: () => `${SVG_OPEN}
+    <rect x="4" y="20" width="16" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path class="anim-dash" d="M20 24h10" stroke="currentColor" stroke-width="1.6"/>
+    <rect x="30" y="14" width="9" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.7"/>
+    <text x="34.5" y="26" font-size="6" font-weight="800" fill="currentColor" text-anchor="middle">CO2</text>
+    <circle class="anim-flicker" cx="10" cy="20" r="2" fill="currentColor"/>
+  ${SVG_CLOSE}`,
+
+  /* ── Ch10 additions ── */
+  // alkane preparation/halogenation — free-radical chain attacking a saturated chain
+  radicalChain: () => `${SVG_OPEN}
+    <path d="M5 30l8-13 8 13 8-13 8 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle class="anim-jitter" cx="21" cy="17" r="2.6" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-bob" cx="29" cy="8" r="1.8" fill="currentColor" style="animation-delay:.3s"/>
+  ${SVG_CLOSE}`,
+  // alkene reactions / Markovnikov's rule — H+ adding to the more substituted carbon
+  markovnikovIcon: () => `${SVG_OPEN}
+    <path d="M6 30l9-14 9 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="15" y1="16" x2="15" y2="30" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+    <path class="anim-bob" d="M28 16l8-6m-7 0l7 0 0 7" stroke="currentColor" stroke-width="1.8" fill="none" style="animation-delay:0s"/>
+    <text x="38" y="9" font-size="9" font-weight="800" fill="currentColor">H+</text>
+  ${SVG_CLOSE}`,
+  // ozonolysis / polymerisation — molecule cleaving into two pieces
+  ozonolysisSplit: () => `${SVG_OPEN}
+    <path class="anim-bob" d="M4 24l10-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="animation-delay:0s"/>
+    <path class="anim-bob" d="M44 24l-10-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="animation-delay:.3s"/>
+    <line x1="20" y1="24" x2="28" y2="24" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 3" opacity="0.5"/>
+    <circle cx="14" cy="15" r="2.2" fill="currentColor"/>
+    <circle cx="34" cy="15" r="2.2" fill="currentColor"/>
+  ${SVG_CLOSE}`,
+  // alkynes / acetylene preparation — linear triple-bond molecule
+  alkyneTriple: () => `${SVG_OPEN}
+    <circle cx="12" cy="24" r="3" fill="currentColor"/>
+    <circle cx="36" cy="24" r="3" fill="currentColor"/>
+    <line x1="16" y1="21" x2="32" y2="21" class="anim-pulse" stroke="currentColor" stroke-width="1.8" style="animation-delay:0s"/>
+    <line x1="16" y1="24" x2="32" y2="24" class="anim-pulse" stroke="currentColor" stroke-width="1.8" style="animation-delay:.2s"/>
+    <line x1="16" y1="27" x2="32" y2="27" class="anim-pulse" stroke="currentColor" stroke-width="1.8" style="animation-delay:.4s"/>
+  ${SVG_CLOSE}`,
+  // alkyne reactions — two-stage sequential addition
+  alkyneAddition: () => `${SVG_OPEN}
+    <circle cx="8" cy="24" r="2.6" fill="currentColor"/>
+    <circle cx="40" cy="24" r="2.6" fill="currentColor"/>
+    <line x1="11" y1="22" x2="37" y2="22" class="anim-pulse" stroke="currentColor" stroke-width="1.6" style="animation-delay:0s"/>
+    <line x1="11" y1="26" x2="37" y2="26" class="anim-pulse" stroke="currentColor" stroke-width="1.6" style="animation-delay:.3s" opacity="0.5"/>
+    <path class="anim-bob" d="M24 10l0 8m-3-3l3-3 3 3" stroke="currentColor" stroke-width="1.6" fill="none" style="animation-delay:.5s"/>
+  ${SVG_CLOSE}`,
+  // aromaticity / benzene preparation — ring with a 4n+2 electron-count label
+  huckelRing: () => `${SVG_OPEN}
+    <circle cx="24" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle class="anim-pulse" cx="24" cy="24" r="7" fill="currentColor" opacity="0.3" style="animation-delay:0s"/>
+    <text x="24" y="28" font-size="8" font-weight="800" fill="currentColor" text-anchor="middle">4n+2</text>
+  ${SVG_CLOSE}`,
+  // electrophilic substitution mechanism — ring with arenium intermediate arrow
+  easMechanism: () => `${SVG_OPEN}
+    <circle cx="18" cy="24" r="11" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path class="anim-dash" d="M30 24h10" stroke="currentColor" stroke-width="1.8"/>
+    <circle class="anim-pulse" cx="44" cy="24" r="3" fill="currentColor" style="animation-delay:0s"/>
+    <text x="18" y="28" font-size="8" font-weight="800" fill="currentColor" text-anchor="middle">E+</text>
+  ${SVG_CLOSE}`,
+  // directive influence of substituents — ring with ortho/para positions highlighted
+  directiveOrtho: () => `${SVG_OPEN}
+    <circle cx="24" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle class="anim-pulse" cx="24" cy="10" r="2.6" fill="currentColor" style="animation-delay:0s"/>
+    <circle class="anim-pulse" cx="12" cy="17" r="2.6" fill="currentColor" style="animation-delay:.25s"/>
+    <circle class="anim-pulse" cx="36" cy="17" r="2.6" fill="currentColor" style="animation-delay:.5s"/>
+    <circle cx="12" cy="31" r="2" fill="currentColor" opacity="0.25"/>
+    <circle cx="36" cy="31" r="2" fill="currentColor" opacity="0.25"/>
+    <circle cx="24" cy="38" r="2" fill="currentColor" opacity="0.25"/>
+  ${SVG_CLOSE}`,
+  // carcinogenicity / toxicity — DNA double helix with a warning mark
+  toxicWarning: () => `${SVG_OPEN}
+    <path d="M14 6c8 6 8 12 0 18s-8 12 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M22 6c-8 6-8 12 0 18s8 12 0 18" fill="none" stroke="currentColor" stroke-width="1.8" opacity="0.6"/>
+    <path class="anim-flicker" d="M37 30l5 9h-10z" fill="currentColor"/>
+    <text x="37" y="38" font-size="7" font-weight="800" style="fill:var(--color-bg)" text-anchor="middle">!</text>
+  ${SVG_CLOSE}`,
+  // final revision / exam archive — checklist with a checkmark
+  examArchiveIcon: () => `${SVG_OPEN}
+    <rect x="9" y="6" width="24" height="32" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path class="anim-pulse" d="M14 16h14m-14 8h14m-14 8h8" stroke="currentColor" stroke-width="1.6" opacity="0.5" style="animation-delay:0s"/>
+    <path class="anim-bob" d="M30 30l8 8 12-16" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:.3s"/>
   ${SVG_CLOSE}`,
 };
 
@@ -293,19 +714,115 @@ const CHAPTER_BASE_ICON = [
   'equilibriumArrows', 'dropletIons', 'electronTransfer', 'carbonChain', 'benzeneRing'
 ];
 
-/* Keyword-matched session-level variants, checked in order against the
-   lowercased topic text — falls back to the chapter's base icon. */
+/* Keyword-matched session-level variants, checked IN ORDER (most specific
+   first) against the lowercased topic text — falls back to the chapter's
+   base icon only when nothing in its list matches. Designed so nearly
+   every session across all 88 files resolves to a topic-specific icon. */
 const CHAPTER_VARIANTS = [
-  [ { kw: ['mole', 'mass'], icon: 'scaleBalance' }, { kw: ['stoichiometry', 'limiting', 'empirical', 'percentage', 'si units', 'measurement'], icon: 'measuringBeaker' } ],
-  [ { kw: ['photoelectric', 'wave', 'radiation', 'spectra', 'spectrum'], icon: 'lightWave' }, { kw: ['quantum', 'orbital', 'uncertainty', 'heisenberg', 'dual'], icon: 'orbitalCloud' } ],
-  [ { kw: ['atomic number', 'isotope', 'electronic config'], icon: 'bohrAtom' } ],
-  [ { kw: ['ionic bond', 'lattice', 'fajans'], icon: 'ionicLattice' }, { kw: ['vsepr', 'hybridisation', 'sigma', 'pi bond', 'molecular orbital', 'valence bond'], icon: 'orbitalOverlap' } ],
-  [ { kw: ['entropy', 'spontaneity', 'gibbs'], icon: 'entropyScatter' }, { kw: ['enthalpy', 'hess', 'calorimeter', 'combustion', 'atomisation', 'bond enthalp'], icon: 'enthalpyFlask' } ],
-  [ { kw: ['le chatelier', 'inert gas', 'catalyst'], icon: 'leChatelierTilt' } ],
-  [ { kw: ['ph scale', 'ph,', 'buffer', 'ka', 'kb'], icon: 'phMeterDial' }, { kw: ['solubility', 'ksp', 'common ion'], icon: 'dissolvingCrystal' } ],
-  [ { kw: ['electrode', 'titration'], icon: 'batteryCell' } ],
-  [ { kw: ['isomerism'], icon: 'isomerMirror' }, { kw: ['mechanism', 'electronic effect', 'hyperconjugation'], icon: 'mechanismArrow' } ],
-  [ { kw: ['alkane', 'halogenation', 'wurtz'], icon: 'alkaneChain' }, { kw: ['alkene', 'alkyne', 'addition', 'markovnikov', 'ozonolysis', 'polymer'], icon: 'alkeneChain' } ],
+  // Ch1 — Some Basic Concepts of Chemistry
+  [
+    { kw: ['physical and chemical', 'physical properties'], icon: 'changeCompare' },
+    { kw: ['si units'], icon: 'measuringBeaker' },
+    { kw: ['laws of chemical combination'], icon: 'daltonSpheres' },
+    { kw: ["dalton's atomic theory", 'dalton'], icon: 'daltonSpheres' },
+    { kw: ['mole concept'], icon: 'scaleBalance' },
+    { kw: ['percentage composition'], icon: 'percentYield' },
+    { kw: ['limiting reagent'], icon: 'limitingArrow' },
+  ],
+  // Ch2 — Atomic Structure
+  [
+    { kw: ['discovery of sub-atomic', 'charge/mass ratio', 'charge-mass'], icon: 'cathodeRayTube' },
+    { kw: ['thomson, rutherford', 'atomic models'], icon: 'rutherfordScatter' },
+    { kw: ['wave nature'], icon: 'lightWave' },
+    { kw: ['photoelectric'], icon: 'photonEject' },
+    { kw: ['atomic spectra'], icon: 'spectraLines' },
+    { kw: ['quantum mechanical'], icon: 'orbitalCloud' },
+    { kw: ['heisenberg', 'uncertainty'], icon: 'uncertaintyBlur' },
+    { kw: ['atomic number', 'isotope'], icon: 'bohrAtom' },
+  ],
+  // Ch3 — Classification of Elements & Periodicity
+  [
+    { kw: ['orbitals, quantum numbers'], icon: 'orbitalCloud' },
+    { kw: ['genesis of periodic'], icon: 'cardSort' },
+    { kw: ['nomenclature of elements'], icon: 'elementNameTag' },
+  ],
+  // Ch4 — Chemical Bonding and Molecular Structure
+  [
+    { kw: ['atomic radius', 's,p,d,f'], icon: 'radiusArrowGrid' },
+    { kw: ['lewis structures', 'formal charge'], icon: 'dotStructure' },
+    { kw: ['lattice energy', 'fajans', 'ionic bond'], icon: 'ionicLattice' },
+    { kw: ['resonance', 'dipole moment', 'bond parameters'], icon: 'resonanceArrow' },
+    { kw: ['vsepr'], icon: 'vseprShape' },
+    { kw: ['valence bond theory', 'sigma and pi'], icon: 'orbitalOverlap' },
+    { kw: ['d-orbitals'], icon: 'expandedOctet' },
+    { kw: ['sp, sp2, sp3', 'hybridisation'], icon: 'hybridOrbitals' },
+  ],
+  // Ch5 — Thermodynamics
+  [
+    { kw: ['molecular orbital theory', 'lcao'], icon: 'moBuildup' },
+    { kw: ['hydrogen bonding'], icon: 'hBondDots' },
+    { kw: ['first law, work'], icon: 'pistonWork' },
+    { kw: ['bomb calorimeter', 'cp-cv'], icon: 'calorimeterBomb' },
+    { kw: ["hess's law"], icon: 'hessCycle' },
+    { kw: ['combustion, atomisation'], icon: 'bondBreakFlame' },
+    { kw: ['lattice enthalpy, solution', 'dilution'], icon: 'hydrationShell' },
+    { kw: ['gibbs energy'], icon: 'gibbsBalance' },
+    { kw: ['entropy', 'spontaneity'], icon: 'entropyScatter' },
+    { kw: ['standard states', 'enthalpy of reaction'], icon: 'enthalpyFlask' },
+  ],
+  // Ch6 — Chemical Equilibrium
+  [
+    { kw: ['physical processes'], icon: 'phaseEquilibrium' },
+    { kw: ['homogeneous, heterogeneous'], icon: 'homHeteroBoxes' },
+    { kw: ['applications of equilibrium'], icon: 'qVsKGauge' },
+    { kw: ['le chatelier'], icon: 'leChatelierTilt' },
+    { kw: ['inert gas', 'temperature, catalyst'], icon: 'factorsTrio' },
+  ],
+  // Ch7 — Ionic Equilibrium
+  [
+    { kw: ['arrhenius'], icon: 'bronstedLowryProton' },
+    { kw: ['lewis acids'], icon: 'lewisAcidBase' },
+    { kw: ['ph scale'], icon: 'phMeterDial' },
+    { kw: ['ka, kb'], icon: 'dissociationLadder' },
+    { kw: ['polybasic acids'], icon: 'polybasicSteps' },
+    { kw: ['common ion effect'], icon: 'commonIonMerge' },
+    { kw: ['hydrolysis of salts'], icon: 'hydrolysisSplit' },
+    { kw: ['buffer solutions'], icon: 'bufferIcon' },
+    { kw: ['solubility product', 'ksp'], icon: 'dissolvingCrystal' },
+  ],
+  // Ch8 — Redox Reactions
+  [
+    { kw: ['acidic medium'], icon: 'acidicBalanceFlow' },
+    { kw: ['basic medium'], icon: 'basicBalanceFlow' },
+    { kw: ['electrode', 'titration'], icon: 'batteryCell' },
+  ],
+  // Ch9 — Organic Chemistry: Basic Principles and Techniques
+  [
+    { kw: ['alkanes:', 'alkanes ', '9.2 alkanes'], icon: 'alkaneChain' },
+    { kw: ['isomerism'], icon: 'isomerMirror' },
+    { kw: ['nomenclature (basic'], icon: 'nameTagMolecule' },
+    { kw: ['functional groups'], icon: 'functionalGroupTag' },
+    { kw: ['mechanism'], icon: 'mechanismArrow' },
+    { kw: ['hyperconjugation', 'electronic effects'], icon: 'hyperconjugationDonate' },
+    { kw: ['types of organic reactions'], icon: 'reactionTypesTrio' },
+    { kw: ['chromatography'], icon: 'chromatographyColumn' },
+    { kw: ['qualitative analysis'], icon: 'lassaigneTest' },
+    { kw: ['quantitative analysis'], icon: 'combustionTube' },
+  ],
+  // Ch10 — Hydrocarbons
+  [
+    { kw: ['halogenation'], icon: 'radicalChain' },
+    { kw: ['markovnikov'], icon: 'markovnikovIcon' },
+    { kw: ['ozonolysis', 'polymerisation'], icon: 'ozonolysisSplit' },
+    { kw: ['alkenes:'], icon: 'alkeneChain' },
+    { kw: ['alkynes:', 'acetylene'], icon: 'alkyneTriple' },
+    { kw: ['alkyne reactions'], icon: 'alkyneAddition' },
+    { kw: ['aromaticity'], icon: 'huckelRing' },
+    { kw: ['electrophilic substitution'], icon: 'easMechanism' },
+    { kw: ['directive influence'], icon: 'directiveOrtho' },
+    { kw: ['carcinogenicity', 'toxicity'], icon: 'toxicWarning' },
+    { kw: ['final revision', 'exam archive'], icon: 'examArchiveIcon' },
+  ],
 ];
 
 function iconKeyFor(chapterIdx, topicsText) {

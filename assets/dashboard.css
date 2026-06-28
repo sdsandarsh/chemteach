@@ -1,29 +1,45 @@
 /* ChemTeach — dashboard styles */
 
-body { padding-top: 64px; padding-bottom: 40px; }
+body { padding-top: 76px; padding-bottom: 40px; }
+
+@media (max-width: 560px) {
+  header.app-header { flex-direction: column; align-items: flex-start; padding: 12px 20px; }
+  body { padding-top: 118px; }
+}
 
 header.app-header {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 20;
-  height: 64px;
-  background: rgba(13, 27, 42, 0.98);
+  min-height: 64px;
+  background: var(--color-card);
   border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 28px;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 28px;
 }
 
 header.app-header .logo {
   font-size: 20px;
   font-weight: 800;
   color: var(--color-highlight);
+  white-space: nowrap;
 }
 
 header.app-header .date {
   color: var(--color-text-muted);
   font-size: 14px;
+  white-space: nowrap;
+}
+
+header.app-header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 header.app-header .reset-link {
@@ -32,7 +48,21 @@ header.app-header .reset-link {
   cursor: pointer;
   background: none;
   border: none;
+  white-space: nowrap;
 }
+
+.theme-toggle-btn {
+  background: var(--color-card-hover);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-active);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.theme-toggle-btn:hover { background: var(--color-border-active); }
 
 .today-banner {
   margin: 16px 28px;
@@ -231,13 +261,14 @@ main.dashboard {
   padding: 10px 12px;
   border-radius: var(--radius-sm);
   transition: background 0.2s ease;
+  flex-wrap: wrap;
 }
 
 .session-entry:hover { background: var(--color-card-hover); }
 
 .session-entry.last-opened { border: 1px solid var(--color-accent); }
 
-.session-entry .status-icon { font-size: 16px; width: 20px; text-align: center; }
+.session-entry .status-icon { font-size: 16px; width: 20px; text-align: center; flex-shrink: 0; }
 .session-entry .status-icon.complete { color: var(--color-success); }
 .session-entry .status-icon.incomplete { color: var(--color-text-muted); }
 
@@ -260,19 +291,27 @@ main.dashboard {
 
 @keyframes sessOrbitSpin { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
 
-.session-entry .info { flex: 1; }
+.session-entry .info { flex: 1 1 160px; min-width: 0; }
 .session-entry .dates { color: var(--color-text-muted); font-size: 12px; }
-.session-entry .topic { color: var(--color-text-body); font-size: 14px; }
+.session-entry .topic {
+  color: var(--color-text-body);
+  font-size: 14px;
+  word-break: break-word;
+}
 
-.session-entry .note-icon { font-size: 13px; opacity: 0.8; }
+.session-entry .note-icon { font-size: 13px; opacity: 0.8; flex-shrink: 0; }
 
 .session-entry .today-badge {
+  display: inline-block;
   background: var(--color-accent);
   color: #042027;
   font-size: 11px;
   font-weight: 700;
   padding: 2px 6px;
   border-radius: 4px;
+  margin-left: 6px;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 
 .session-entry .go-btn {
@@ -282,6 +321,8 @@ main.dashboard {
   border-radius: var(--radius-sm);
   font-size: 13px;
   font-weight: 700;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .session-entry .go-btn:hover { background: var(--color-highlight); }
