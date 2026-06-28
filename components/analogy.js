@@ -179,7 +179,7 @@ window.Analogy = (() => {
     function loop() {
       if (waveActive) {
         waveScale += 0.05;
-        wave.style.transform = \`scale(\${1 + Math.sin(waveScale)*0.1})\`;
+        wave.style.transform = `scale(${1 + Math.sin(waveScale)*0.1})`;
       }
       requestAnimationFrame(loop);
     }
