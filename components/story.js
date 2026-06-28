@@ -56,27 +56,45 @@ window.Story = (() => {
     narrative.style.fontSize = '22px';
     narrative.style.lineHeight = '1.6';
 
+    const revealContainer = document.createElement('div');
+    revealContainer.style.marginTop = '24px';
+    revealContainer.style.opacity = '0';
+    revealContainer.style.transition = 'opacity 0.6s ease';
+    revealContainer.style.display = 'flex';
+    revealContainer.style.flexDirection = 'column';
+    revealContainer.style.alignItems = 'center';
+    revealContainer.style.gap = '16px';
+
     const revealLine = document.createElement('div');
     revealLine.textContent = config.reveal || '';
     revealLine.style.color = 'var(--color-highlight)';
     revealLine.style.fontWeight = '700';
     revealLine.style.fontSize = '26px';
-    revealLine.style.marginTop = '24px';
-    revealLine.style.opacity = '0';
-    revealLine.style.transition = 'opacity 0.6s ease';
+
+    revealContainer.appendChild(revealLine);
+
+    if (config.image) {
+      const img = document.createElement('img');
+      img.src = config.image;
+      img.style.maxWidth = '300px';
+      img.style.borderRadius = 'var(--radius)';
+      img.style.border = '2px solid var(--color-border)';
+      img.style.boxShadow = 'var(--shadow-glow)';
+      revealContainer.appendChild(img);
+    }
 
     const revealBtn = document.createElement('button');
     revealBtn.textContent = 'REVEAL';
     revealBtn.className = 'btn';
     revealBtn.style.marginTop = '20px';
     revealBtn.onclick = () => {
-      revealLine.style.opacity = '1';
+      revealContainer.style.opacity = '1';
       revealBtn.style.display = 'none';
     };
 
     content.appendChild(setting);
     content.appendChild(narrative);
-    content.appendChild(revealLine);
+    content.appendChild(revealContainer);
     content.appendChild(revealBtn);
 
     wrap.appendChild(bg);
