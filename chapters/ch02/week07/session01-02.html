@@ -6,6 +6,7 @@
 <title>Ch02 W07 S01-02 | ChemTeach</title>
 <link rel="stylesheet" href="../../../assets/design-tokens.css">
 <link rel="stylesheet" href="../../../assets/session.css">
+<link rel="stylesheet" href="../../../assets/quantum-deck.css">
 <script src="../../../assets/theme.js"></script>
 </head>
 <body>
@@ -39,11 +40,11 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "Dual Nature of Matter", "image": "Dual Nature of Matter.png", "caption": "The universe exhibits both wave and particle characteristics."}'>
+<div class="slide" data-type="infographic" data-config='{"title": "Dual Nature of Matter", "image": "Dual Nature of Matter.png", "caption": "The universe exhibits both wave and particle characteristics.", "explanation": "In 1924, Louis de Broglie made a radical proposition: if light waves can act like particles, then matter (like electrons) must also exhibit wave-like behavior. This concept, known as wave-particle duality, bridges classical mechanics with the quantum realm."}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "Experimental Proof", "image": "Electron Diffraction.png", "caption": "Electron diffraction proves the wave nature of matter."}'>
+<div class="slide" data-type="infographic" data-config='{"title": "Experimental Proof", "image": "Electron Diffraction.png", "caption": "Electron diffraction proves the wave nature of matter.", "explanation": "The Davisson-Germer experiment provided the first concrete proof of matter waves. By firing electrons at a nickel crystal, they observed a diffraction pattern of concentric rings—a phenomenon exclusively associated with waves, not particles!"}'>
   <div class="component-container"></div>
 </div>
 
@@ -51,11 +52,11 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "The Atomic Shift", "image": "Transition from Bohr Model to Quantum Model.png", "caption": "From fixed orbits to probability."}'>
+<div class="slide" data-type="infographic" data-config='{"title": "The Atomic Shift", "image": "Transition from Bohr Model to Quantum Model.png", "caption": "From fixed orbits to probability.", "explanation": "Bohr envisioned electrons running on fixed tracks, like planets orbiting the sun. The Quantum Mechanical model replaced these solid tracks with 3D probability clouds (orbitals) where an electron is most likely to be found, completely revolutionizing how we map the atom."}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "de Broglie Equation", "image": "Understanding de Broglie Equation.png", "caption": "Calculating the wavelength of matter."}'>
+<div class="slide" data-type="infographic" data-config='{"title": "de Broglie Equation", "image": "Understanding de Broglie Equation.png", "caption": "Calculating the wavelength of matter.", "explanation": "The formula λ = h/mv relates a particle’s wavelength to its mass and velocity. Because Planck’s constant (h) is incredibly small, macroscopic objects have a wavelength so tiny it is undetectable. But for a near-massless electron, the wavelength is physically significant."}'>
   <div class="component-container"></div>
 </div>
 
@@ -67,7 +68,11 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "Macro vs Micro", "image": "Macroscopic vs Microscopic Objects.png", "caption": "Why we only observe wave nature in microscopic particles."}'>
+<div class="slide" data-type="infographic" data-config='{"title": "Macro vs Micro", "image": "Macroscopic vs Microscopic Objects.png", "caption": "Why we only observe wave nature in microscopic particles.", "explanation": "A moving cricket ball technically has a wavelength! However, because of its large mass, the calculated wavelength is billions of times smaller than an atomic nucleus. In contrast, an electron’s tiny mass results in a wavelength comparable to atomic dimensions."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="quantum-sim" data-config='{"mode": "wave-morph", "title": "Wave-Particle Duality Morph", "instruction": "Drag the slider to transition the particle into a waveform."}'>
   <div class="component-container"></div>
 </div>
 
@@ -107,6 +112,7 @@
 <script src="../../../components/comic-strip.js"></script>
 <script src="../../../components/animation.js"></script>
 <script src="../../../components/infographic.js"></script>
+<script src="../../../components/quantum-sim.js"></script>
 <script>
 const SESSION_ID = 'ch02_w07_s01-02';
 let currentSlide = 0;
@@ -143,6 +149,7 @@ function initCurrentSlide() {
     case 'comic-strip': ComicStrip.init(container, config); break;
     case 'animation': ChemAnimation.init(container, config); break;
     case 'infographic': Infographic.init(container, config); break;
+    case 'quantum-sim': QuantumSim.init(container, config); break;
   }
 }
 

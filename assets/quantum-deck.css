@@ -1,0 +1,239 @@
+/* 
+ * quantum-deck.css
+ * Sci-Fi styling for the Quantum Control Deck interactive simulations.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+
+:root {
+  --qd-bg-dark: #030712;
+  --qd-bg-panel: #0b0f19;
+  --qd-bg-card: #0f172a;
+  
+  --qd-cyan: #06b6d4;
+  --qd-cyan-dim: rgba(6, 182, 212, 0.2);
+  --qd-cyan-glow: rgba(6, 182, 212, 0.4);
+  
+  --qd-pink: #ec4899;
+  --qd-pink-dim: rgba(236, 72, 153, 0.2);
+  --qd-pink-glow: rgba(236, 72, 153, 0.4);
+  
+  --qd-purple: #a855f7;
+  --qd-purple-dim: rgba(168, 85, 247, 0.2);
+  --qd-purple-glow: rgba(168, 85, 247, 0.4);
+  
+  --qd-indigo: #6366f1;
+  --qd-indigo-dim: rgba(99, 102, 241, 0.2);
+  
+  --qd-slate-800: #1e293b;
+  --qd-slate-400: #94a3b8;
+  --qd-white: #f8fafc;
+}
+
+.qd-tech-font {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.qd-container {
+  background-color: var(--qd-bg-panel);
+  border: 1px solid var(--qd-slate-800);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Scanning grid background */
+.qd-hud-grid {
+  background-size: 30px 30px;
+  background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.qd-canvas {
+  background-color: #050811;
+  border-radius: 16px;
+  border: 1px solid var(--qd-slate-800);
+  width: 100%;
+  max-width: 500px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+  cursor: crosshair;
+}
+
+/* Glow Borders */
+.qd-glow-cyan {
+  box-shadow: 0 0 20px var(--qd-cyan-glow);
+  border-color: var(--qd-cyan) !important;
+}
+.qd-glow-pink {
+  box-shadow: 0 0 20px var(--qd-pink-glow);
+  border-color: var(--qd-pink) !important;
+}
+.qd-glow-purple {
+  box-shadow: 0 0 20px var(--qd-purple-glow);
+  border-color: var(--qd-purple) !important;
+}
+
+/* UI Controls */
+.qd-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--qd-slate-800);
+}
+
+.qd-btn {
+  background: var(--qd-bg-card);
+  border: 1px solid var(--qd-slate-800);
+  color: var(--qd-slate-400);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.qd-btn:hover {
+  background: var(--qd-slate-800);
+  color: var(--qd-white);
+}
+
+.qd-btn-cyan {
+  background: var(--qd-cyan-dim);
+  border-color: var(--qd-cyan);
+  color: var(--qd-cyan);
+}
+.qd-btn-cyan:hover {
+  background: var(--qd-cyan);
+  color: var(--qd-bg-dark);
+  box-shadow: 0 0 15px var(--qd-cyan-glow);
+}
+
+.qd-btn-pink {
+  background: var(--qd-pink-dim);
+  border-color: var(--qd-pink);
+  color: var(--qd-pink);
+}
+.qd-btn-pink:hover {
+  background: var(--qd-pink);
+  color: var(--qd-bg-dark);
+  box-shadow: 0 0 15px var(--qd-pink-glow);
+}
+
+/* Custom Range Slider */
+.qd-slider-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.qd-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--qd-slate-400);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.qd-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--qd-bg-dark);
+  border-radius: 4px;
+  border: 1px solid var(--qd-slate-800);
+  outline: none;
+}
+.qd-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--qd-indigo);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--qd-indigo);
+}
+.qd-slider-cyan::-webkit-slider-thumb { background: var(--qd-cyan); box-shadow: 0 0 10px var(--qd-cyan); }
+.qd-slider-pink::-webkit-slider-thumb { background: var(--qd-pink); box-shadow: 0 0 10px var(--qd-pink); }
+.qd-slider-purple::-webkit-slider-thumb { background: var(--qd-purple); box-shadow: 0 0 10px var(--qd-purple); }
+
+/* Decorative Elements */
+.qd-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.qd-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--qd-white);
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.qd-badge {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--qd-indigo-dim);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.qd-stat-panel {
+  display: flex;
+  gap: 20px;
+  background: var(--qd-bg-dark);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--qd-slate-800);
+}
+
+.qd-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.qd-stat-label {
+  font-size: 9px;
+  color: var(--qd-slate-400);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.qd-stat-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+.qd-val-cyan { color: var(--qd-cyan); }
+.qd-val-pink { color: var(--qd-pink); }

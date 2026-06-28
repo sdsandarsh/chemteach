@@ -1,7 +1,7 @@
 /**
- * Infographic ?" dedicated slide component for displaying high-quality infographics.
+ * Infographic — dedicated slide component for displaying high-quality infographics.
  * window.Infographic.init(container, config)
- * config: { title, image, caption }
+ * config: { title, image, caption, explanation }
  */
 window.Infographic = (() => {
   function build(container, config) {
@@ -13,7 +13,7 @@ window.Infographic = (() => {
     wrap.style.alignItems = 'center';
     wrap.style.gap = '20px';
     wrap.style.width = '100%';
-    wrap.style.maxWidth = '1000px';
+    wrap.style.maxWidth = '1100px';
     wrap.style.margin = '0 auto';
     wrap.style.background = 'var(--color-card)';
     wrap.style.borderRadius = 'var(--radius-lg)';
@@ -21,15 +21,11 @@ window.Infographic = (() => {
     wrap.style.border = '1px solid var(--color-border)';
     wrap.style.boxShadow = 'var(--shadow-glow)';
 
-    if (config.title) {
-      const titleEl = document.createElement('h2');
-      titleEl.textContent = config.title;
-      titleEl.style.margin = '0 0 10px 0';
-      titleEl.style.color = 'var(--color-accent)';
-      titleEl.style.fontSize = '28px';
-      titleEl.style.textAlign = 'center';
-      wrap.appendChild(titleEl);
-    }
+    const contentRow = document.createElement('div');
+    contentRow.style.display = 'flex';
+    contentRow.style.flexDirection = 'column';
+    contentRow.style.width = '100%';
+    contentRow.style.gap = '20px';
 
     const imgContainer = document.createElement('div');
     imgContainer.style.width = '100%';
@@ -78,25 +74,50 @@ window.Infographic = (() => {
     };
 
     imgContainer.appendChild(img);
-    wrap.appendChild(imgContainer);
+    contentRow.appendChild(imgContainer);
+
+    // Text Content Area (Caption + Explanation)
+    const textArea = document.createElement('div');
+    textArea.style.display = 'flex';
+    textArea.style.flexDirection = 'column';
+    textArea.style.gap = '10px';
+    textArea.style.alignItems = 'center';
 
     if (config.caption) {
       const captionEl = document.createElement('p');
       captionEl.textContent = config.caption;
-      captionEl.style.margin = '10px 0 0 0';
-      captionEl.style.color = 'var(--color-text-body)';
-      captionEl.style.fontSize = '16px';
+      captionEl.style.margin = '0';
+      captionEl.style.color = 'var(--color-accent)';
+      captionEl.style.fontSize = '18px';
+      captionEl.style.fontWeight = 'bold';
       captionEl.style.textAlign = 'center';
-      captionEl.style.lineHeight = '1.6';
-      captionEl.style.maxWidth = '800px';
-      wrap.appendChild(captionEl);
+      textArea.appendChild(captionEl);
     }
+    
+    if (config.explanation) {
+      const expEl = document.createElement('div');
+      expEl.innerHTML = config.explanation;
+      expEl.style.color = 'var(--color-text-body)';
+      expEl.style.fontSize = '15px';
+      expEl.style.lineHeight = '1.6';
+      expEl.style.textAlign = 'center';
+      expEl.style.maxWidth = '850px';
+      expEl.style.background = 'rgba(255,255,255,0.03)';
+      expEl.style.padding = '16px';
+      expEl.style.borderRadius = 'var(--radius)';
+      expEl.style.border = '1px solid var(--color-border)';
+      textArea.appendChild(expEl);
+    }
+
+    contentRow.appendChild(textArea);
+    wrap.appendChild(contentRow);
     
     // Accessibility: instruction for zoom
     const instruction = document.createElement('small');
-    instruction.textContent = '(Click image to zoom)';
+    instruction.textContent = '🔍 Click image to zoom fullscreen';
     instruction.style.color = 'var(--color-text-muted)';
     instruction.style.fontSize = '12px';
+    instruction.style.marginTop = '10px';
     wrap.appendChild(instruction);
 
     container.appendChild(wrap);

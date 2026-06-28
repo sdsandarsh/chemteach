@@ -6,6 +6,7 @@
 <title>Ch02 W07 S03-04 | ChemTeach</title>
 <link rel="stylesheet" href="../../../assets/design-tokens.css">
 <link rel="stylesheet" href="../../../assets/session.css">
+<link rel="stylesheet" href="../../../assets/quantum-deck.css">
 <script src="../../../assets/theme.js"></script>
 </head>
 <body>
@@ -35,7 +36,7 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "Everyday Analogy", "image": "Everyday Analogy for Heisenberg Uncertainty Principle.png", "caption": "The Heisenberg Uncertainty Principle explained simply."}'>
+<div class="slide" data-type="infographic" data-config='{"title": "Everyday Analogy", "image": "Everyday Analogy for Heisenberg Uncertainty Principle.png", "caption": "The Heisenberg Uncertainty Principle explained simply.", "explanation": "Imagine taking a photo of a moving car. If you use a fast shutter speed (sharp photo), you know exactly where it is, but you lose all sense of its speed from the still image. If you use a long exposure (blurry photo), you can estimate speed from the blur length, but you no longer know its exact position! The same fundamental trade-off applies to observing electrons."}'>
   <div class="component-container"></div>
 </div>
 
@@ -43,11 +44,11 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="visual-explain" data-config='{"diagram": "energy-level-diagram", "revealSteps": true, "caption": "Click REVEAL to build: \u0394x\u00b7\u0394p \u2265 h/4\u03c0 \u2192 why fixed &#39;orbits&#39; (exact position + exact velocity) are physically impossible to define for electrons."}'>
+<div class="slide" data-type="quantum-sim" data-config='{"mode": "heisenberg", "title": "Heisenberg Pinball", "instruction": "Click on the canvas to fire a photon. Observe how successfully hitting the electron ruins its velocity predictability!"}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "Position and Momentum", "image": "Position and Momentum.png", "caption": "The trade-off between measuring where an electron is versus how fast it is moving."}'>
+<div class="slide" data-type="infographic" data-config='{"title": "Position and Momentum", "image": "Position and Momentum.png", "caption": "The trade-off between measuring where an electron is versus how fast it is moving.", "explanation": "Heisenberg formalized this into an exact mathematical relationship: Δx · Δp ≥ h/4π. It guarantees that any attempt to narrow down an electron’s exact position (shrinking Δx) must inversely blow up the uncertainty in its momentum (increasing Δp). It is physically impossible for both to be zero."}'>
   <div class="component-container"></div>
 </div>
 
@@ -63,11 +64,15 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "Summary", "image": "summary.png", "caption": "Overview of the transition to Quantum Mechanics."}'>
+<div class="slide" data-type="quantum-sim" data-config='{"mode": "orbital-collapse", "title": "Orbit Dissolution", "instruction": "Drag the slider to transition from a rigid planetary orbit to a statistical probability cloud (orbital)."}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "Birth of the Quantum Model", "image": "Birth of Quantum Mechanical Model.png", "caption": "The foundation of modern atomic theory."}'>
+<div class="slide" data-type="infographic" data-config='{"title": "Summary", "image": "summary.png", "caption": "Overview of the transition to Quantum Mechanics.", "explanation": "We’ve moved from Bohr’s deterministic universe (where electrons orbit on neat tracks like planets) to a probabilistic universe. We can never know precisely where an electron is or where it’s going—we can only calculate the statistical likelihood of finding it in certain 3D regions of space."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="infographic" data-config='{"title": "Birth of the Quantum Model", "image": "Birth of Quantum Mechanical Model.png", "caption": "The foundation of modern atomic theory.", "explanation": "Combining de Broglie’s matter waves with Heisenberg’s Uncertainty Principle led Erwin Schrödinger to formulate the Quantum Mechanical Model of the atom. Instead of trying to plot paths, he wrote wave equations that map out orbitals—the electron clouds we use today!"}'>
   <div class="component-container"></div>
 </div>
 
@@ -103,6 +108,7 @@
 <script src="../../../components/comic-strip.js"></script>
 <script src="../../../components/animation.js"></script>
 <script src="../../../components/infographic.js"></script>
+<script src="../../../components/quantum-sim.js"></script>
 <script>
 const SESSION_ID = 'ch02_w07_s03-04';
 let currentSlide = 0;
@@ -139,6 +145,7 @@ function initCurrentSlide() {
     case 'comic-strip': ComicStrip.init(container, config); break;
     case 'animation': ChemAnimation.init(container, config); break;
     case 'infographic': Infographic.init(container, config); break;
+    case 'quantum-sim': QuantumSim.init(container, config); break;
   }
 }
 

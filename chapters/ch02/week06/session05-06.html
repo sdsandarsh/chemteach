@@ -6,6 +6,7 @@
 <title>Ch02 W06 S05-06 | ChemTeach</title>
 <link rel="stylesheet" href="../../../assets/design-tokens.css">
 <link rel="stylesheet" href="../../../assets/session.css">
+<link rel="stylesheet" href="../../../assets/quantum-deck.css">
 <script src="../../../assets/theme.js"></script>
 </head>
 <body>
@@ -31,11 +32,11 @@
   </div>
 </div>
 
-<div class="slide" data-type="infographic" data-config='{"title": "Why the Bohr Model Failed", "image": "Why Bohr Model Failed.png", "caption": "The limitations of early quantum mechanics."}'>
+<div class="slide" data-type="infographic" data-config='{"title": "Why the Bohr Model Failed", "image": "Why Bohr Model Failed.png", "caption": "The limitations of early quantum mechanics.", "explanation": "While Bohr accurately predicted the hydrogen spectrum, his model completely collapsed when applied to multi-electron atoms like Helium. It ignored the wave nature of electrons, failed to account for electron-electron repulsion, and incorrectly assigned fixed exact paths to electrons—a direct violation of Heisenberg’s Uncertainty Principle."}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="visual-explain" data-config='{"diagram": "energy-level-diagram", "revealSteps": true, "caption": "Click REVEAL to walk through the formulas: radius of orbit n (rn = 0.529 \u00d7 n\u00b2/Z \u00c5) and energy of orbit n (En = -13.6 Z\u00b2/n\u00b2 eV)."}'>
+<div class="slide" data-type="quantum-sim" data-config='{"mode": "bohr-failure", "title": "Bohr Orbit Decapsulation", "instruction": "Click Helium to witness how electrostatic repulsion completely destabilizes the fixed planetary orbits."}'>
   <div class="component-container"></div>
 </div>
 
@@ -87,6 +88,7 @@
 <script src="../../../components/comic-strip.js"></script>
 <script src="../../../components/animation.js"></script>
 <script src="../../../components/infographic.js"></script>
+<script src="../../../components/quantum-sim.js"></script>
 <script>
 const SESSION_ID = 'ch02_w06_s05-06';
 let currentSlide = 0;
@@ -123,6 +125,7 @@ function initCurrentSlide() {
     case 'comic-strip': ComicStrip.init(container, config); break;
     case 'animation': ChemAnimation.init(container, config); break;
     case 'infographic': Infographic.init(container, config); break;
+    case 'quantum-sim': QuantumSim.init(container, config); break;
   }
 }
 
