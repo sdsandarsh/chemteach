@@ -35,11 +35,11 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="model-3d" data-config='{"model": "orbital-sp", "labels": true, "rotatable": true, "caption": "Drag to rotate. The s-orbital is spherical; p-orbitals are dumbbell-shaped, oriented along different axes."}'>
+<div class="slide" data-type="quantum-sim" data-config='{"mode": "orbital-shapes", "title": "3D PROBABILITY CLOUDS", "instruction": "Select an orbital shape below to see its 3D probability density map."}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="visual-explain" data-config='{"diagram": "periodic-table-blocks", "revealSteps": true, "caption": "Click REVEAL to build: Principal (n) → Azimuthal (l) → Magnetic (m) → Spin (s) quantum numbers, one at a time."}'>
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "quantum-address", "revealSteps": true, "caption": "Click REVEAL to build: Principal (n) → Azimuthal (l) → Magnetic (m) → Spin (s) quantum numbers, one at a time."}'>
   <div class="component-container"></div>
 </div>
 
@@ -86,6 +86,7 @@
 <script src="../../../components/mnemonic.js"></script>
 <script src="../../../components/comic-strip.js"></script>
 <script src="../../../components/animation.js"></script>
+<script src="../../../components/quantum-sim.js"></script>
 <script>
 const SESSION_ID = 'ch02_w08_s01-02';
 let currentSlide = 0;
@@ -121,6 +122,7 @@ function initCurrentSlide() {
     case 'mnemonic': Mnemonic.init(container, config); break;
     case 'comic-strip': ComicStrip.init(container, config); break;
     case 'animation': ChemAnimation.init(container, config); break;
+    case 'quantum-sim': QuantumSim.init(container, config); break;
   }
 }
 

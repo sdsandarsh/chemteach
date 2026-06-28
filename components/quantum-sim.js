@@ -81,6 +81,8 @@ window.QuantumSim = (() => {
       initHeisenberg(ctx, canvas, controls);
     } else if (config.mode === 'orbital-collapse') {
       initOrbitalCollapse(ctx, canvas, controls);
+    } else if (config.mode === 'orbital-shapes') {
+      initOrbitalShapes(ctx, canvas, controls);
     }
 
     // --- Bohr Failure Simulation ---
@@ -405,6 +407,127 @@ window.QuantumSim = (() => {
     container._quantumCleanup = () => {
       if (animationId) cancelAnimationFrame(animationId);
     };
+
+    // --- Orbital Shapes (3D Probability Clouds) ---
+    function initOrbitalShapes(ctx, canvas, controls) {
+      let currentOrb = 's';
+      
+      const btnS = document.createElement('button');
+      btnS.className = 'qd-btn qd-btn-cyan';
+      btnS.textContent = 's-orbital';
+      
+      const btnP = document.createElement('button');
+      btnP.className = 'qd-btn';
+      btnP.textContent = 'p-orbital';
+
+      const btnD = document.createElement('button');
+      btnD.className = 'qd-btn';
+      btnD.textContent = 'd-orbital';
+
+      controls.appendChild(btnS);
+      controls.appendChild(btnP);
+      controls.appendChild(btnD);
+
+      btnS.onclick = () => { currentOrb = 's'; btnS.classList.add('qd-btn-cyan'); btnP.classList.remove('qd-btn-cyan'); btnD.classList.remove('qd-btn-cyan'); initParticles(); };
+      btnP.onclick = () => { currentOrb = 'p'; btnP.classList.add('qd-btn-cyan'); btnS.classList.remove('qd-btn-cyan'); btnD.classList.remove('qd-btn-cyan'); initParticles(); };
+      btnD.onclick = () => { currentOrb = 'd'; btnD.classList.add('qd-btn-cyan'); btnS.classList.remove('qd-btn-cyan'); btnP.classList.remove('qd-btn-cyan'); initParticles(); };
+
+      let particles = [];
+      const numParticles = 1200;
+
+      function initParticles() {
+        particles = [];
+        for(let i=0; i<numParticles; i++) {
+          let x, y, z;
+          if (currentOrb === 's') {
+            const r = 80 * Math.cbrt(Math.random());
+            const theta = Math.random() * 2 * Math.PI;
+            const phi = Math.acos(2 * Math.random() - 1);
+            x = r * Math.sin(phi) * Math.cos(theta);
+            y = r * Math.sin(phi) * Math.sin(theta);
+            z = r * Math.cos(phi);
+          } else if (currentOrb === 'p') {
+            const sign = Math.random() > 0.5 ? 1 : -1;
+            const r = 50 * Math.cbrt(Math.random());
+            const theta = Math.random() * 2 * Math.PI;
+            const phi = Math.acos(2 * Math.random() - 1);
+            x = r * Math.sin(phi) * Math.cos(theta);
+            y = (r * Math.sin(phi) * Math.sin(theta)) * 0.5 + (sign * 60);
+            z = r * Math.cos(phi);
+          } else if (currentOrb === 'd') {
+            const lobe = Math.floor(Math.random() * 4);
+            const r = 40 * Math.cbrt(Math.random());
+            const theta = Math.random() * 2 * Math.PI;
+            const phi = Math.acos(2 * Math.random() - 1);
+            x = (r * Math.sin(phi) * Math.cos(theta)) * 0.7;
+            y = (r * Math.sin(phi) * Math.sin(theta)) * 0.7;
+            z = r * Math.cos(phi);
+            if(lobe===0) { x += 55; y += 55; }
+            if(lobe===1) { x -= 55; y += 55; }
+            if(lobe===2) { x += 55; y -= 55; }
+            if(lobe===3) { x -= 55; y -= 55; }
+          }
+          particles.push({x, y, z});
+        }
+      }
+      
+      initParticles();
+      let angleY = 0;
+      let angleX = 0;
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const cx = canvas.width / 2;
+        const cy = canvas.height / 2;
+
+        angleY += 0.01;
+        angleX += 0.005;
+        const cosY = Math.cos(angleY), sinY = Math.sin(angleY);
+        const cosX = Math.cos(angleX), sinX = Math.sin(angleX);
+
+        ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+        ctx.beginPath();
+        ctx.moveTo(cx, 0); ctx.lineTo(cx, canvas.height);
+        ctx.moveTo(0, cy); ctx.lineTo(canvas.width, cy);
+        ctx.stroke();
+
+        let baseColor = '0, 180, 204';
+        if (currentOrb === 'p') baseColor = '0, 229, 255';
+        if (currentOrb === 'd') baseColor = '255, 215, 64';
+
+        const projected = particles.map(p => {
+          let x1 = p.x * cosY - p.z * sinY;
+          let z1 = p.z * cosY + p.x * sinY;
+          let y2 = p.y * cosX - z1 * sinX;
+          let z2 = z1 * cosX + p.y * sinX;
+          return {x: x1, y: y2, z: z2};
+        });
+        
+        projected.sort((a,b) => a.z - b.z);
+
+        projected.forEach(p => {
+          const scale = 350 / (350 - p.z);
+          const px = cx + p.x * scale;
+          const py = cy + p.y * scale;
+          const size = Math.max(0.5, 1.5 * scale);
+          const alpha = Math.min(1, Math.max(0.1, (p.z + 150) / 300));
+          
+          ctx.fillStyle = `rgba(${baseColor}, ${alpha})`;
+          ctx.beginPath();
+          ctx.arc(px, py, size, 0, Math.PI*2);
+          ctx.fill();
+        });
+
+        ctx.fillStyle = '#fff';
+        ctx.beginPath();
+        ctx.arc(cx, cy, 2, 0, Math.PI*2);
+        ctx.fill();
+
+        animationId = requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
   }
 
   return { init: build };

@@ -52,6 +52,16 @@ window.VisualExplain = (() => {
     'titration-curve': [
       { x: 30, y: 200, w: 540, h: 4, text: 'Volume of titrant added' },
       { x: 280, y: 40, w: 4, h: 160, text: 'Equivalence point' }
+    ],
+    'quantum-address': [
+      { x: 10, y: 20, w: 135, h: 60, text: 'City (Shell)', fill: '#1A6B8A' },
+      { x: 77, y: 100, w: 60, h: 20, text: 'n', fill: 'transparent', textColor: '#00E5FF' },
+      { x: 155, y: 20, w: 135, h: 60, text: 'Street (Subshell)', fill: '#00B4CC' },
+      { x: 222, y: 100, w: 60, h: 20, text: 'l', fill: 'transparent', textColor: '#00E5FF' },
+      { x: 300, y: 20, w: 135, h: 60, text: 'House (Orbital)', fill: '#00E5FF', textColor: '#0D1B2A' },
+      { x: 367, y: 100, w: 60, h: 20, text: 'm', fill: 'transparent', textColor: '#00E5FF' },
+      { x: 445, y: 20, w: 135, h: 60, text: 'Room (Spin)', fill: '#FFD740', textColor: '#0D1B2A' },
+      { x: 512, y: 100, w: 60, h: 20, text: 's', fill: 'transparent', textColor: '#FFD740' }
     ]
   };
 
@@ -97,8 +107,9 @@ window.VisualExplain = (() => {
       text.setAttribute('x', n.x + n.w / 2);
       text.setAttribute('y', n.y + n.h / 2 + 5);
       text.setAttribute('text-anchor', 'middle');
-      text.setAttribute('fill', '#FFFFFF');
+      text.setAttribute('fill', n.textColor || '#FFFFFF');
       text.setAttribute('font-size', '13');
+      text.setAttribute('font-weight', '600');
       text.textContent = n.text;
       g.appendChild(text);
 
