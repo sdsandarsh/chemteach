@@ -62,6 +62,13 @@ window.VisualExplain = (() => {
       { x: 367, y: 100, w: 60, h: 20, text: 'm', fill: 'transparent', textColor: '#00E5FF' },
       { x: 445, y: 20, w: 135, h: 60, text: 'Room (Spin)', fill: '#FFD740', textColor: '#0D1B2A' },
       { x: 512, y: 100, w: 60, h: 20, text: 's', fill: 'transparent', textColor: '#FFD740' }
+    ],
+    'historical-classification': [
+      { x: 20, y: 20, w: 140, h: 40, imageH: 140, image: '../../../assets/images/infographics/dobereiner-caricature.jpg', text: 'Dobereiner (Triads)' },
+      { x: 175, y: 80, w: 50, h: 40, text: '➔', fill: 'transparent', textColor: 'var(--color-accent)' },
+      { x: 230, y: 20, w: 140, h: 40, imageH: 140, image: '../../../assets/images/infographics/newlands-caricature.jpg', text: 'Newlands (Octaves)' },
+      { x: 385, y: 80, w: 50, h: 40, text: '➔', fill: 'transparent', textColor: 'var(--color-accent)' },
+      { x: 440, y: 20, w: 140, h: 40, imageH: 140, image: '../../../assets/images/infographics/mendeleev-caricature.jpg', text: 'Mendeleev (Table)' }
     ]
   };
 
@@ -93,25 +100,72 @@ window.VisualExplain = (() => {
       g.style.opacity = revealSteps ? '0' : '1';
       g.style.transition = 'opacity 0.4s ease';
 
-      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-      rect.setAttribute('x', n.x);
-      rect.setAttribute('y', n.y);
-      rect.setAttribute('width', n.w);
-      rect.setAttribute('height', n.h);
-      rect.setAttribute('rx', 8);
-      rect.setAttribute('fill', n.fill || 'rgba(0,180,204,0.25)');
-      rect.setAttribute('stroke', '#00B4CC');
-      g.appendChild(rect);
+      if (n.image) {
+        const clipId = 'clip-' + Math.random().toString(36).substr(2, 9);
+        const clipPath = document.createElementNS('http://www.w3.org/2000/svg', 'clipPath');
+        clipPath.setAttribute('id', clipId);
+        
+        const clipRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        clipRect.setAttribute('x', n.x);
+        clipRect.setAttribute('y', n.y);
+        clipRect.setAttribute('width', n.w);
+        clipRect.setAttribute('height', n.imageH || n.h);
+        clipRect.setAttribute('rx', 8);
+        clipPath.appendChild(clipRect);
+        svg.appendChild(clipPath);
 
-      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      text.setAttribute('x', n.x + n.w / 2);
-      text.setAttribute('y', n.y + n.h / 2 + 5);
-      text.setAttribute('text-anchor', 'middle');
-      text.setAttribute('fill', n.textColor || '#FFFFFF');
-      text.setAttribute('font-size', '13');
-      text.setAttribute('font-weight', '600');
-      text.textContent = n.text;
-      g.appendChild(text);
+        const img = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+        img.setAttribute('x', n.x);
+        img.setAttribute('y', n.y);
+        img.setAttribute('width', n.w);
+        img.setAttribute('height', n.imageH || n.h);
+        img.setAttribute('href', n.image);
+        img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+        img.setAttribute('clip-path', `url(#${clipId})`);
+        g.appendChild(img);
+
+        const border = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        border.setAttribute('x', n.x);
+        border.setAttribute('y', n.y);
+        border.setAttribute('width', n.w);
+        border.setAttribute('height', n.imageH || n.h);
+        border.setAttribute('rx', 8);
+        border.setAttribute('fill', 'none');
+        border.setAttribute('stroke', 'var(--color-accent)');
+        border.setAttribute('stroke-width', '2');
+        g.appendChild(border);
+
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', n.x + n.w / 2);
+        text.setAttribute('y', n.y + (n.imageH || n.h) + 24);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('fill', 'var(--color-text)');
+        text.setAttribute('font-size', '13');
+        text.setAttribute('font-weight', '600');
+        text.textContent = n.text;
+        g.appendChild(text);
+
+      } else {
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', n.x);
+        rect.setAttribute('y', n.y);
+        rect.setAttribute('width', n.w);
+        rect.setAttribute('height', n.h);
+        rect.setAttribute('rx', 8);
+        rect.setAttribute('fill', n.fill || 'rgba(0,180,204,0.25)');
+        rect.setAttribute('stroke', n.fill === 'transparent' ? 'transparent' : 'var(--color-accent)');
+        g.appendChild(rect);
+
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', n.x + n.w / 2);
+        text.setAttribute('y', n.y + n.h / 2 + 5);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('fill', n.textColor || 'var(--color-text)');
+        text.setAttribute('font-size', n.fill === 'transparent' ? '24' : '13');
+        text.setAttribute('font-weight', '600');
+        text.textContent = n.text;
+        g.appendChild(text);
+      }
 
       svg.appendChild(g);
     });
