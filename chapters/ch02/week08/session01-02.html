@@ -31,7 +31,11 @@
   </div>
 </div>
 
-<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Electrons exist in orbitals — 3D probability regions, not fixed Bohr orbits. Heisenberg proved we can never know an electron&#39;s exact path."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "If we can&#39;t know an exact path, how do we describe an electron&#39;s location, energy, and behaviour AT ALL? We need a different kind of address system."}, "unknown": {"label": "TODAY&#39;S ANSWER", "text": "Four quantum numbers — n, l, m, s — together form a unique &#39;address&#39; for every electron in an atom, describing its energy level, shape, orientation, and spin."}}'>
+<div class="slide" data-type="story" data-config='{"setting": "Schr\u00f6dinger&#39;s Wave Mechanics, 1926", "narrative": "Erwin Schr\u00f6dinger took de Broglie&#39;s idea of matter waves to its logical extreme. He wrote a complex wave equation to describe the electron, treating it purely as a wave spread out over space.", "reveal": "His math worked perfectly, but physicists were confused: if the electron is a particle, how can its charge be physically smeared out like a wave? What does the wave actually mean?", "visual": "space-atoms", "image": "../../../assets/images/infographics/schrodinger-caricature.jpg"}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="story" data-config='{"setting": "Born&#39;s Probability Interpretation, 1926", "narrative": "Max Born solved the riddle. He proposed that Schr\u00f6dinger&#39;s wave is NOT a physical wave of electric charge. Instead, it is a wave of PROBABILITY.", "reveal": "The amplitude squared of the wave function (|\u03c8|\u00b2) gives the probability of finding the electron at a specific point in space. The electron is a particle, but its location is guided by a wave of likelihood! This 3D probability region is called an ORBITAL.", "visual": "mole-atoms", "image": "../../../assets/images/infographics/born-caricature.jpg"}'>
   <div class="component-container"></div>
 </div>
 
@@ -39,7 +43,7 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="visual-explain" data-config='{"diagram": "quantum-address", "revealSteps": true, "caption": "Click REVEAL to build: Principal (n) → Azimuthal (l) → Magnetic (m) → Spin (s) quantum numbers, one at a time."}'>
+<div class="slide" data-type="quantum-explorer" data-config='{}'>
   <div class="component-container"></div>
 </div>
 
@@ -70,7 +74,7 @@
 
 <div class="slide-nav">
   <button id="btn-prev">◀ PREV</button>
-  <span id="slide-counter">Slide 1 of 8</span>
+  <span id="slide-counter">Slide 1 of 9</span>
   <button id="btn-next">NEXT ▶</button>
 </div>
 
@@ -87,6 +91,7 @@
 <script src="../../../components/comic-strip.js"></script>
 <script src="../../../components/animation.js"></script>
 <script src="../../../components/quantum-sim.js"></script>
+<script src="../../../components/quantum-explorer.js"></script>
 <script>
 const SESSION_ID = 'ch02_w08_s01-02';
 let currentSlide = 0;
@@ -123,6 +128,7 @@ function initCurrentSlide() {
     case 'comic-strip': ComicStrip.init(container, config); break;
     case 'animation': ChemAnimation.init(container, config); break;
     case 'quantum-sim': QuantumSim.init(container, config); break;
+    case 'quantum-explorer': QuantumExplorer.init(container, config); break;
   }
 }
 
