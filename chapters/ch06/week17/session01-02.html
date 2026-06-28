@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch06 W17 S01-02 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 06 | Week 17 | Session 1-2</div>
+    <div class="session-title">Chemical Equilibrium</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 6 | Week 17 | Session 1-2 | September 14-15, 2026</div>
+    <h1>HOMOGENEOUS & HETEROGENEOUS EQUILIBRIA</h1>
+    <div class="topics">Topics covered today:<br>6.4-6.5 Homogeneous, Heterogeneous Equilibria</div>
+  </div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "acid-base-conjugate", "revealSteps": true, "caption": "Click REVEAL to compare: homogeneous equilibrium (all species same phase, e.g. all gases) vs heterogeneous equilibrium (species in different phases, e.g. solid + gas)."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="analogy" data-config='{"realWorld": {"label": "A CONVERSATION IN ONE ROOM vs ACROSS TWO ROOMS", "visual": "see-saw", "fact": "People chatting within the SAME room interact freely and equally. People in DIFFERENT rooms (separated by a wall) interact differently \u2014 only certain things (like sound through a door) can cross between them."}, "chemistry": {"label": "HOMOGENEOUS vs HETEROGENEOUS EQUILIBRIUM", "visual": "mole-atoms", "fact": "Homogeneous equilibrium: all species in the SAME phase (e.g. all gases), interacting uniformly. Heterogeneous equilibrium: species in DIFFERENT phases (e.g. solid + gas), where only certain species' concentrations actually matter in K."}, "bridge": "Just as same-room interactions differ from across-room interactions, equilibria within one phase behave differently in their K expressions than equilibria spanning multiple phases."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "For the heterogeneous equilibrium CaCO3(s) \u21cc CaO(s) + CO2(g), the equilibrium constant expression is simply K = [CO2] \u2014 the two solids don't appear at all. Why are CaCO3 and CaO completely left out of the expression?", "hint": "Think about whether the 'concentration' of a pure solid can ever actually change.", "answer": "Because the concentration (density) of a PURE SOLID is constant and doesn't change with the amount present \u2014 so it's absorbed into the constant K itself rather than written separately", "explanation": "A pure solid's concentration (moles per unit volume of the solid itself) never changes, regardless of how much solid is present \u2014 only its total mass changes. Since this 'concentration' term is always the same constant value, it gets mathematically folded into K itself, leaving only CO2 (the only species whose concentration can actually vary) in the final expression."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Same Phase Homo, Mixed Phase Hetero", "breakdown": ["Same Phase Homo \u2192 homogeneous equilibrium: ALL species in one phase (e.g. all gases, or all in solution)", "Mixed Phase Hetero \u2192 heterogeneous equilibrium: species spread across MULTIPLE phases (e.g. solid+gas, solid+liquid)", "Pure solids/liquids excluded \u2192 only gases and dissolved species appear in K for heterogeneous equilibria"], "rule": "Whether an equilibrium is homogeneous or heterogeneous depends ONLY on the physical states of the species involved, not on the type of reaction.", "tip": "Always scan a reaction for (s) or (l) labels on PURE substances \u2014 those get dropped entirely from the K expression."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each equilibrium as Homogeneous or Heterogeneous.", "items": ["N2(g) + 3H2(g) \u21cc 2NH3(g)", "CaCO3(s) \u21cc CaO(s) + CO2(g)", "H2(g) + I2(g) \u21cc 2HI(g)", "2H2O(l) \u21cc 2H2(g) + O2(g)"], "categories": ["Homogeneous", "Heterogeneous"], "answers": {"N2(g) + 3H2(g) \u21cc 2NH3(g)": "Homogeneous", "CaCO3(s) \u21cc CaO(s) + CO2(g)": "Heterogeneous", "H2(g) + I2(g) \u21cc 2HI(g)": "Homogeneous", "2H2O(l) \u21cc 2H2(g) + O2(g)": "Heterogeneous"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Homogeneous equilibrium: all species in the same phase</li><li>Heterogeneous equilibrium: species span multiple phases (e.g. solid + gas)</li><li>Pure solids/liquids are excluded from K — their concentration never changes</li><li>Only gases and dissolved species appear explicitly in heterogeneous K expressions</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 6.4-1, 2, 3<br>
+      Assignment: 6.4-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch06_w17_s01-02';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(6, 17, '01-02');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

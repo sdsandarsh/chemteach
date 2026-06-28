@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch06 W17 S03-04 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 06 | Week 17 | Session 3-4</div>
+    <div class="session-title">Chemical Equilibrium</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 6 | Week 17 | Session 3-4 | September 16-17, 2026</div>
+    <h1>APPLICATIONS OF EQUILIBRIUM CONSTANTS</h1>
+    <div class="topics">Topics covered today:<br>6.6 Applications of Equilibrium Constants</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "K is a fixed number at a given temperature, calculated from equilibrium concentrations using the Law of Mass Action."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "Before a reaction even reaches equilibrium, can we predict which DIRECTION it will move \u2014 toward more products, or back toward more reactants?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Yes \u2014 calculate the Reaction Quotient (Q) using CURRENT (non-equilibrium) concentrations, then compare Q to K. This single comparison predicts the reaction's direction instantly."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "reaction-profile", "revealSteps": true, "caption": "Click REVEAL to build: Reaction Quotient Q (same formula as K, but using current concentrations) \u2192 compare Q vs K \u2192 predict direction of reaction."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "At a certain moment, a reaction's Reaction Quotient Q is calculated to be SMALLER than its equilibrium constant K. Which direction will the reaction proceed \u2014 toward more products, or back toward more reactants?", "hint": "Q needs to INCREASE to reach K. What direction of reaction increases Q?", "answer": "The reaction proceeds FORWARD, toward more products", "explanation": "Since Q = [products]/[reactants] (same form as K) and Q < K means there currently aren't enough products (or too many reactants) relative to the equilibrium ratio. The reaction must move FORWARD \u2014 converting more reactants into products \u2014 to increase Q until it equals K."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Q Less Than K, Forward We Go", "breakdown": ["Q Less Than K \u2192 reaction proceeds FORWARD (toward products) to increase Q up to K", "Q Greater Than K \u2192 reaction proceeds BACKWARD (toward reactants) to decrease Q down to K", "Q Equals K \u2192 system is already AT equilibrium, no net change"], "rule": "Large K (K>>1) means equilibrium favours products strongly. Small K (K<<1) means equilibrium favours reactants strongly.", "tip": "Applications of K include: predicting reaction direction (Q vs K), calculating equilibrium concentrations from initial conditions, and determining the extent of a reaction."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Match each Q vs K comparison to the predicted reaction direction.", "items": ["Q < K", "Q > K", "Q = K"], "categories": ["Forward (toward products)", "Backward (toward reactants)", "At equilibrium, no change"], "answers": {"Q < K": "Forward (toward products)", "Q > K": "Backward (toward reactants)", "Q = K": "At equilibrium, no change"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Reaction Quotient Q: same formula as K, but uses current (non-equilibrium) concentrations</li><li>Q < K: reaction proceeds forward; Q > K: reaction proceeds backward; Q = K: at equilibrium</li><li>Large K favours products strongly; small K favours reactants strongly</li><li>K applications: predicting direction, calculating equilibrium concentrations, extent of reaction</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 6.6-1, 2, 3<br>
+      Assignment: 6.6-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch06_w17_s03-04';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(6, 17, '03-04');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>
