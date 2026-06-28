@@ -1,1 +1,152 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch09 W27 S01-02 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 09 | Week 27 | Session 1-2</div>
+    <div class="session-title">Organic Chemistry: Basic Principles and Techniques</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 9 | Week 27 | Session 1-2 | November 16-17, 2026</div>
+    <h1>ELECTRONIC EFFECTS & HYPERCONJUGATION</h1>
+    <div class="topics">Topics covered today:<br>8.7.3-8.7.9 Electronic Effects, Hyperconjugation</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Reaction mechanisms (last class) depend on which parts of a molecule are electron-rich or electron-poor \u2014 nucleophiles and electrophiles."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "WHAT determines whether a particular carbon in a molecule ends up electron-rich or electron-poor in the first place? Is it random, or governed by predictable effects?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Electronic effects (inductive, electromeric, resonance, hyperconjugation) systematically redistribute electron density through a molecule \u2014 and predicting them lets us predict reactivity itself."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "bond-polarity-spectrum", "revealSteps": true, "caption": "Click REVEAL to build: inductive effect (electron pull through sigma bonds) \u2192 resonance effect (electron pair delocalization through pi system) \u2192 hyperconjugation (sigma bond electrons stabilizing an adjacent empty/partial orbital)."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="analogy" data-config='{"realWorld": {"label": "A TUG-OF-WAR ROPE WITH UNEVEN PULLERS", "visual": "see-saw", "fact": "If one team pulls harder than the other in a tug-of-war, the rope's center point shifts noticeably toward the stronger side, even though the rope itself is one continuous, connected object."}, "chemistry": {"label": "INDUCTIVE EFFECT", "visual": "mole-atoms", "fact": "A more electronegative atom 'pulls' electron density through the chain of sigma bonds toward itself, shifting electron distribution along the entire molecule, weakening as distance increases."}, "bridge": "Just as the tug-of-war rope's centerpoint shifts toward the stronger puller, electron density in a bonded chain shifts toward the more electronegative atom \u2014 strongest near it, fading with distance."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "A tertiary carbocation (3 alkyl groups attached) is significantly MORE stable than a primary carbocation (1 alkyl group attached). Both are positively charged carbon centers. What effect specifically explains why more surrounding alkyl groups increase stability?", "hint": "Think about nearby C-H sigma bonds 'donating' some electron density toward the empty orbital.", "answer": "HYPERCONJUGATION \u2014 more adjacent C-H sigma bonds can donate electron density into the empty p-orbital, stabilizing the positive charge", "explanation": "A carbocation has an empty p-orbital. Adjacent C-H sigma bonds can partially align with this empty orbital and donate some electron density into it, partially neutralizing the positive charge \u2014 this is hyperconjugation. A tertiary carbocation has MORE adjacent C-H bonds available for this stabilizing donation than a primary carbocation, making it significantly more stable."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Inductive Through Sigma, Resonance Through Pi, Hyperconjugation Donates Sigma to Empty", "breakdown": ["Inductive Through Sigma \u2192 permanent electron pull through sigma bonds due to electronegativity differences", "Resonance Through Pi \u2192 electron pair delocalization through a conjugated pi system", "Hyperconjugation Donates Sigma to Empty \u2192 adjacent C-H sigma bond electrons stabilize an empty or partially empty orbital"], "rule": "More alkyl groups (more hyperconjugation) = more stable carbocation = tertiary > secondary > primary in carbocation stability.", "tip": "Inductive effect weakens rapidly with distance \u2014 it's strongest on the directly attached carbon, negligible after 3-4 bonds away."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Order these carbocations from Most Stable to Least Stable.", "items": ["Tertiary carbocation", "Secondary carbocation", "Primary carbocation"], "categories": ["Most Stable", "Middle Stability", "Least Stable"], "answers": {"Tertiary carbocation": "Most Stable", "Secondary carbocation": "Middle Stability", "Primary carbocation": "Least Stable"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Inductive effect: permanent electron pull through sigma bonds, weakens with distance</li><li>Resonance effect: electron pair delocalization through a conjugated pi system</li><li>Hyperconjugation: adjacent C-H sigma bonds stabilize an empty/partial orbital</li><li>More alkyl groups (more hyperconjugation) means more stable carbocations: tertiary > secondary > primary</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 8.7-5, 6, 7<br>
+      Assignment: 8.7-8, 9
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 8</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch09_w27_s01-02';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(9, 27, '01-02');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

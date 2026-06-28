@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch09 W26 S05-06 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 09 | Week 26 | Session 5-6</div>
+    <div class="session-title">Organic Chemistry: Basic Principles and Techniques</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 9 | Week 26 | Session 5-6 | November 16, 2026</div>
+    <h1>INTRODUCTION TO REACTION MECHANISM</h1>
+    <div class="topics">Topics covered today:<br>8.7 Reaction Mechanism</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "A balanced chemical equation tells you WHAT reactants become WHAT products \u2014 the starting point and the ending point."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "An equation says nothing about HOW the transformation actually happens, step by step, at the level of bonds breaking and forming. Can we see that hidden journey?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Reaction mechanism: a detailed, step-by-step description of exactly how bonds break and form during a reaction, often shown with curved arrows tracking electron pair movement."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="animation" data-config='{"sequence": "reaction-mechanism", "steps": ["A nucleophile (electron-rich species) approaches an electrophilic carbon atom.", "A curved arrow shows the nucleophile's electron pair moving to form a new bond with that carbon.", "Simultaneously, the bond to the leaving group breaks, with its electrons moving entirely onto the leaving group.", "The leaving group departs, and a new bond is fully formed \u2014 the mechanism step is complete."], "stepByStep": true, "caption": "Click PLAY, then NEXT STEP to see how curved arrows track electron pair movement during a single mechanistic step."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "In mechanism diagrams, a curved arrow ALWAYS starts from an electron pair (a bond or lone pair) and points toward where those electrons are going. Why must the arrow specifically start at electrons, rather than at an atom or a whole molecule?", "hint": "Think about what is ACTUALLY moving during a reaction \u2014 atoms moving as whole units, or something else?", "answer": "Because chemical bond formation/breaking is fundamentally about ELECTRON PAIRS moving, not atoms physically relocating", "explanation": "Reaction mechanisms track electron movement because that's what bonding fundamentally is \u2014 shared or transferred electron pairs. A curved arrow always starts at the source of electrons (a lone pair or existing bond) and points to where they end up (forming a new bond or becoming a lone pair on a leaving group), accurately representing the real underlying electronic event."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Arrow From Electrons, Never From Atoms", "breakdown": ["Arrow From Electrons \u2192 curved arrows always originate at an electron pair (bond or lone pair)", "Never From Atoms \u2192 arrows never start at a plain atom symbol with no associated electrons shown", "Nucleophile \u2192 electron-rich species that attacks electron-poor centers", "Electrophile \u2192 electron-poor species that attracts electron-rich nucleophiles"], "rule": "Reaction mechanisms reveal WHY a reaction happens the way it does, not just WHAT the final products are.", "tip": "Identifying the nucleophile and electrophile in a reaction is usually the first step in predicting or drawing its mechanism."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each species description as Nucleophile or Electrophile.", "items": ["Electron-rich, attacks", "Electron-poor, attracts attack", "Has a lone pair to donate", "Has a positive or partial positive charge"], "categories": ["Nucleophile", "Electrophile"], "answers": {"Electron-rich, attacks": "Nucleophile", "Electron-poor, attracts attack": "Electrophile", "Has a lone pair to donate": "Nucleophile", "Has a positive or partial positive charge": "Electrophile"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Reaction mechanism: step-by-step description of bond breaking/forming during a reaction</li><li>Curved arrows track electron pair movement, always starting from electrons</li><li>Nucleophile: electron-rich attacking species; Electrophile: electron-poor target</li><li>Mechanisms explain WHY reactions happen, beyond just balanced equations</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 8.7-1, 2<br>
+      Assignment: 8.7-3, 4
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch09_w26_s05-06';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(9, 26, '05-06');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

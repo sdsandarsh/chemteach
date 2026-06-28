@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch09 W25 S05-06 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 09 | Week 25 | Session 5-6</div>
+    <div class="session-title">Organic Chemistry: Basic Principles and Techniques</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 9 | Week 25 | Session 5-6 | November 6-7, 2026</div>
+    <h1>CLASSIFICATION & BASIC NOMENCLATURE</h1>
+    <div class="topics">Topics covered today:<br>8.4-8.5 Classification, Nomenclature (Basic)</div>
+  </div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "matter-classification-tree", "revealSteps": true, "caption": "Click REVEAL to build the classification: acyclic (open chain) vs cyclic (ring) \u2192 saturated vs unsaturated \u2192 homocyclic vs heterocyclic \u2192 aromatic vs alicyclic."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="story" data-config='{"setting": "Geneva, Switzerland, 1892", "narrative": "As organic chemistry exploded with newly discovered compounds, chemists faced chaos: the same compound was sometimes called by 3 or 4 completely different names in different countries, causing dangerous confusion in industry and medicine. An international committee gathered to fix this once and for all, creating a systematic, universal naming system based purely on a molecule's structure \u2014 so that any chemist, anywhere, reading the name alone, could draw the exact correct structure without ambiguity.", "reveal": "A name became more than a label \u2014 it became a precise, structural code, readable by any chemist on Earth.", "visual": "classroom-1800s"}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "IUPAC names always identify the LONGEST continuous carbon chain as the 'parent' chain, even if a shorter chain looks more obvious or central in the drawing. Why is 'longest chain' specifically chosen as the rule, rather than some other criterion?", "hint": "Think about what gives the MOST INFORMATION about the molecule's core structure.", "answer": "Because the longest chain captures the maximum structural backbone of the molecule, providing the most complete and unambiguous base name", "explanation": "Choosing the longest continuous chain ensures the parent name reflects the largest possible continuous carbon backbone, with everything else (branches, substituents) clearly identified as additions to that backbone. This consistent rule eliminates ambiguity \u2014 without it, different chemists might pick different 'main chains' for the same molecule, defeating the entire purpose of systematic nomenclature."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Longest Chain Parent, Number for Lowest Locants", "breakdown": ["Longest Chain Parent \u2192 identify the longest continuous carbon chain as the base name", "Number for Lowest Locants \u2192 number the chain to give substituents/functional groups the LOWEST possible position numbers", "Meth, Eth, Prop, But... \u2192 prefixes for 1,2,3,4... carbons in the parent chain"], "rule": "Classification: acyclic (open-chain) vs cyclic (ring); saturated (only single bonds) vs unsaturated (has double/triple bonds).", "tip": "Always scan the ENTIRE molecule for the truly longest chain \u2014 it may not be drawn in a straight horizontal line."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Match each carbon count to its IUPAC parent chain prefix.", "items": ["1 carbon", "2 carbons", "3 carbons", "4 carbons"], "categories": ["Meth-", "Eth-", "Prop-", "But-"], "answers": {"1 carbon": "Meth-", "2 carbons": "Eth-", "3 carbons": "Prop-", "4 carbons": "But-"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Classification: acyclic vs cyclic; saturated vs unsaturated; homocyclic vs heterocyclic</li><li>IUPAC nomenclature: systematic, universal naming based purely on structure</li><li>Rule: identify longest continuous chain, number for lowest locants</li><li>Prefixes meth-, eth-, prop-, but-... indicate carbon count in the parent chain</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 8.4-1, 2, 3<br>
+      Assignment: 8.4-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch09_w25_s05-06';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(9, 25, '05-06');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>
