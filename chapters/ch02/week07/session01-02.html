@@ -39,32 +39,24 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="static">
-  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-    <img src="../../../assets/images/infographics/Dual%20Nature%20of%20Matter.png" alt="Dual Nature of Matter" style="max-width: 100%; max-height: 80vh; border-radius: var(--radius-lg); box-shadow: var(--shadow-glow); object-fit: contain;">
-  </div>
+<div class="slide" data-type="infographic" data-config='{"title": "Dual Nature of Matter", "image": "Dual Nature of Matter.png", "caption": "The universe exhibits both wave and particle characteristics."}'>
+  <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="static">
-  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-    <img src="../../../assets/images/infographics/Electron%20Diffraction.png" alt="Experimental Proof of Wave Nature" style="max-width: 100%; max-height: 80vh; border-radius: var(--radius-lg); box-shadow: var(--shadow-glow); object-fit: contain;">
-  </div>
+<div class="slide" data-type="infographic" data-config='{"title": "Experimental Proof", "image": "Electron Diffraction.png", "caption": "Electron diffraction proves the wave nature of matter."}'>
+  <div class="component-container"></div>
 </div>
 
 <div class="slide" data-type="visual-explain" data-config='{"diagram": "energy-level-diagram", "revealSteps": true, "caption": "Click REVEAL to build the quantum mechanical picture: electrons as waves \u2192 orbitals (regions of probability) replace fixed orbits \u2192 no exact path, only likelihood."}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="static">
-  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-    <img src="../../../assets/images/infographics/Transition%20from%20Bohr%20Model%20to%20Quantum%20Model.png" alt="The Atomic Shift: From Fixed Orbits to Probability" style="max-width: 100%; max-height: 80vh; border-radius: var(--radius-lg); box-shadow: var(--shadow-glow); object-fit: contain;">
-  </div>
+<div class="slide" data-type="infographic" data-config='{"title": "The Atomic Shift", "image": "Transition from Bohr Model to Quantum Model.png", "caption": "From fixed orbits to probability."}'>
+  <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="static">
-  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-    <img src="../../../assets/images/infographics/Understanding%20de%20Broglie%20Equation.png" alt="de Broglie equation" style="max-width: 100%; max-height: 80vh; border-radius: var(--radius-lg); box-shadow: var(--shadow-glow); object-fit: contain;">
-  </div>
+<div class="slide" data-type="infographic" data-config='{"title": "de Broglie Equation", "image": "Understanding de Broglie Equation.png", "caption": "Calculating the wavelength of matter."}'>
+  <div class="component-container"></div>
 </div>
 
 <div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Lambda Equals H Over M V", "breakdown": ["Lambda (\u03bb) \u2192 de Broglie wavelength of any moving particle", "H \u2192 Planck&#39;s constant", "M V \u2192 mass \u00d7 velocity (momentum, p)", "Formula \u2192 \u03bb = h/p = h/(mv)"], "rule": "Every moving object has a de Broglie wavelength, but it is only noticeable for extremely light particles like electrons \u2014 for everyday objects, \u03bb is far too small to detect.", "tip": "Orbital \u2260 Orbit. An orbit is a fixed path (Bohr). An orbital is a 3D region of space where there is high PROBABILITY of finding an electron (quantum model)."}'>
@@ -75,10 +67,8 @@
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="static">
-  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-    <img src="../../../assets/images/infographics/Macroscopic%20vs%20Microscopic%20Objects.png" alt="Macroscopic Objects vs Microscopic Objects" style="max-width: 100%; max-height: 80vh; border-radius: var(--radius-lg); box-shadow: var(--shadow-glow); object-fit: contain;">
-  </div>
+<div class="slide" data-type="infographic" data-config='{"title": "Macro vs Micro", "image": "Macroscopic vs Microscopic Objects.png", "caption": "Why we only observe wave nature in microscopic particles."}'>
+  <div class="component-container"></div>
 </div>
 
 <div class="slide" data-type="gamification" data-config='{"instruction": "Sort each statement to Bohr&#39;s Model or the Quantum Mechanical Model.", "items": ["Electrons follow fixed circular paths", "Electrons exist in orbitals (probability regions)", "Electron position can be known exactly", "Electron behaves as a wave"], "categories": ["Bohr&#39;s Model", "Quantum Mechanical Model"], "answers": {"Electrons follow fixed circular paths": "Bohr&#39;s Model", "Electrons exist in orbitals (probability regions)": "Quantum Mechanical Model", "Electron position can be known exactly": "Bohr&#39;s Model", "Electron behaves as a wave": "Quantum Mechanical Model"}}'>
@@ -116,6 +106,7 @@
 <script src="../../../components/mnemonic.js"></script>
 <script src="../../../components/comic-strip.js"></script>
 <script src="../../../components/animation.js"></script>
+<script src="../../../components/infographic.js"></script>
 <script>
 const SESSION_ID = 'ch02_w07_s01-02';
 let currentSlide = 0;
@@ -151,6 +142,7 @@ function initCurrentSlide() {
     case 'mnemonic': Mnemonic.init(container, config); break;
     case 'comic-strip': ComicStrip.init(container, config); break;
     case 'animation': ChemAnimation.init(container, config); break;
+    case 'infographic': Infographic.init(container, config); break;
   }
 }
 

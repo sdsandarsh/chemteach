@@ -31,10 +31,8 @@
   </div>
 </div>
 
-<div class="slide" data-type="static">
-  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-    <img src="../../../assets/images/infographics/Why%20Bohr%20Model%20Failed.png" alt="Limitations of Bohr's Model" style="max-width: 100%; max-height: 80vh; border-radius: var(--radius-lg); box-shadow: var(--shadow-glow); object-fit: contain;">
-  </div>
+<div class="slide" data-type="infographic" data-config='{"title": "Why the Bohr Model Failed", "image": "Why Bohr Model Failed.png", "caption": "The limitations of early quantum mechanics."}'>
+  <div class="component-container"></div>
 </div>
 
 <div class="slide" data-type="visual-explain" data-config='{"diagram": "energy-level-diagram", "revealSteps": true, "caption": "Click REVEAL to walk through the formulas: radius of orbit n (rn = 0.529 \u00d7 n\u00b2/Z \u00c5) and energy of orbit n (En = -13.6 Z\u00b2/n\u00b2 eV)."}'>
@@ -88,6 +86,7 @@
 <script src="../../../components/mnemonic.js"></script>
 <script src="../../../components/comic-strip.js"></script>
 <script src="../../../components/animation.js"></script>
+<script src="../../../components/infographic.js"></script>
 <script>
 const SESSION_ID = 'ch02_w06_s05-06';
 let currentSlide = 0;
@@ -123,6 +122,7 @@ function initCurrentSlide() {
     case 'mnemonic': Mnemonic.init(container, config); break;
     case 'comic-strip': ComicStrip.init(container, config); break;
     case 'animation': ChemAnimation.init(container, config); break;
+    case 'infographic': Infographic.init(container, config); break;
   }
 }
 
