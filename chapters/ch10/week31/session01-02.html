@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch10 W31 S01-02 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 10 | Week 31 | Session 1-2</div>
+    <div class="session-title">Hydrocarbons</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 10 | Week 31 | Session 1-2 | December 14-15, 2026</div>
+    <h1>ALKYNE REACTIONS</h1>
+    <div class="topics">Topics covered today:<br>9.4.4 Alkyne Reactions</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Alkenes undergo ONE addition reaction across their double bond, converting C=C into C-C with new groups attached."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "Alkynes have a TRIPLE bond \u2014 does this mean addition reactions happen just once (like alkenes), or can MORE than one round of addition occur?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Alkynes can undergo addition TWICE \u2014 first converting the triple bond to a double bond, then a second addition converting that double bond to a fully saturated single bond."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="animation" data-config='{"sequence": "reaction-mechanism", "steps": ["Acetylene (HC\u2261CH) reacts with the first equivalent of HBr, adding across one pi bond of the triple bond.", "This produces a vinyl halide (still containing one C=C double bond) \u2014 the FIRST addition is complete.", "If excess HBr is present, a SECOND addition occurs across the remaining double bond.", "The final product is a fully saturated dihalide, with both pi bonds of the original triple bond now satisfied."], "stepByStep": true, "caption": "Click PLAY, then NEXT STEP to see how alkynes undergo TWO sequential addition reactions, unlike the single addition seen in alkenes."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Both additions to an alkyne follow Markovnikov's Rule, just like alkene addition. Why does the SAME selectivity rule (favouring the more stable carbocation/intermediate) apply equally to alkynes as it does to alkenes?", "hint": "Think about what's fundamentally similar between the two addition mechanisms, despite the different starting bond type.", "answer": "Because both reactions proceed through the SAME underlying mechanism \u2014 electrophilic addition via the more stable intermediate \u2014 regardless of whether the starting bond is a double or triple bond", "explanation": "Markovnikov's Rule isn't specific to double bonds \u2014 it reflects a general principle of electrophilic addition: the electrophile (H+) adds in whichever way produces the more stable carbocation (or vinyl cation, for alkynes) intermediate. Since this underlying mechanistic logic is identical for both pi bonds in an alkyne, Markovnikov selectivity applies consistently to both addition steps."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Twice the Bond, Twice the Addition", "breakdown": ["Twice the Bond, Twice the Addition \u2192 alkynes (triple bond) can undergo TWO successive addition reactions, unlike alkenes (one addition only)", "First Addition \u2192 triple bond \u2192 double bond product (vinyl halide, etc.)", "Second Addition (with excess reagent) \u2192 double bond \u2192 fully saturated product", "Markovnikov applies to BOTH additions \u2192 same selectivity logic each time"], "rule": "Controlling the amount of reagent (1 equivalent vs excess) determines whether the reaction stops after the first addition or proceeds to full saturation.", "tip": "Alkynes are generally MORE reactive than alkenes toward addition reactions, due to the higher electron density concentrated in the triple bond."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each scenario by the number of addition reactions occurring.", "items": ["Alkene + 1 equivalent HBr", "Alkyne + 1 equivalent HBr", "Alkyne + excess HBr"], "categories": ["One addition only", "Two additions (full saturation)"], "answers": {"Alkene + 1 equivalent HBr": "One addition only", "Alkyne + 1 equivalent HBr": "One addition only", "Alkyne + excess HBr": "Two additions (full saturation)"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Alkynes can undergo TWO sequential addition reactions (triple → double → single bond)</li><li>Both additions follow Markovnikov's Rule, same underlying mechanism as alkenes</li><li>Amount of reagent (limited vs excess) controls whether reaction stops at one or two additions</li><li>Alkynes are generally more reactive than alkenes in addition reactions</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 9.4-6, 7, 8<br>
+      Assignment: 9.4-9, 10
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch10_w31_s01-02';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(10, 31, '01-02');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch10 W29 S03-04 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 10 | Week 29 | Session 3-4</div>
+    <div class="session-title">Hydrocarbons</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 10 | Week 29 | Session 3-4 | December 3-4, 2026</div>
+    <h1>ALKANES: PREPARATION, PROPERTIES & HALOGENATION</h1>
+    <div class="topics">Topics covered today:<br>9.2.2-9.2.3 Preparation, Properties, Halogenation</div>
+  </div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "reaction-profile", "revealSteps": true, "caption": "Click REVEAL to build alkane preparation methods: Wurtz reaction (2 R-X + 2Na \u2192 R-R) \u2192 catalytic hydrogenation of alkenes \u2192 decarboxylation of carboxylic acid salts."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="animation" data-config='{"sequence": "reaction-mechanism", "steps": ["A halogen molecule (Cl2) absorbs UV light and splits into two highly reactive chlorine radicals (initiation).", "A chlorine radical attacks methane, pulling off one hydrogen and forming a methyl radical plus HCl.", "The methyl radical attacks another Cl2 molecule, forming chloromethane and a new chlorine radical.", "This new radical repeats the cycle (propagation), continuing the chain reaction until radicals combine and terminate it."], "stepByStep": true, "caption": "Click PLAY, then NEXT STEP to see the free radical chain mechanism of alkane halogenation: initiation, propagation, termination."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Alkane halogenation requires either UV light or high temperature to even START \u2014 yet once started, the reaction proceeds rapidly and continuously without needing constant energy input. What type of mechanism explains this 'hard to start, easy to continue' behaviour?", "hint": "Think about a chain that, once the first link breaks, keeps breaking on its own.", "answer": "A FREE RADICAL CHAIN MECHANISM \u2014 initiation requires energy (breaking Cl2 into radicals), but propagation steps are self-sustaining", "explanation": "The initiation step (splitting Cl2 into radicals) requires UV light or heat because breaking a covalent bond evenly (homolytically) needs energy input. But once radicals exist, propagation steps are exothermic and self-sustaining \u2014 each step generates a new radical that immediately continues the chain, requiring no further external energy until termination eventually occurs."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Initiate, Propagate, Terminate", "breakdown": ["Initiate \u2192 Cl2 splits into 2 chlorine radicals using light/heat (energy required)", "Propagate \u2192 radicals react with alkane and Cl2 in a repeating, self-sustaining cycle", "Terminate \u2192 two radicals combine, ending the chain (radical + radical \u2192 stable molecule)"], "rule": "Wurtz reaction (2RX + 2Na \u2192 R-R + 2NaX) is best for making symmetric alkanes with an EVEN number of carbons doubled from the starting halide.", "tip": "Free radical halogenation of alkanes with multiple C-H environments often gives a MIXTURE of products \u2014 not perfectly selective."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each step to its stage in the free radical chain mechanism.", "items": ["Cl2 splits into 2 radicals", "Radical attacks methane, forms HCl + methyl radical", "Two radicals combine to form a stable molecule"], "categories": ["Initiation", "Propagation", "Termination"], "answers": {"Cl2 splits into 2 radicals": "Initiation", "Radical attacks methane, forms HCl + methyl radical": "Propagation", "Two radicals combine to form a stable molecule": "Termination"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Alkane preparation: Wurtz reaction, hydrogenation of alkenes, decarboxylation</li><li>Halogenation proceeds via free radical chain mechanism: initiation, propagation, termination</li><li>Initiation requires UV light/heat; propagation is self-sustaining</li><li>Halogenation often gives a mixture of products due to multiple C-H environments</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 9.2-2, 3, 4<br>
+      Assignment: 9.2-5, 6
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch10_w29_s03-04';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(10, 29, '03-04');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

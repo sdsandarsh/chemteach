@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch10 W31 S05-06 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 10 | Week 31 | Session 5-6</div>
+    <div class="session-title">Hydrocarbons</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 10 | Week 31 | Session 5-6 | December 18-19, 2026</div>
+    <h1>AROMATICITY & BENZENE PREPARATION</h1>
+    <div class="topics">Topics covered today:<br>9.5.3-9.5.4 Aromaticity, Benzene Preparation</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Benzene is exceptionally stable due to its delocalized pi electron system \u2014 but is EVERY ring with alternating double bonds automatically this stable?"}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "Cyclooctatetraene (an 8-carbon ring with alternating double bonds) is NOT exceptionally stable like benzene, despite looking superficially similar. What specific rule decides which rings get this special 'aromatic' stability?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Huckel's Rule: a ring is aromatic ONLY if it is planar, fully conjugated, AND has exactly (4n+2) pi electrons. Benzene (6 pi electrons, n=1) qualifies; cyclooctatetraene (8 pi electrons) does not."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "energy-level-diagram", "revealSteps": true, "caption": "Click REVEAL to build Huckel's Rule requirements one at a time: (1) cyclic, (2) planar, (3) fully conjugated (continuous overlapping p-orbitals), (4) exactly 4n+2 pi electrons."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Cyclooctatetraene has 8 pi electrons in a conjugated ring \u2014 but 8 does NOT fit the formula 4n+2 for any whole number n (4n+2 gives 2, 6, 10, 14...). What does Huckel's Rule predict about its aromaticity, and is this consistent with its actual observed lack of special stability?", "hint": "Check if 8 fits the 4n+2 pattern for any integer n.", "answer": "Huckel's Rule predicts cyclooctatetraene is NOT aromatic, since 8 doesn't satisfy 4n+2 for any integer \u2014 and this matches its observed normal (non-aromatic) reactivity", "explanation": "4n+2 gives 2, 6, 10, 14... for n=0,1,2,3. Since 8 doesn't appear in this sequence, Huckel's Rule correctly predicts cyclooctatetraene lacks aromatic stabilization \u2014 consistent with experimental observation that it behaves like an ordinary alkene-containing ring, not like the exceptionally stable benzene."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Planar, Conjugated, 4n+2", "breakdown": ["Planar \u2192 the ring must be flat for p-orbitals to align and overlap properly", "Conjugated \u2192 continuous, unbroken overlapping p-orbitals around the entire ring", "4n+2 \u2192 exact pi electron count must fit this formula (2, 6, 10, 14...) for n = 0, 1, 2, 3..."], "rule": "Benzene preparation: from coal tar distillation (industrial), or via cyclic trimerization of acetylene (laboratory method, 3 HC\u2261CH \u2192 benzene).", "tip": "All three Huckel conditions (planar, conjugated, AND 4n+2) must be satisfied simultaneously \u2014 missing even one disqualifies aromaticity."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each pi electron count as Satisfying or Not Satisfying Huckel's 4n+2 rule.", "items": ["2 pi electrons", "4 pi electrons", "6 pi electrons (benzene)", "8 pi electrons"], "categories": ["Satisfies 4n+2", "Does Not Satisfy 4n+2"], "answers": {"2 pi electrons": "Satisfies 4n+2", "4 pi electrons": "Does Not Satisfy 4n+2", "6 pi electrons (benzene)": "Satisfies 4n+2", "8 pi electrons": "Does Not Satisfy 4n+2"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Huckel's Rule: aromaticity requires planar, fully conjugated ring with exactly (4n+2) pi electrons</li><li>Benzene satisfies all three conditions (6 pi electrons, n=1) — fully aromatic</li><li>Cyclooctatetraene (8 pi electrons) fails the 4n+2 condition — not aromatic</li><li>Benzene prepared industrially from coal tar, or via cyclic trimerization of acetylene</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 9.5-6, 7, 8<br>
+      Assignment: 9.5-9, 10
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch10_w31_s05-06';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(10, 31, '05-06');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

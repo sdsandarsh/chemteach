@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch10 W30 S03-04 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 10 | Week 30 | Session 3-4</div>
+    <div class="session-title">Hydrocarbons</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 10 | Week 30 | Session 3-4 | December 9-10, 2026</div>
+    <h1>OZONOLYSIS & POLYMERISATION OF ALKENES</h1>
+    <div class="topics">Topics covered today:<br>9.3 Ozonolysis, Polymerisation</div>
+  </div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "reaction-profile", "revealSteps": true, "caption": "Click REVEAL to build: ozonolysis (O3 then Zn/H2O) cleaves C=C completely into two carbonyl compounds \u2192 used to determine exact position of a double bond in an unknown alkene."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Ozonolysis is one of the most powerful tools for determining WHERE a double bond was located in an unknown alkene, even before modern spectroscopy existed. Why does completely CLEAVING the double bond (rather than just adding across it) provide this positional information?", "hint": "Think about what information survives versus what information is destroyed by simple addition reactions.", "answer": "Because cleaving the bond produces two SEPARATE carbonyl fragments whose identities reveal EXACTLY which carbons were on each side of the original double bond", "explanation": "Unlike addition reactions (which keep the carbon skeleton intact and don't reveal where the double bond was), ozonolysis breaks the molecule into two distinct pieces at the exact double bond location. By identifying the two resulting carbonyl compounds (aldehydes/ketones), chemists can work backward to reconstruct exactly where the original C=C bond was positioned in the unknown alkene."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "A single alkene molecule (like ethene) is small and simple \u2014 just a handful of atoms."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "Plastic bags, bottles, and countless everyday materials are made of polyethylene \u2014 yet polyethylene isn't found in nature as a small molecule. How does simple ethene become a giant plastic material?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Polymerisation: thousands of small alkene molecules (monomers) link together one after another through their double bonds, forming one enormous chain molecule (polymer) \u2014 exactly how polyethylene is made from ethene."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Ozone Cleaves, Polymers Weave", "breakdown": ["Ozone Cleaves \u2192 ozonolysis (O3, then Zn/H2O) completely breaks the C=C bond, forming two carbonyl compounds", "Polymers Weave \u2192 polymerisation links many alkene monomers together into one long-chain polymer", "Addition Polymerisation \u2192 monomers add together with NO atoms lost (unlike condensation polymerisation)"], "rule": "Ozonolysis is used analytically (to determine double bond position); polymerisation is used industrially (to manufacture materials like polyethylene, polypropylene).", "tip": "Polyethylene is formed via addition polymerisation of ethene monomers under high pressure with a catalyst."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Match each process to its primary use/purpose.", "items": ["Ozonolysis", "Polymerisation"], "categories": ["Determines double bond position (analytical)", "Manufactures plastics/materials (industrial)"], "answers": {"Ozonolysis": "Determines double bond position (analytical)", "Polymerisation": "Manufactures plastics/materials (industrial)"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Ozonolysis: O3 then Zn/H2O cleaves C=C completely into two carbonyl fragments</li><li>Used analytically to determine the exact position of a double bond</li><li>Polymerisation: many alkene monomers link via addition to form one long polymer chain</li><li>Polyethylene is manufactured industrially via addition polymerisation of ethene</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 9.3-11, 12<br>
+      Assignment: 9.3-13, 14
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch10_w30_s03-04';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(10, 30, '03-04');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>

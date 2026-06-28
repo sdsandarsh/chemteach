@@ -1,1 +1,148 @@
-<!-- CONTENT PENDING -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch10 W32 S05-06 | ChemTeach</title>
+<link rel="stylesheet" href="../../../assets/design-tokens.css">
+<link rel="stylesheet" href="../../../assets/session.css">
+</head>
+<body>
+
+<div class="slide-header">
+  <div>
+    <div class="crumb">Chapter 10 | Week 32 | Session 5-6</div>
+    <div class="session-title">Hydrocarbons</div>
+  </div>
+  <div class="top-controls">
+    <button id="btn-home">HOME</button>
+    <button id="btn-complete">MARK COMPLETE</button>
+    <button id="btn-fullscreen">FULLSCREEN</button>
+  </div>
+</div>
+
+<div class="slide active" data-type="static">
+  <div class="title-card">
+    <div class="meta">Chapter 10 | Week 32 | Session 5-6 | December 26-28, 2026</div>
+    <h1>CARCINOGENICITY & TOXICITY OF AROMATIC HYDROCARBONS</h1>
+    <div class="topics">Topics covered today:<br>9.6 Carcinogenicity and Toxicity</div>
+  </div>
+</div>
+
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "YOU ALREADY KNOW THIS", "text": "Benzene and other aromatic hydrocarbons are widely used as industrial solvents and fuel additives, valued for their chemical stability."}, "bridge": {"label": "BUT HERE IS THE QUESTION", "text": "Despite being chemically stable and useful, why are benzene and certain other aromatic compounds specifically flagged as serious health hazards, including links to cancer?"}, "unknown": {"label": "TODAY'S ANSWER", "text": "Certain polycyclic aromatic hydrocarbons (PAHs), formed especially during incomplete combustion, are metabolized in the body into reactive intermediates that can damage DNA directly \u2014 making them carcinogenic (cancer-causing)."}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="visual-explain" data-config='{"diagram": "bond-polarity-spectrum", "revealSteps": true, "caption": "Click REVEAL to build: benzene and PAHs (like benzpyrene) \u2192 formed during incomplete combustion (tobacco smoke, vehicle exhaust, charred food) \u2192 metabolized in the body into reactive epoxide intermediates \u2192 these bind to and damage DNA."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="riddle" data-config='{"question": "Benzene itself is relatively stable and doesn't directly damage DNA on contact. Yet it is still classified as a carcinogen. How can a chemically stable, seemingly 'harmless' molecule end up causing cancer?", "hint": "Think about what happens to benzene AFTER it enters the body \u2014 does it stay unchanged, or does something process it?", "answer": "Because the body's own metabolic enzymes CONVERT benzene into reactive intermediate compounds, and THESE metabolites \u2014 not benzene itself \u2014 are what actually damage DNA", "explanation": "Benzene is processed by liver enzymes (notably cytochrome P450) into reactive intermediates like benzene oxide, which are far more chemically reactive than benzene itself. These reactive metabolites can bind to and damage DNA, disrupting normal cell division and potentially triggering cancer \u2014 the danger comes from what the body TURNS benzene into, not from benzene's own (relatively unreactive) structure."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Stable Outside, Reactive Inside", "breakdown": ["Stable Outside \u2192 benzene/PAHs are chemically stable as encountered in the environment", "Reactive Inside \u2192 metabolized in the body into reactive intermediates that damage DNA", "PAHs \u2192 Polycyclic Aromatic Hydrocarbons, formed from incomplete combustion (smoke, exhaust, charred food)"], "rule": "This is why minimizing exposure to combustion byproducts (smoke, vehicle exhaust, overly charred food) reduces cancer risk \u2014 even though the molecules themselves seem chemically unremarkable.", "tip": "This completes the deep-dive into aromatic chemistry \u2014 structure, reactivity, AND the real-world health implications of these widely used industrial compounds."}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="gamification" data-config='{"instruction": "Sort each statement as True or False regarding benzene/PAH carcinogenicity.", "items": ["Benzene itself directly damages DNA on contact", "Liver metabolism converts benzene into reactive intermediates", "PAHs form during incomplete combustion", "Aromatic stability means zero health risk"], "categories": ["True", "False"], "answers": {"Benzene itself directly damages DNA on contact": "False", "Liver metabolism converts benzene into reactive intermediates": "True", "PAHs form during incomplete combustion": "True", "Aromatic stability means zero health risk": "False"}}'>
+  <div class="component-container"></div>
+</div>
+
+<div class="slide" data-type="static">
+  <div class="summary-card">
+    <h1>✓ SESSION COMPLETE</h1>
+    <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
+    <ul><li>Benzene and PAHs are chemically stable but are metabolized into reactive, DNA-damaging intermediates</li><li>PAHs form especially during incomplete combustion (smoke, exhaust, charred food)</li><li>Carcinogenicity arises from metabolic activation, not direct reactivity of the parent molecule</li><li>Minimizing combustion byproduct exposure reduces associated cancer risk</li></ul>
+    <div class="mcq-block">
+      <strong>NCERT MCQs:</strong><br>
+      Classwork: 9.6-1, 2, 3<br>
+      Assignment: 9.6-4, 5
+    </div>
+  </div>
+</div>
+
+<div class="slide-nav">
+  <button id="btn-prev">◀ PREV</button>
+  <span id="slide-counter">Slide 1 of 7</span>
+  <button id="btn-next">NEXT ▶</button>
+</div>
+
+<script src="../../../progress.js"></script>
+<script src="../../../components/story.js"></script>
+<script src="../../../components/scaffold.js"></script>
+<script src="../../../components/particle-sim.js"></script>
+<script src="../../../components/model-3d.js"></script>
+<script src="../../../components/analogy.js"></script>
+<script src="../../../components/visual-explain.js"></script>
+<script src="../../../components/drag-drop.js"></script>
+<script src="../../../components/riddle.js"></script>
+<script src="../../../components/mnemonic.js"></script>
+<script src="../../../components/comic-strip.js"></script>
+<script src="../../../components/animation.js"></script>
+<script>
+const SESSION_ID = 'ch10_w32_s05-06';
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, slides.length - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('slide-counter').textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+  document.getElementById('btn-prev').disabled = currentSlide === 0;
+  document.getElementById('btn-next').disabled = currentSlide === slides.length - 1;
+  ChemProgress.setLastSlide(SESSION_ID, currentSlide + 1);
+  initCurrentSlide();
+}
+
+function initCurrentSlide() {
+  const slide = slides[currentSlide];
+  const type = slide.dataset.type;
+  const container = slide.querySelector('.component-container');
+  if (!container || container.dataset.init === 'true') return;
+  container.dataset.init = 'true';
+  const config = JSON.parse(slide.dataset.config || '{}');
+  switch (type) {
+    case 'story': Story.init(container, config); break;
+    case 'known-unknown': Scaffold.init(container, config); break;
+    case 'experiment-sim': ParticleSim.init(container, config); break;
+    case 'model-3d': Model3D.init(container, config); break;
+    case 'analogy': Analogy.init(container, config); break;
+    case 'visual-explain': VisualExplain.init(container, config); break;
+    case 'gamification': DragDrop.init(container, config); break;
+    case 'riddle': Riddle.init(container, config); break;
+    case 'mnemonic': Mnemonic.init(container, config); break;
+    case 'comic-strip': ComicStrip.init(container, config); break;
+    case 'animation': ChemAnimation.init(container, config); break;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+
+document.getElementById('btn-prev').onclick = () => goToSlide(currentSlide - 1);
+document.getElementById('btn-next').onclick = () => goToSlide(currentSlide + 1);
+document.getElementById('btn-home').onclick = () => window.location.href = '../../../index.html';
+document.getElementById('btn-complete').onclick = () => {
+  ChemProgress.markComplete(SESSION_ID);
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+};
+document.getElementById('btn-fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+
+ChemProgress.setLastOpened(10, 32, '05-06');
+const savedSlide = ChemProgress.getLastSlide(SESSION_ID);
+goToSlide(savedSlide - 1);
+if (ChemProgress.isComplete(SESSION_ID)) {
+  const btn = document.getElementById('btn-complete');
+  btn.textContent = '✓ COMPLETE';
+  btn.classList.add('is-complete');
+}
+</script>
+</body>
+</html>
