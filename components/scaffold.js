@@ -61,11 +61,15 @@ window.Scaffold = (() => {
     let shown = 0;
     function showNext() {
       if (shown >= panels.length) return;
-      panels[shown].style.display = 'block';
-      requestAnimationFrame(() => {
-        panels[shown].style.opacity = '1';
-        panels[shown].style.transform = 'translateY(0)';
-      });
+      const currentIdx = shown;
+      panels[currentIdx].style.display = 'block';
+      
+      // Use setTimeout to ensure display: block is processed before transition starts
+      setTimeout(() => {
+        panels[currentIdx].style.opacity = '1';
+        panels[currentIdx].style.transform = 'translateY(0)';
+      }, 10);
+      
       shown++;
       progress.textContent = `${shown} of ${panels.length}`;
       if (shown >= panels.length) {

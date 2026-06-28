@@ -3,8 +3,6 @@
  * Sci-Fi styling for the Quantum Control Deck interactive simulations.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
-
 :root {
   --qd-bg-dark: #030712;
   --qd-bg-panel: #0b0f19;
@@ -31,7 +29,7 @@
 }
 
 .qd-tech-font {
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--font-main);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -104,7 +102,7 @@
   color: var(--qd-slate-400);
   padding: 8px 16px;
   border-radius: 8px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--font-main);
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
@@ -191,7 +189,7 @@
 }
 
 .qd-title {
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--font-main);
   font-size: 18px;
   font-weight: 700;
   color: var(--qd-white);
@@ -231,7 +229,7 @@
 }
 
 .qd-stat-value {
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--font-main);
   font-size: 14px;
   font-weight: 700;
 }

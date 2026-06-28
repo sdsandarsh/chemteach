@@ -116,7 +116,7 @@ window.QuantumSim = (() => {
         ctx.shadowBlur = 0;
         
         ctx.fillStyle = '#fff';
-        ctx.font = '12px Orbitron';
+        ctx.font = '12px sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(atomType === 'H' ? '+1' : '+2', cx, cy);
