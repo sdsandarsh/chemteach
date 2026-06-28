@@ -4,8 +4,8 @@
  * config: { model, labels, rotatable, caption }
  */
 window.Model3D = (() => {
-  function atom(x, y, z, size, color, label, orbit) {
-    return { type: 'atom', x, y, z, size, color, label, orbit };
+  function atom(x, y, z, size, color, label, orbit, glow) {
+    return { type: 'atom', x, y, z, size, color, label, orbit, glow };
   }
   function bond(x1, y1, z1, x2, y2, z2, color) {
     return { type: 'bond', x1, y1, z1, x2, y2, z2, color };
@@ -16,20 +16,20 @@ window.Model3D = (() => {
 
   const MODELS = {
     'atom-bohr': () => {
-      const els = [atom(0, 0, 0, 36, '#FFD740', 'Nucleus')];
+      const els = [atom(0, 0, 0, 40, '#FFD740', '', null, true)];
       
       // Orbit n=1
-      els.push(ring(0, 0, 0, 70, 'rgba(0, 180, 204, 0.4)'));
+      els.push(ring(0, 0, 0, 70, 'rgba(0, 229, 255, 0.3)'));
       for (let i = 0; i < 2; i++) {
         const a = i * Math.PI;
-        els.push(atom(0, 0, 0, 12, '#00B4CC', 'e-', { radius: 70, angle: a, speed: 0.02 }));
+        els.push(atom(0, 0, 0, 14, '#00E5FF', '', { radius: 70, angle: a, speed: 0.02 }, true));
       }
       
       // Orbit n=2
-      els.push(ring(0, 0, 0, 130, 'rgba(0, 180, 204, 0.4)'));
+      els.push(ring(0, 0, 0, 130, 'rgba(0, 229, 255, 0.3)'));
       for (let i = 0; i < 8; i++) {
         const a = (i / 8) * Math.PI * 2;
-        els.push(atom(0, 0, 0, 10, '#00E5FF', 'e-', { radius: 130, angle: a, speed: 0.01 }));
+        els.push(atom(0, 0, 0, 12, '#00E5FF', '', { radius: 130, angle: a, speed: 0.01 }, true));
       }
       return els;
     },
@@ -126,8 +126,8 @@ window.Model3D = (() => {
     stage.style.overflow = 'hidden';
 
     const scene = document.createElement('div');
-    scene.style.width = '100%';
-    scene.style.height = '100%';
+    scene.style.width = '0';
+    scene.style.height = '0';
     scene.style.position = 'absolute';
     scene.style.top = '50%';
     scene.style.left = '50%';
@@ -142,7 +142,15 @@ window.Model3D = (() => {
         dot.style.width = el.size + 'px';
         dot.style.height = el.size + 'px';
         dot.style.borderRadius = '50%';
-        dot.style.background = el.color;
+        
+        if (el.glow) {
+          dot.style.background = `radial-gradient(circle, #FFFFFF 10%, ${el.color} 70%)`;
+          dot.style.boxShadow = `0 0 20px ${el.color}, 0 0 40px ${el.color}`;
+        } else {
+          dot.style.background = `radial-gradient(circle at 30% 30%, #FFFFFF 10%, ${el.color} 80%)`;
+          dot.style.boxShadow = `0 4px 10px rgba(0,0,0,0.5)`;
+        }
+
         if (el.orbit) {
           el.x = Math.cos(el.orbit.angle) * el.orbit.radius;
           el.y = Math.sin(el.orbit.angle) * el.orbit.radius;
@@ -150,19 +158,23 @@ window.Model3D = (() => {
         dot.style.left = (el.x - el.size / 2) + 'px';
         dot.style.top = (el.y - el.size / 2) + 'px';
         dot.style.transform = `translateZ(${el.z}px)`;
-        dot.style.boxShadow = '0 0 12px rgba(0,180,204,0.4)';
         dot.style.display = 'flex';
         dot.style.alignItems = 'center';
         dot.style.justifyContent = 'center';
-        dot.style.fontSize = '10px';
-        dot.style.color = '#0D1B2A';
+        dot.style.fontSize = '12px';
+        dot.style.color = '#FFFFFF';
+        dot.style.textShadow = '0 1px 3px rgba(0,0,0,0.8)';
         dot.style.fontWeight = 'bold';
-        const lbl = document.createElement('span');
-        lbl.textContent = el.label || '';
-        lbl.className = 'model3d-label';
-        lbl.style.display = showLabels ? 'block' : 'none';
-        dot.appendChild(lbl);
-        dot.dataset.labelEl = '1';
+        
+        if (el.label) {
+          const lbl = document.createElement('span');
+          lbl.textContent = el.label;
+          lbl.className = 'model3d-label';
+          lbl.style.display = showLabels ? 'block' : 'none';
+          dot.appendChild(lbl);
+          dot.dataset.labelEl = '1';
+        }
+        
         el.domElement = dot;
         scene.appendChild(dot);
       } else if (el.type === 'ring') {
