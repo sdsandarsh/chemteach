@@ -130,22 +130,38 @@
     margin-bottom: 1.5rem;
   }
   .q-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
-  .q-option {
-    background: var(--mcq-bg);
-    border: 1px solid var(--mcq-border);
-    padding: 0.75rem;
-    border-radius: 6px;
+  .q-options-container {
+    position: relative;
+    margin-top: 1.5rem;
+  }
+
+  /* Reference MCQ Option Styles */
+  .opt { 
+    display: flex; align-items: center; gap: 16px; width: 100%; text-align: left; 
+    background: rgba(255,255,255,.04); border: 2px solid rgba(255,255,255,.08);
+    color: var(--mcq-text); padding: 12px 18px; border-radius: 12px; margin-bottom: 12px; font-size: 1.1rem;
+    cursor: pointer; transition: all .18s cubic-bezier(.2,.85,.3,1.1); line-height: 1.4; 
+  }
+  .opt-letter {
+    flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px; background: rgba(255,255,255,.02);
+    border: 1.5px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.9rem; color: #8b949e; transition: all .18s;
+  }
+  .opt-text { flex: 1; }
+  .opt:hover { 
+    background: rgba(88, 166, 255, .1); border-color: rgba(88, 166, 255, .4); 
+    transform: translateX(4px) scale(1.005); 
+  }
+  .opt:hover .opt-letter { 
+    background: var(--mcq-primary); color: #fff; border-color: var(--mcq-primary); 
   }
 
   /* HW Assignment Mode */
   .hw-btn {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
     background: transparent;
     border: 1px solid var(--mcq-accent);
     color: var(--mcq-accent);
@@ -163,17 +179,18 @@
 
   .hw-overlay {
     position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 100%;
-    background: rgba(13, 17, 23, 0.95);
-    backdrop-filter: blur(4px);
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(13, 17, 23, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    border-radius: 12px;
     z-index: 10;
-    animation: fadeIn 0.3s ease forwards;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
     border: 2px dashed var(--mcq-accent);
   }
   .hw-overlay h3 {
@@ -291,13 +308,22 @@
         card.innerHTML = `
           <div class="q-meta">
             <span>${q.category} | Page ${q.page || '?'}</span>
-            <span>Q${q.qNum}</span>
+            <span style="display:flex; align-items:center; gap:12px;">
+              <button class="hw-btn" onclick="triggerHW(this)">HW</button>
+              <span>Q${q.qNum}</span>
+            </span>
           </div>
-          <button class="hw-btn" onclick="triggerHW(this)">HW</button>
           <div class="q-body">
             <div class="q-text">${q.text}</div>
-            <div class="q-options">
-              ${q.options.map((opt, i) => `<div class="q-option">(${String.fromCharCode(97+i)}) ${opt}</div>`).join('')}
+            <div class="q-options-container">
+              <div class="q-options">
+                ${q.options.map((opt, i) => `
+                  <button class="opt">
+                    <div class="opt-letter">${String.fromCharCode(97+i)}</div>
+                    <div class="opt-text">${opt}</div>
+                  </button>
+                `).join('')}
+              </div>
             </div>
           </div>
         `;
@@ -327,15 +353,12 @@
         <h3>!!! ASSIGNMENT !!!</h3>
         <p>Let's see if you can do it 📝🎯</p>
       `;
-      // Overlay covers the whole options section. Let's cover the whole body except question text? 
-      // Actually, user said: "the options below the question should block after 3 seconds and the space should read Assignment MCQ"
-      const optionsDiv = card.querySelector('.q-options');
-      optionsDiv.style.position = 'relative';
-      optionsDiv.innerHTML = '';
-      optionsDiv.appendChild(overlay);
+      const optionsContainer = card.querySelector('.q-options-container');
+      optionsContainer.appendChild(overlay);
       
-      // Remove btn
-      btn.remove();
+      // Remove btn smoothly
+      btn.style.opacity = '0';
+      setTimeout(() => btn.remove(), 200);
     }, 3000);
   }
 
