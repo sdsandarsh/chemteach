@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCQs | Chapter 2</title>
+<link rel="stylesheet" href="../../assets/design-tokens.css">
+<style>
+  :root {
+    --mcq-bg: #0d1117;
+    --mcq-surface: #161b22;
+    --mcq-border: #30363d;
+    --mcq-text: #c9d1d9;
+    --mcq-primary: #58a6ff;
+    --mcq-accent: #ff7b72;
+    --mcq-success: #238636;
+    --mcq-hw-bg: #1f2428;
+  }
+  body {
+    background-color: var(--mcq-bg);
+    color: var(--mcq-text);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: var(--mcq-surface);
+    border-bottom: 1px solid var(--mcq-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .app-header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--mcq-primary);
+  }
+  .back-btn {
+    color: var(--mcq-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--mcq-border);
+    border-radius: 4px;
+    background: var(--mcq-surface);
+  }
+  .back-btn:hover {
+    background: #21262d;
+  }
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Category Menu */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .category-btn {
+    background: var(--mcq-surface);
+    border: 1px solid var(--mcq-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--mcq-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-weight: 600;
+  }
+  .category-btn:hover {
+    border-color: var(--mcq-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.1);
+  }
+
+  /* Question View */
+  #question-view {
+    display: none;
+  }
+  .view-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+  .view-header h2 {
+    margin: 0;
+  }
+
+  /* Topics & Questions */
+  .topic-group {
+    margin-bottom: 3rem;
+  }
+  .topic-header {
+    background: var(--mcq-surface);
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--mcq-primary);
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--mcq-primary);
+  }
+  
+  .q-card {
+    background: var(--mcq-surface);
+    border: 1px solid var(--mcq-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .q-meta {
+    font-size: 0.85rem;
+    color: #8b949e;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--mcq-border);
+    padding-bottom: 0.5rem;
+  }
+  .q-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .q-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .q-option {
+    background: var(--mcq-bg);
+    border: 1px solid var(--mcq-border);
+    padding: 0.75rem;
+    border-radius: 6px;
+  }
+
+  /* HW Assignment Mode */
+  .hw-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: 1px solid var(--mcq-accent);
+    color: var(--mcq-accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .hw-btn:hover {
+    background: var(--mcq-accent);
+    color: #fff;
+  }
+
+  .hw-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 100%;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    z-index: 10;
+    animation: fadeIn 0.3s ease forwards;
+    border: 2px dashed var(--mcq-accent);
+  }
+  .hw-overlay h3 {
+    color: var(--mcq-accent);
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    animation: blink 1s infinite alternate;
+  }
+  .hw-overlay p {
+    color: var(--mcq-text);
+    margin: 0;
+  }
+
+  @keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0.6; }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Math rendering tweaks */
+  .math {
+    font-family: "Cambria Math", "Times New Roman", serif;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha512-6FaAxxO+jlb4t10W59v3Q49+0u115a3N4x5/u+V0U7n/Yf/tB6CokM/U+iX+J3Jq1hDbnxI63LgWq3WqFwIeTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+<header class="app-header">
+  <h1>ChemTeach | Chapter 2 MCQs</h1>
+  <a href="../../index.html" class="back-btn">← Back to Dashboard</a>
+</header>
+
+<div class="container">
+  
+  <div id="home-view">
+    <h2 style="margin-top:0; margin-bottom: 2rem;">Select Question Category</h2>
+    <div class="category-grid" id="category-grid">
+      <button class="category-btn" data-cat="NCERT Extract (MCQs CORNER)">NCERT Extract (MCQs CORNER)</button>
+      <button class="category-btn" data-cat="NCERT Exemplar Problems">NCERT Exemplar</button>
+      <button class="category-btn" data-cat="Assertion & Reason Questions">Assertion & Reason Questions</button>
+      <button class="category-btn" data-cat="Statement Based Questions">Statement Based Questions</button>
+      <button class="category-btn" data-cat="Numerical Value Type Questions">Numerical Value Type Questions</button>
+      <button class="category-btn" data-cat="Exam Archive">Exam Archive</button>
+    </div>
+  </div>
+
+  <div id="question-view">
+    <div class="view-header">
+      <button class="back-btn" id="btn-back-home">← Categories</button>
+      <h2 id="current-category-title"></h2>
+    </div>
+    <div id="questions-container"></div>
+  </div>
+
+</div>
+
+<script src="mcq-data.js"></script>
+<script>
+  const homeView = document.getElementById('home-view');
+  const questionView = document.getElementById('question-view');
+  const questionsContainer = document.getElementById('questions-container');
+  const catTitle = document.getElementById('current-category-title');
+
+  // Handle Category Clicks
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const cat = e.target.getAttribute('data-cat');
+      renderQuestions(cat);
+      homeView.style.display = 'none';
+      questionView.style.display = 'block';
+      catTitle.textContent = cat;
+    });
+  });
+
+  // Handle Back
+  document.getElementById('btn-back-home').addEventListener('click', () => {
+    questionView.style.display = 'none';
+    homeView.style.display = 'block';
+  });
+
+  function renderQuestions(category) {
+    questionsContainer.innerHTML = '';
+    
+    // Filter questions by category
+    const catQs = MCQs.filter(q => q.category === category);
+    
+    if (catQs.length === 0) {
+      questionsContainer.innerHTML = '<p>No questions transcribed yet for this category.</p>';
+      return;
+    }
+
+    // Group by topic
+    const grouped = {};
+    catQs.forEach(q => {
+      if (!grouped[q.topic]) grouped[q.topic] = [];
+      grouped[q.topic].push(q);
+    });
+
+    Object.keys(grouped).forEach(topic => {
+      const topicDiv = document.createElement('div');
+      topicDiv.className = 'topic-group';
+      
+      if (topic !== "General") {
+        topicDiv.innerHTML = `<div class="topic-header">${topic}</div>`;
+      }
+      
+      grouped[topic].forEach(q => {
+        const card = document.createElement('div');
+        card.className = 'q-card';
+        card.innerHTML = `
+          <div class="q-meta">
+            <span>${q.category} | Page ${q.page || '?'}</span>
+            <span>Q${q.qNum}</span>
+          </div>
+          <button class="hw-btn" onclick="triggerHW(this)">HW</button>
+          <div class="q-body">
+            <div class="q-text">${q.text}</div>
+            <div class="q-options">
+              ${q.options.map((opt, i) => `<div class="q-option">(${String.fromCharCode(97+i)}) ${opt}</div>`).join('')}
+            </div>
+          </div>
+        `;
+        topicDiv.appendChild(card);
+      });
+      
+      questionsContainer.appendChild(topicDiv);
+    });
+    
+    if(window.MathJax) {
+      MathJax.typesetPromise();
+    }
+  }
+
+  function triggerHW(btn) {
+    const card = btn.closest('.q-card');
+    const body = card.querySelector('.q-body');
+    
+    // Disable btn
+    btn.disabled = true;
+    btn.textContent = "Assigning...";
+    
+    setTimeout(() => {
+      const overlay = document.createElement('div');
+      overlay.className = 'hw-overlay';
+      overlay.innerHTML = `
+        <h3>!!! ASSIGNMENT !!!</h3>
+        <p>Let's see if you can do it 📝🎯</p>
+      `;
+      // Overlay covers the whole options section. Let's cover the whole body except question text? 
+      // Actually, user said: "the options below the question should block after 3 seconds and the space should read Assignment MCQ"
+      const optionsDiv = card.querySelector('.q-options');
+      optionsDiv.style.position = 'relative';
+      optionsDiv.innerHTML = '';
+      optionsDiv.appendChild(overlay);
+      
+      // Remove btn
+      btn.remove();
+    }, 3000);
+  }
+
+  // Optional: Scroll to specific session topic if URL parameter exists
+  const urlParams = new URLSearchParams(window.location.search);
+  const sessionNum = urlParams.get('session');
+  if (sessionNum) {
+    // We could automatically filter or scroll based on session, but for now we just show categories
+  }
+</script>
+</body>
+</html>
