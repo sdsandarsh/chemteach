@@ -11,8 +11,10 @@
 <body>
 
 <header class="app-header">
-  <h1>ChemTeach | Chapter 2 MCQs</h1>
-  <a href="../../index.html" class="back-btn">← Back to Dashboard</a>
+  <div class="header-inner">
+    <h1>ChemTeach | Chapter 2 MCQs</h1>
+    <a href="../../index.html" class="back-btn">← Back to Dashboard</a>
+  </div>
 </header>
 
 <div class="container">
@@ -207,12 +209,11 @@
   }
 
   // Session topic / mapping
-  const urlParams = new URLSearchParams(window.location.search);
-  const sessionNum = urlParams.get('session');
-  if (sessionNum) {
-    document.getElementById('session-title-display').textContent = "Session: " + sessionNum;
-    document.getElementById('home-session-title').textContent = "Session: " + sessionNum;
-  }
+  const uniqueTopics = [...new Set(MCQs.map(q => q.topic).filter(t => t !== "General"))];
+  const sessionName = uniqueTopics.length > 0 ? uniqueTopics[0] : "Session MCQs";
+  
+  document.getElementById('home-session-title').textContent = sessionName;
+  document.getElementById('session-title-display').textContent = sessionName;
 </script>
 </body>
 </html>
