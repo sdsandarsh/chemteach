@@ -178,5 +178,140 @@ const MCQs = [
     ],
     correctOption: 3,
     explanation: "Bohr's model specifies exact well-defined circular orbits for electrons with specific positions and velocities. This contradicts Heisenberg's Uncertainty Principle, which states that it is impossible to determine simultaneously the exact position and momentum (velocity) of an electron."
+  },
+  {
+    category: "NCERT Exemplar Problems",
+    topic: "2.5 Towards Quantum Mechanical Model of the Atom",
+    page: 42,
+    qNum: 13,
+    text: "If travelling at same speeds, which of the following matter waves have the shortest wavelength?",
+    options: [
+      "Electron",
+      "Alpha particle (\\(\\text{He}^{2+}\\))",
+      "Neutron",
+      "Proton"
+    ],
+    correctOption: 1,
+    explanation: "According to de Broglie's equation, \\(\\lambda = \\frac{h}{mv}\\). For particles moving at the same speed (\\(v\\)), the wavelength \\(\\lambda\\) is inversely proportional to the mass \\(m\\). The alpha particle (\\(\\text{He}^{2+}\\)) has the largest mass among the given options (4 amu), so it will have the shortest wavelength."
+  },
+  {
+    category: "Assertion & Reason",
+    topic: "2.5 Towards Quantum Mechanical Model of the Atom",
+    page: 43,
+    qNum: 7,
+    text: "<b>Assertion :</b> According to de Broglie, the wavelengths associated with electrons and other subatomic particles can be detected experimentally.<br><b>Reason :</b> The wavelength associated with any material particle is directly proportional to its mass.",
+    options: [
+      "If both assertion and reason are true and reason is the correct explanation of assertion.",
+      "If both assertion and reason are true but reason is not the correct explanation of assertion.",
+      "If assertion is true but reason is false.",
+      "If both assertion and reason are false."
+    ],
+    correctOption: 2,
+    explanation: "The assertion is true, as the wave nature of electrons was experimentally verified (e.g., Davisson-Germer experiment). The reason is false because according to de Broglie's equation \\(\\lambda = \\frac{h}{mv}\\), the wavelength is <i>inversely</i> proportional to its mass."
+  },
+  {
+    category: "Matching Type Questions",
+    topic: "2.5 Towards Quantum Mechanical Model of the Atom",
+    page: 45,
+    qNum: 4,
+    text: "Match the column I with column II and mark the appropriate choice.<br><br><b>Column I</b><br>(A) Uncertainty of an object<br>(B) Bohr's radius of an orbit<br>(C) Angular momentum of an electron<br>(D) de Broglie wavelength<br><br><b>Column II</b><br>(i) \\(\\frac{5.29 \\times n^2}{Z}\\)<br>(ii) \\(\\frac{h}{4\\pi m}\\)<br>(iii) \\(\\frac{h}{mv}\\)<br>(iv) \\(n \\cdot \\frac{h}{2\\pi}\\)",
+    options: [
+      "(A) &rarr; (iii), (B) &rarr; (iv), (C) &rarr; (i), (D) &rarr; (ii)",
+      "(A) &rarr; (ii), (B) &rarr; (i), (C) &rarr; (iv), (D) &rarr; (iii)",
+      "(A) &rarr; (iv), (B) &rarr; (iii), (C) &rarr; (i), (D) &rarr; (ii)",
+      "(A) &rarr; (i), (B) &rarr; (ii), (C) &rarr; (iv), (D) &rarr; (iii)"
+    ],
+    correctOption: 1,
+    explanation: "<ul><li>(A) Uncertainty: \\(\\Delta x \\cdot \\Delta v \\geq \\frac{h}{4\\pi m}\\) &rarr; (ii)</li><li>(B) Bohr's radius: \\(r_n = \\frac{52.9 \\times n^2}{Z}\\) pm &rarr; (i)</li><li>(C) Angular momentum: \\(mvr = \\frac{nh}{2\\pi}\\) &rarr; (iv)</li><li>(D) de Broglie wavelength: \\(\\lambda = \\frac{h}{mv}\\) &rarr; (iii)</li></ul>"
+  },
+  {
+    category: "Numerical Value Type Questions",
+    topic: "2.5 Towards Quantum Mechanical Model of the Atom",
+    page: 46,
+    qNum: 6,
+    text: "The de Broglie wavelength of a ball of mass 10 g moving with a velocity of 10 m s\\(^{-1}\\) is",
+    options: [
+      "\\(6.626 \\times 10^{-33}\\) m",
+      "\\(6.626 \\times 10^{-29}\\) m",
+      "\\(6.626 \\times 10^{-31}\\) m",
+      "\\(6.626 \\times 10^{-36}\\) m"
+    ],
+    correctOption: 0,
+    explanation: "\\(\\lambda = \\frac{h}{mv}\\)<br>Mass \\(m = 10\\text{ g} = 0.01\\text{ kg}\\).<br>Velocity \\(v = 10\\text{ m s}^{-1}\\).<br>\\(\\lambda = \\frac{6.626 \\times 10^{-34}}{0.01 \\times 10} = 6.626 \\times 10^{-33}\\text{ m}\\)."
+  },
+  {
+    category: "Numerical Value Type Questions",
+    topic: "2.5 Towards Quantum Mechanical Model of the Atom",
+    page: 46,
+    qNum: 7,
+    text: "A 120 g cricket ball is thrown with a speed of 44.7 m/s, what will be its de Broglie wavelength?",
+    options: [
+      "\\(1.2 \\times 10^{-34}\\) cm",
+      "\\(1.2 \\times 10^{-32}\\) cm",
+      "\\(1.6 \\times 10^{-32}\\) cm",
+      "\\(1.6 \\times 10^{-30}\\) cm"
+    ],
+    correctOption: 1,
+    explanation: "\\(\\lambda = \\frac{h}{mv}\\)<br>Mass \\(m = 120\\text{ g} = 0.12\\text{ kg}\\).<br>\\(v = 44.7\\text{ m/s}\\).<br>\\(\\lambda = \\frac{6.626 \\times 10^{-34}}{0.12 \\times 44.7} = 1.235 \\times 10^{-34}\\text{ m} = 1.235 \\times 10^{-32}\\text{ cm}\\)."
+  },
+  {
+    category: "Numerical Value Type Questions",
+    topic: "2.5 Towards Quantum Mechanical Model of the Atom",
+    page: 46,
+    qNum: 8,
+    text: "A particle is moving 3 times faster than the speed of electron. If the ratio of wavelength of particle and electron is \\(1.8 \\times 10^{-4}\\), then particle is",
+    options: [
+      "neutron",
+      "\\(\\alpha\\)-particle",
+      "deuteron",
+      "tritium"
+    ],
+    correctOption: 0,
+    explanation: "Using \\(\\lambda = \\frac{h}{mv}\\), we get \\(\\frac{\\lambda_p}{\\lambda_e} = \\frac{m_e}{m_p} \\times \\frac{v_e}{v_p}\\).<br>Given \\(v_p = 3 v_e\\) and \\(\\frac{\\lambda_p}{\\lambda_e} = 1.8 \\times 10^{-4}\\).<br>\\(1.8 \\times 10^{-4} = \\frac{m_e}{m_p} \\times \\frac{1}{3} \\implies \\frac{m_p}{m_e} = \\frac{1}{3 \\times 1.8 \\times 10^{-4}} \\approx 1851\\).<br>The mass of a neutron is approx 1838 times that of an electron. Thus, the particle is a neutron."
+  },
+  {
+    category: "Numerical Value Type Questions",
+    topic: "2.5 Towards Quantum Mechanical Model of the Atom",
+    page: 46,
+    qNum: 9,
+    text: "The ratio of de Broglie wavelengths of a deuterium atom to that of an \\(\\alpha\\)-particle, when the velocity of the former is five times greater than that of the latter, is",
+    options: [
+      "4",
+      "0.2",
+      "2",
+      "0.4"
+    ],
+    correctOption: 3,
+    explanation: "\\(\\lambda = \\frac{h}{mv}\\) implies \\(\\frac{\\lambda_d}{\\lambda_\\alpha} = \\frac{m_\\alpha}{m_d} \\times \\frac{v_\\alpha}{v_d}\\).<br>Mass of \\(\\alpha\\)-particle \\(\\approx 4\\text{ amu}\\), mass of deuterium \\(\\approx 2\\text{ amu}\\) (Ratio \\(\\frac{m_\\alpha}{m_d} = 2\\)).<br>Velocity \\(v_d = 5 v_\\alpha\\) (Ratio \\(\\frac{v_\\alpha}{v_d} = \\frac{1}{5}\\)).<br>Ratio \\(\\frac{\\lambda_d}{\\lambda_\\alpha} = 2 \\times \\frac{1}{5} = 0.4\\)."
+  },
+  {
+    category: "Exam Archive",
+    topic: "2.5 Towards Quantum Mechanical Model of the Atom",
+    page: 48,
+    qNum: 8,
+    text: "If the radius of the first orbit of hydrogen atom is \\(a_0\\), then de Broglie's wavelength of electron in 3\\(^{\\text{rd}}\\) orbit is",
+    options: [
+      "\\(6\\pi a_0\\)",
+      "\\(\\frac{\\pi a_0}{6}\\)",
+      "\\(\\frac{\\pi a_0}{3}\\)",
+      "\\(3\\pi a_0\\)"
+    ],
+    correctOption: 0,
+    explanation: "According to Bohr's postulate, \\(mvr = \\frac{nh}{2\\pi}\\).<br>Since \\(\\lambda = \\frac{h}{mv}\\), we get \\(2\\pi r = n\\lambda\\).<br>For H-atom, radius of \\(n^{\\text{th}}\\) orbit \\(r_n = a_0 n^2\\). For \\(n = 3\\), \\(r_3 = 9a_0\\).<br>So, \\(2\\pi (9a_0) = 3\\lambda \\implies 18\\pi a_0 = 3\\lambda \\implies \\lambda = 6\\pi a_0\\)."
+  },
+  {
+    category: "Exam Archive",
+    topic: "2.5 Towards Quantum Mechanical Model of the Atom",
+    page: 50,
+    qNum: 16,
+    text: "Which one is the wrong statement?",
+    options: [
+      "The uncertainty principle is \\(\\Delta E \\times \\Delta t \\geq \\frac{h}{4\\pi}\\)",
+      "Half filled and fully filled orbitals have greater stability due to greater exchange energy, greater symmetry and more balanced arrangement.",
+      "The energy of \\(2s\\)-orbital is less than the energy of \\(2p\\)-orbital in case of hydrogen like atoms.",
+      "de-Broglie's wavelength is given by \\(\\lambda = \\frac{h}{mv}\\), where \\(m =\\) mass of the particle, \\(v =\\) group velocity of the particle."
+    ],
+    correctOption: 2,
+    explanation: "For hydrogen and hydrogen-like atoms (single-electron systems), the energy of an orbital depends ONLY on the principal quantum number \\(n\\). Therefore, the \\(2s\\) and \\(2p\\) orbitals are degenerate (have the exact same energy). The statement claiming \\(2s < 2p\\) is only true for multi-electron atoms."
   }
 ];
