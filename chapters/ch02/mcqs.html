@@ -18,7 +18,10 @@
 <div class="container">
   
   <div id="home-view">
-    <h2 style="margin-top:0; margin-bottom: 2rem;">Select Question Category</h2>
+    <div>
+      <h2 style="margin-top:0; margin-bottom: 0.5rem;">Select Question Category</h2>
+      <div id="home-session-title" style="color: var(--dimmed); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 600;"></div>
+    </div>
     <div class="category-grid" id="category-grid">
       <button class="category-btn" data-cat="NCERT Extract (MCQs CORNER)">NCERT Extract (MCQs CORNER)</button>
       <button class="category-btn" data-cat="NCERT Exemplar Problems">NCERT Exemplar</button>
@@ -208,6 +211,7 @@
   const sessionNum = urlParams.get('session');
   if (sessionNum) {
     document.getElementById('session-title-display').textContent = "Session: " + sessionNum;
+    document.getElementById('home-session-title').textContent = "Session: " + sessionNum;
   }
 </script>
 </body>

@@ -61,18 +61,26 @@ body::before {
   100% { background-position: 18% 12%; }
 }
 
+/* ── LAYOUT ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
 /* ── CARD ── */
 .q-card {
   background: var(--card-bg); border: 1.5px solid var(--card-border); border-radius: 20px;
   padding: 24px 32px 24px; box-shadow: var(--card-shadow); backdrop-filter: blur(8px);
   animation: cardIn .4s cubic-bezier(.2,.85,.3,1.1);
-  position: relative; overflow: hidden;
+  position: relative;
   margin-bottom: 1.5rem;
 }
 .q-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
   background: linear-gradient(90deg, var(--spec-6), var(--purple), var(--spec-8), var(--spec-3), var(--spec-5));
   background-size: 300% 100%; animation: gradientShift 6s ease-in-out infinite;
+  border-top-left-radius: 18px; border-top-right-radius: 18px;
 }
 @keyframes cardIn { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes gradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
@@ -128,6 +136,7 @@ body::before {
   -webkit-backdrop-filter: blur(10px);
   width: calc(100% - 64px); /* Account for card padding */
   left: 32px;
+  bottom: 32px;
   cursor: grab;
 }
 .sol:active {
@@ -193,25 +202,28 @@ body::before {
 /* ── CATEGORY GRID ── */
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 2rem;
 }
 .category-btn {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 1.5rem;
-  font-size: 1.1rem;
+  border: 1.5px solid var(--card-border);
+  border-radius: 20px;
+  padding: 22px 26px;
+  font-size: 1.15rem;
   color: var(--text);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
   text-align: left;
-  font-weight: 600;
+  font-weight: 700;
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-left: 6px solid var(--plasma);
+  position: relative;
+  overflow: hidden;
 }
 .category-btn::after {
   content: '→';
@@ -220,8 +232,9 @@ body::before {
   transition: transform 0.2s;
 }
 .category-btn:hover {
-  border-color: var(--plasma);
-  transform: translateY(-4px);
+  border-color: rgba(37,99,255,0.45);
+  background: rgba(37,99,255,0.1);
+  transform: translateX(4px);
   box-shadow: 0 10px 25px rgba(37,99,255,0.15);
 }
 .category-btn:hover::after {
