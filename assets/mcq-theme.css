@@ -1,0 +1,153 @@
+/* ══════════════════════════════════════════════════════════
+   THEME VARIABLES
+══════════════════════════════════════════════════════════ */
+:root {
+  --plasma: #2563ff;
+  --photon: #ffd60a;
+  --emit: #00e676;
+  --absorb: #ff3d6e;
+  --purple: #b347ff;
+  --spec-6: #2563ff;
+  --spec-8: #ff3dc6;
+  --spec-3: #ffd60a;
+  --spec-5: #00d4ff;
+}
+
+[data-theme="dark"], :root {
+  --bg: #0a0a1f;
+  --bg-grad: radial-gradient(ellipse 75% 50% at 12% 5%, rgba(37,99,255,.22) 0%, transparent 62%),
+            radial-gradient(ellipse 60% 45% at 88% 12%, rgba(179,71,255,.20) 0%, transparent 62%),
+            radial-gradient(ellipse 65% 50% at 50% 105%, rgba(0,212,255,.15) 0%, transparent 62%),
+            radial-gradient(ellipse 40% 30% at 70% 60%, rgba(255,61,198,.08) 0%, transparent 60%);
+  --card-bg: rgba(255,255,255,.07);
+  --card-border: rgba(255,255,255,.14);
+  --card-shadow: 0 0 60px rgba(37,99,255,.10), 0 24px 50px rgba(0,0,0,.4);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --dimmed: #64748b;
+  --title: #ffd60a;
+  
+  --opt-bg: rgba(255,255,255,.06);
+  --opt-bdr: rgba(255,255,255,.14);
+  --opt-col: #e2e8f0;
+  --opt-hbg: rgba(37,99,255,.16);
+  --opt-hbdr: rgba(37,99,255,.45);
+  
+  --grid-bg: rgba(255,255,255,.04);
+  --grid-bdr: rgba(255,255,255,.08);
+  
+  --sol-bg: rgba(0,230,118,.11);
+  --sol-bdr: rgba(0,230,118,.28);
+  --bb: rgba(0,230,118,.18);
+  --emit: #00e676;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+}
+body::before {
+  content: ''; position: fixed; inset: -10% -10%; z-index: -1; pointer-events: none;
+  background-image: var(--bg-grad); background-size: 130% 130%;
+  animation: ambientDrift 22s ease-in-out infinite alternate;
+}
+@keyframes ambientDrift {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 18% 12%; }
+}
+
+/* ── CARD ── */
+.q-card {
+  background: var(--card-bg); border: 1.5px solid var(--card-border); border-radius: 28px;
+  padding: 48px 48px 44px; box-shadow: var(--card-shadow); backdrop-filter: blur(8px);
+  animation: cardIn .4s cubic-bezier(.2,.85,.3,1.1);
+  position: relative; overflow: hidden;
+  margin-bottom: 2rem;
+}
+.q-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: linear-gradient(90deg, var(--spec-6), var(--purple), var(--spec-8), var(--spec-3), var(--spec-5));
+  background-size: 300% 100%; animation: gradientShift 6s ease-in-out infinite;
+}
+@keyframes cardIn { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes gradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+.q-meta {
+  font-size: 17px; font-weight: 700; color: var(--dimmed); margin-bottom: 12px; letter-spacing: .02em;
+  display: flex; justify-content: space-between;
+}
+.q-text {
+  font-size: 26px; font-weight: 700; line-height: 1.45; margin-bottom: 26px; white-space: pre-line;
+}
+
+/* ── OPTIONS (MCQ) ── */
+.q-options-container { position: relative; }
+.q-options { display: flex; flex-direction: column; gap: 0; }
+.opt { 
+  display: flex; align-items: center; gap: 16px; width: 100%; text-align: left; background: var(--opt-bg); border: 2px solid var(--opt-bdr);
+  color: var(--opt-col); padding: 16px 22px; border-radius: 16px; margin-bottom: 14px; font-size: 21px;
+  font-weight: 600; cursor: pointer; transition: all .18s cubic-bezier(.2,.85,.3,1.1); line-height: 1.4; 
+}
+.opt-letter {
+  flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px; background: var(--grid-bg);
+  border: 1.5px solid var(--opt-bdr); display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 17px; color: var(--dimmed); transition: all .18s;
+}
+.opt-text { flex: 1; }
+.opt:hover:not(:disabled) { background: var(--opt-hbg); border-color: var(--opt-hbdr); transform: translateX(4px) scale(1.005); }
+.opt:hover:not(:disabled) .opt-letter { background: var(--plasma); color: #fff; border-color: var(--plasma); }
+.opt:disabled { cursor: default; }
+
+.opt.correct { background: var(--bb); border-color: var(--emit); color: var(--emit); font-weight: 800; box-shadow: 0 0 24px -6px rgba(0,230,118,.5); }
+.opt.correct .opt-letter { background: var(--emit); color: #06160e; border-color: var(--emit); }
+.opt.wrong { background: rgba(255,61,110,.13); border-color: var(--absorb); color: var(--absorb); font-weight: 800; }
+.opt.wrong .opt-letter { background: var(--absorb); color: #fff; border-color: var(--absorb); }
+.opt.dim { opacity: .4; }
+
+/* ── SOLUTION BOX ── */
+.sol { display: none; margin-top: 24px; background: var(--sol-bg); border: 1px solid var(--sol-bdr); border-radius: 16px; padding: 22px 26px; font-size: 19px; line-height: 1.65; animation: cardIn 0.4s ease forwards; }
+
+/* ── CONFETTI / BOO OVERLAY ── */
+#fxc { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
+.boo-emoji { position: fixed; top: -40px; font-size: 48px; pointer-events: none; z-index: 1000; animation-name: booFall; animation-timing-function: ease-in; animation-fill-mode: forwards; }
+@keyframes booFall { 0% { transform: translateY(-40px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+
+/* HW Overlay override */
+.hw-btn {
+  background: transparent;
+  border: 1px solid var(--photon);
+  color: var(--photon);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.hw-btn:hover { background: var(--photon); color: #000; }
+.hw-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 10, 31, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+  border: 2px dashed var(--photon);
+}
+.hw-overlay h3 { color: var(--photon); font-size: 1.5rem; animation: blink 1s infinite alternate; }
+@keyframes blink { from { opacity: 1; } to { opacity: 0.6; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.math { font-family: "Cambria Math", "Times New Roman", serif; }

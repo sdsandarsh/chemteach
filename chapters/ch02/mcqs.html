@@ -5,220 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MCQs | Chapter 2</title>
 <link rel="stylesheet" href="../../assets/design-tokens.css">
-<style>
-  :root {
-    --mcq-bg: #0d1117;
-    --mcq-surface: #161b22;
-    --mcq-border: #30363d;
-    --mcq-text: #c9d1d9;
-    --mcq-primary: #58a6ff;
-    --mcq-accent: #ff7b72;
-    --mcq-success: #238636;
-    --mcq-hw-bg: #1f2428;
-  }
-  body {
-    background-color: var(--mcq-bg);
-    color: var(--mcq-text);
-    font-family: system-ui, -apple-system, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-  }
-  .app-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background: var(--mcq-surface);
-    border-bottom: 1px solid var(--mcq-border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .app-header h1 {
-    margin: 0;
-    font-size: 1.25rem;
-    color: var(--mcq-primary);
-  }
-  .back-btn {
-    color: var(--mcq-text);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--mcq-border);
-    border-radius: 4px;
-    background: var(--mcq-surface);
-  }
-  .back-btn:hover {
-    background: #21262d;
-  }
-  .container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  
-  /* Category Menu */
-  .category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  .category-btn {
-    background: var(--mcq-surface);
-    border: 1px solid var(--mcq-border);
-    border-radius: 8px;
-    padding: 1.5rem;
-    font-size: 1.1rem;
-    color: var(--mcq-text);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: center;
-    font-weight: 600;
-  }
-  .category-btn:hover {
-    border-color: var(--mcq-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.1);
-  }
-
-  /* Question View */
-  #question-view {
-    display: none;
-  }
-  .view-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    gap: 1rem;
-  }
-  .view-header h2 {
-    margin: 0;
-  }
-
-  /* Topics & Questions */
-  .topic-group {
-    margin-bottom: 3rem;
-  }
-  .topic-header {
-    background: var(--mcq-surface);
-    padding: 0.75rem 1rem;
-    border-left: 4px solid var(--mcq-primary);
-    border-radius: 0 4px 4px 0;
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    color: var(--mcq-primary);
-  }
-  
-  .q-card {
-    background: var(--mcq-surface);
-    border: 1px solid var(--mcq-border);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-  }
-  .q-meta {
-    font-size: 0.85rem;
-    color: #8b949e;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--mcq-border);
-    padding-bottom: 0.5rem;
-  }
-  .q-text {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
-  .q-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .q-options-container {
-    position: relative;
-    margin-top: 1.5rem;
-  }
-
-  /* Reference MCQ Option Styles */
-  .opt { 
-    display: flex; align-items: center; gap: 16px; width: 100%; text-align: left; 
-    background: rgba(255,255,255,.04); border: 2px solid rgba(255,255,255,.08);
-    color: var(--mcq-text); padding: 12px 18px; border-radius: 12px; margin-bottom: 12px; font-size: 1.1rem;
-    cursor: pointer; transition: all .18s cubic-bezier(.2,.85,.3,1.1); line-height: 1.4; 
-  }
-  .opt-letter {
-    flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px; background: rgba(255,255,255,.02);
-    border: 1.5px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 0.9rem; color: #8b949e; transition: all .18s;
-  }
-  .opt-text { flex: 1; }
-  .opt:hover { 
-    background: rgba(88, 166, 255, .1); border-color: rgba(88, 166, 255, .4); 
-    transform: translateX(4px) scale(1.005); 
-  }
-  .opt:hover .opt-letter { 
-    background: var(--mcq-primary); color: #fff; border-color: var(--mcq-primary); 
-  }
-
-  /* HW Assignment Mode */
-  .hw-btn {
-    background: transparent;
-    border: 1px solid var(--mcq-accent);
-    color: var(--mcq-accent);
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    font-weight: 600;
-    transition: all 0.2s;
-  }
-  .hw-btn:hover {
-    background: var(--mcq-accent);
-    color: #fff;
-  }
-
-  .hw-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(13, 17, 23, 0.85);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    z-index: 10;
-    opacity: 0;
-    animation: fadeIn 0.4s ease forwards;
-    border: 2px dashed var(--mcq-accent);
-  }
-  .hw-overlay h3 {
-    color: var(--mcq-accent);
-    font-size: 1.5rem;
-    margin: 0 0 0.5rem 0;
-    text-transform: uppercase;
-    animation: blink 1s infinite alternate;
-  }
-  .hw-overlay p {
-    color: var(--mcq-text);
-    margin: 0;
-  }
-
-  @keyframes blink {
-    from { opacity: 1; }
-    to { opacity: 0.6; }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  /* Math rendering tweaks */
-  .math {
-    font-family: "Cambria Math", "Times New Roman", serif;
-  }
-</style>
+<link rel="stylesheet" href="../../assets/mcq-theme.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha512-6FaAxxO+jlb4t10W59v3Q49+0u115a3N4x5/u+V0U7n/Yf/tB6CokM/U+iX+J3Jq1hDbnxI63LgWq3WqFwIeTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
@@ -252,6 +39,7 @@
 
 </div>
 
+<script src="../../assets/mcq-fx.js"></script>
 <script src="mcq-data.js"></script>
 <script>
   const homeView = document.getElementById('home-view');
@@ -318,12 +106,16 @@
             <div class="q-options-container">
               <div class="q-options">
                 ${q.options.map((opt, i) => `
-                  <button class="opt">
+                  <button class="opt" onclick="selectOption(this, ${i}, ${q.correctOption})">
                     <div class="opt-letter">${String.fromCharCode(97+i)}</div>
                     <div class="opt-text">${opt}</div>
                   </button>
                 `).join('')}
               </div>
+            </div>
+            <div class="sol">
+              <strong>Explanation:</strong><br>
+              ${q.explanation}
             </div>
           </div>
         `;
@@ -360,6 +152,40 @@
       btn.style.opacity = '0';
       setTimeout(() => btn.remove(), 200);
     }, 3000);
+  }
+
+  // Handle Answer Selection
+  function selectOption(btn, selectedIndex, correctIndex) {
+    if (btn.closest('.q-options').classList.contains('answered')) return;
+    
+    const optionsDiv = btn.closest('.q-options');
+    optionsDiv.classList.add('answered');
+    const allBtns = optionsDiv.querySelectorAll('.opt');
+    const card = btn.closest('.q-card');
+    const solDiv = card.querySelector('.sol');
+
+    // Disable all options
+    allBtns.forEach(b => b.disabled = true);
+    
+    // Clear previous fx
+    clearFX();
+
+    if (selectedIndex === correctIndex) {
+      btn.classList.add('correct');
+      playWin();
+      launchConfetti();
+    } else {
+      btn.classList.add('wrong');
+      allBtns[correctIndex].classList.add('correct');
+      allBtns.forEach((b, i) => {
+        if (i !== selectedIndex && i !== correctIndex) b.classList.add('dim');
+      });
+      playBoo();
+      launchBoo();
+    }
+    
+    // Reveal explanation
+    solDiv.style.display = 'block';
   }
 
   // Optional: Scroll to specific session topic if URL parameter exists
