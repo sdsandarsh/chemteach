@@ -6,6 +6,7 @@
 <title>Ch02 W08 S01-02 | ChemTeach</title>
 <link rel="stylesheet" href="../../../assets/design-tokens.css">
 <link rel="stylesheet" href="../../../assets/session.css">
+<link rel="stylesheet" href="../../../assets/quantum-deck.css">
 <script src="../../../assets/theme.js"></script>
 </head>
 <body>
@@ -23,58 +24,135 @@
   </div>
 </div>
 
+<!-- Slide 1: Title -->
 <div class="slide active" data-type="static">
   <div class="title-card">
     <div class="meta">Chapter 2 | Week 8</div>
-    <h1>ORBITALS, QUANTUM NUMBERS & SHAPES</h1>
-    <div class="topics">Topics covered today:<br>2.6 Orbitals, Quantum Numbers, Shapes (completes Chapter 2)</div>
+    <h1>QUANTUM MECHANICAL MODEL & ELECTRONIC CONFIGURATION</h1>
+    <div class="topics">Topics covered today:<br>2.6 Quantum Mechanical Model of Atom<br>2.6.1-2.6.4 Orbitals, Quantum Numbers, Shapes & Energies<br>2.6.5-2.6.6 Electronic Configurations & Stability</div>
   </div>
 </div>
 
-<div class="slide" data-type="story" data-config='{"setting": "Schr\u00f6dinger&#39;s Wave Mechanics, 1926", "narrative": "Erwin Schr\u00f6dinger took de Broglie&#39;s idea of matter waves to its logical extreme. He wrote a complex wave equation to describe the electron, treating it purely as a wave spread out over space.", "reveal": "His math worked perfectly, but physicists were confused: if the electron is a particle, how can its charge be physically smeared out like a wave? What does the wave actually mean?", "visual": "space-atoms", "image": "../../../assets/images/infographics/schrodinger-caricature.jpg"}'>
+<!-- Slide 2: Story (Schrodinger) -->
+<div class="slide" data-type="story" data-config='{"setting": "Quantum Mechanics, 1926", "narrative": "Classical mechanics (Newton&#39;s laws) works perfectly for falling stones or orbiting planets, but it fails completely for microscopic particles like electrons because it ignores wave-particle duality and the uncertainty principle. Werner Heisenberg and Erwin Schr\u00f6dinger independently developed a new science: Quantum Mechanics.", "reveal": "Schr\u00f6dinger formulated a complex mathematical equation (the Schr\u00f6dinger equation, H\u03c8 = E\u03c8) that treats the electron purely as a wave. The solution to this equation gives the possible energy levels and wave functions (\u03c8) for the electron.", "visual": "space-atoms", "image": "../../../assets/images/infographics/schrodinger-caricature.jpg"}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="story" data-config='{"setting": "Born&#39;s Probability Interpretation, 1926", "narrative": "Max Born solved the riddle. He proposed that Schr\u00f6dinger&#39;s wave is NOT a physical wave of electric charge. Instead, it is a wave of PROBABILITY.", "reveal": "The amplitude squared of the wave function (|\u03c8|\u00b2) gives the probability of finding the electron at a specific point in space. The electron is a particle, but its location is guided by a wave of likelihood! This 3D probability region is called an ORBITAL.", "visual": "mole-atoms", "image": "../../../assets/images/infographics/born-caricature.jpg"}'>
+<!-- Slide 3: Analogy (Orbit vs Orbital) -->
+<div class="slide" data-type="known-unknown" data-config='{"known": {"label": "ORBIT (BOHR MODEL)", "text": "A well-defined circular path around the nucleus. It assumes both the exact position and exact velocity of the electron are known simultaneously. (Contradicts Heisenberg&#39;s Uncertainty Principle)."}, "bridge": {"label": "THE PARADIGM SHIFT", "text": "Heisenberg proved we can never know the exact trajectory. Therefore, orbits do not exist. We must replace precise paths with PROBABILITY."}, "unknown": {"label": "ORBITAL (QUANTUM MODEL)", "text": "A 3D region in space around the nucleus where the probability of finding the electron is maximum (usually ~90%). It represents the wave function \u03c8 of one electron."}}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="quantum-sim" data-config='{"mode": "orbital-shapes", "title": "3D PROBABILITY CLOUDS", "instruction": "Select an orbital shape below to see its 3D probability density map."}'>
+<!-- Slide 4: Visual Explain (Max Born & Probability Density) -->
+<div class="slide" data-type="visual-explain" data-config='{"title": "Probability Density (|\u03c8|\u00b2)", "layout": "split", "points": ["The wave function \u03c8 itself has NO physical meaning.", "However, German physicist Max Born proposed that the SQUARE of the wave function (|\u03c8|\u00b2) at a point gives the PROBABILITY DENSITY of finding the electron there.", "|\u03c8|\u00b2 is always positive.", "By plotting |\u03c8|\u00b2 in 3D space, we get boundary surface diagrams (clouds) that enclose regions where there is a 90% chance of finding the electron. These regions are called Atomic Orbitals."], "visual": "cloud-density"}'>
   <div class="component-container"></div>
 </div>
 
+<!-- Slide 5: Scaffold/List (4 Quantum Numbers Intro) -->
+<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Quantum Numbers: The Electron&#39;s Address", "breakdown": ["n \u2192 Principal (Shell / Energy / Size)", "l \u2192 Azimuthal (Subshell / Shape / Orbital Angular Momentum)", "m_l \u2192 Magnetic (Orientation in space)", "m_s \u2192 Electron Spin (Intrinsic rotation)"], "rule": "Every electron in an atom is uniquely identified by these four numbers. No two electrons can have the exact same four numbers.", "tip": "Think of it as: City (n), Street (l), House Number (m_l), and Resident (m_s)."}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 6: Visual Explain (Principal Quantum Number n) -->
+<div class="slide" data-type="visual-explain" data-config='{"title": "1. Principal Quantum Number (n)", "layout": "bullets", "points": ["Positive integer: n = 1, 2, 3, 4...", "Identifies the main SHELL (K, L, M, N...).", "Determines the SIZE of the orbital. As n increases, the orbital becomes larger and the electron is further from the nucleus.", "Determines the ENERGY. As n increases, energy increases (becomes less negative) because it takes energy to move an electron away from the positive nucleus.", "The number of allowed orbitals in a shell is n\u00b2.", "The maximum number of electrons in a shell is 2n\u00b2."], "visual": "target"}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 7: Visual Explain (Azimuthal Quantum Number l) -->
+<div class="slide" data-type="visual-explain" data-config='{"title": "2. Azimuthal Quantum Number (l)", "layout": "bullets", "points": ["Also known as Orbital Angular Momentum or Subsidiary quantum number.", "Defines the 3D SHAPE of the orbital.", "For a given shell n, l can have n values ranging from 0 to (n-1).", "If n=1, l=0. If n=2, l=0, 1. If n=3, l=0, 1, 2.", "Subshell notations based on l value:", "l = 0 \u2192 s subshell (spherical)", "l = 1 \u2192 p subshell (dumbbell)", "l = 2 \u2192 d subshell (double-dumbbell)", "l = 3 \u2192 f subshell"], "visual": "shapes"}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 8: Visual Explain (Magnetic Quantum Number m_l) -->
+<div class="slide" data-type="visual-explain" data-config='{"title": "3. Magnetic Quantum Number (m\u2097)", "layout": "bullets", "points": ["Gives information about the SPATIAL ORIENTATION of the orbital with respect to a standard coordinate axis.", "For any subshell l, there are (2l + 1) possible values of m\u2097.", "Values range from -l to +l (including 0).", "For s-subshell (l=0): m\u2097 = 0. Only 1 orientation (1 orbital).", "For p-subshell (l=1): m\u2097 = -1, 0, +1. Three orientations (3 orbitals: p\u2093, p\u2098, p\u2095).", "For d-subshell (l=2): m\u2097 = -2, -1, 0, +1, +2. Five orientations (5 orbitals).", "Number of orbitals in a subshell equals (2l+1)."], "visual": "axis"}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 9: Story/Visual (Electron Spin Quantum Number m_s) -->
+<div class="slide" data-type="story" data-config='{"setting": "Uhlenbeck & Goudsmit, 1925", "narrative": "The first three quantum numbers perfectly described orbital shapes and energies, but they couldn&#39;t explain why some spectral lines appeared as closely spaced doublets. Something was missing.", "reveal": "They discovered the Electron Spin Quantum Number (m\u209b). An electron spins on its own axis, creating a tiny magnetic field. It can only spin in two directions: +1/2 (spin up \u2191) or -1/2 (spin down \u2193). An orbital can hold a maximum of 2 electrons, and they must have opposite spins!", "visual": "molecule", "image": "../../../assets/images/infographics/spin-caricature.jpg"}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 10: Quantum Sim (s and p orbital shapes & boundary surfaces) -->
+<div class="slide" data-type="quantum-sim" data-config='{"mode": "orbital-shapes", "title": "Shapes of s & p Orbitals", "instruction": "Select 1s, 2s, and 2p to observe their boundary surfaces. Notice how the s-orbital is a sphere, while p-orbitals are dumbbells oriented along the x, y, or z axes."}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 11: Visual Explain (d orbital shapes) -->
+<div class="slide" data-type="visual-explain" data-config='{"title": "Shapes of d Orbitals (l=2)", "layout": "split", "points": ["For l=2, there are 5 possible m\u2097 values, meaning 5 d-orbitals.", "Four of them have a clover-leaf (double-dumbbell) shape:", "d_xy, d_yz, d_xz (lobes lie BETWEEN the axes)", "d_x\u00b2-y\u00b2 (lobes lie ON the x and y axes)", "The fifth orbital, d_z\u00b2, looks different: a dumbbell along the z-axis with a donut (torus) ring around the center.", "Despite different shapes, all five 3d orbitals are equivalent in energy (degenerate) in an isolated atom."], "visual": "d-orbitals"}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 12: Math/Visual (Nodes) -->
+<div class="slide" data-type="math-derivation" data-config='{
+  "title": "Nodes (Regions of Zero Probability)",
+  "steps": [
+    { "text": "A node is a region where the probability density (|\u03c8|\u00b2) drops exactly to ZERO.", "math": "" },
+    { "text": "1. Radial Nodes: Spherical surfaces where probability is zero.", "math": "Radial Nodes = n - l - 1" },
+    { "text": "2. Angular Nodes: Planes or cones passing through the nucleus where probability is zero.", "math": "Angular Nodes = l" },
+    { "text": "3. Total Nodes: The sum of radial and angular nodes.", "math": "Total Nodes = (n - l - 1) + l = n - 1", "finalBox": true }
+  ]
+}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 13: Visual Explain (Energies, Shielding, Zeff) -->
+<div class="slide" data-type="visual-explain" data-config='{"title": "Energies & Shielding Effect", "layout": "bullets", "points": ["In a Hydrogen atom (1 electron), energy depends ONLY on n. (1s < 2s = 2p < 3s = 3p = 3d).", "In Multi-electron atoms, energy depends on BOTH n and l.", "Why? Because of Electron Repulsion. Inner shell electrons repel outer shell electrons, pushing them away.", "This is called the SHIELDING or SCREENING effect. The outer electrons do not feel the full positive charge of the nucleus (Z). They feel a reduced charge called Effective Nuclear Charge (Z_eff).", "Penetration effect: s-orbitals are more spherical and spend more time close to the nucleus than p, d, or f. Thus, s-electrons are shielded less and bound tighter.", "As a result, for the same shell n, energies are: s < p < d < f."], "visual": "shielding"}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 14: Gamification (n+l Rule) -->
+<div class="slide" data-type="gamification" data-config='{"instruction": "Order the orbitals by energy using the (n+l) Rule! Lower (n+l) = lower energy. If tie, lower n = lower energy. Group them into Lower Energy vs Higher Energy relative to 4s (n=4, l=0 \u2192 sum=4).", "items": ["3p", "3d", "4p", "5s"], "categories": ["Lower or Equal to 4s", "Higher Energy than 4s"], "answers": {"3p": "Lower or Equal to 4s", "3d": "Higher Energy than 4s", "4p": "Higher Energy than 4s", "5s": "Higher Energy than 4s"}}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 15: Visual Explain (Aufbau Principle) -->
+<div class="slide" data-type="visual-explain" data-config='{"title": "1. Aufbau Principle", "layout": "split", "points": ["&#39;Aufbau&#39; is German for &#39;building up&#39;.", "Principle: In the ground state of atoms, orbitals are filled in order of their increasing energies.", "Electrons first occupy the lowest energy orbital available to them.", "The sequence follows the (n+l) rule:", "1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s..."], "visual": "aufbau-diagram"}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 16: Riddle/Analogy (Pauli Exclusion Principle) -->
+<div class="slide" data-type="riddle" data-config='{"question": "2. Pauli Exclusion Principle<br><br>Two electrons occupy the exact same 3s orbital. Their n, l, and m_l values are therefore identical. What MUST be different between them, by law?", "hint": "Think about the one quantum number that has only two possible values.", "answer": "Their SPIN quantum number (m_s) \u2014 one must be +1/2 and the other -1/2", "explanation": "The Pauli Exclusion Principle states: No two electrons in an atom can have the same set of four quantum numbers. Or simply: Only two electrons may exist in the same orbital, and they must have opposite spins!"}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 17: Visual Explain (Hunds Rule) -->
+<div class="slide" data-type="visual-explain" data-config='{"title": "3. Hund&#39;s Rule of Maximum Multiplicity", "layout": "bullets", "points": ["Deals with filling electrons into DEGENERATE orbitals (orbitals belonging to the same subshell, like the three 2p orbitals).", "Principle: Pairing of electrons in the orbitals belonging to the same subshell does NOT take place until each orbital belonging to that subshell has got one electron each.", "That is, every orbital in a subshell is SINGLY occupied first, with parallel spins.", "Why? Putting two electrons in the same orbital causes repulsion. Filling empty orbitals first minimizes electron-electron repulsion and maximizes exchange energy, creating a more stable state."], "visual": "hunds-rule"}'>
+  <div class="component-container"></div>
+</div>
+
+<!-- Slide 18: Interactive (Writing Electronic Configurations) -->
 <div class="slide" data-type="quantum-explorer" data-config='{}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Number, Lobe, Map, Spin", "breakdown": ["Number (n) → Principal quantum number: shell/energy level (1,2,3...)", "Lobe (l) → Azimuthal quantum number: shape of orbital (0=s, 1=p, 2=d, 3=f)", "Map (m) → Magnetic quantum number: orientation of orbital in space", "Spin (s) → Spin quantum number: electron&#39;s intrinsic spin, +1/2 or -1/2"], "rule": "No two electrons in the same atom can have all four quantum numbers identical — this is the Pauli Exclusion Principle.", "tip": "s-orbital: 1 shape, spherical. p-orbital: 3 orientations, dumbbell. d-orbital: 5 orientations, cloverleaf-like."}'>
+<!-- Slide 19: Visual Explain (Stability of Half/Fully Filled Subshells) -->
+<div class="slide" data-type="visual-explain" data-config='{"title": "Stability of Half & Fully Filled Subshells", "layout": "bullets", "points": ["There are exceptions to the Aufbau principle! E.g., Chromium (Z=24) is [Ar] 3d\u2075 4s\u00b9 (NOT 3d\u2074 4s\u00b2) and Copper (Z=29) is [Ar] 3d\u00b9\u2070 4s\u00b9 (NOT 3d\u2079 4s\u00b2).", "Why? Because exactly half-filled (d\u2075) and fully-filled (d\u00b9\u2070) subshells have EXTRA STABILITY.", "Reason 1: Symmetrical Distribution. Symmetry leads to stability. Electrons in a half/fully filled d-subshell are symmetrically distributed, causing less shielding of one another.", "Reason 2: Exchange Energy. Electrons with parallel spins in degenerate orbitals can exchange positions. This releases energy (Exchange Energy), stabilizing the atom. A d\u2075 configuration has the maximum possible number of exchanges!"], "visual": "cr-cu-config"}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="riddle" data-config='{"question": "Two electrons occupy the same orbital. Their n, l, and m values are therefore identical. What MUST be different between them, by law?", "hint": "Think about the one quantum number that has only two possible values.", "answer": "Their SPIN quantum number (s) — one must be +1/2 and the other -1/2", "explanation": "The Pauli Exclusion Principle states no two electrons in an atom can share all four quantum numbers. If n, l, and m are identical (same orbital), the only way to keep the electrons distinct is opposite spins — this is exactly why each orbital holds a maximum of 2 electrons."}'>
+<!-- Slide 20: Gamification (Final Quiz) -->
+<div class="slide" data-type="gamification" data-config='{"instruction": "Match the rule to its definition.", "items": ["Aufbau Principle", "Pauli Exclusion", "Hund&#39;s Rule", "(n+l) Rule"], "categories": ["Lowest energy first", "Opposite spins", "Singly occupy first", "Determines energy order"], "answers": {"Aufbau Principle": "Lowest energy first", "Pauli Exclusion": "Opposite spins", "Hund&#39;s Rule": "Singly occupy first", "(n+l) Rule": "Determines energy order"}}'>
   <div class="component-container"></div>
 </div>
 
-<div class="slide" data-type="gamification" data-config='{"instruction": "Match each quantum number to what it describes.", "items": ["n", "l", "m", "s"], "categories": ["Energy level/shell", "Orbital shape", "Orbital orientation", "Electron spin"], "answers": {"n": "Energy level/shell", "l": "Orbital shape", "m": "Orbital orientation", "s": "Electron spin"}}'>
-  <div class="component-container"></div>
-</div>
-
+<!-- Slide 21: Summary Slide -->
 <div class="slide" data-type="static">
   <div class="summary-card">
-    <h1>✓ SESSION COMPLETE</h1>
+    <h1>✓ CHAPTER 2 COMPLETE</h1>
     <div style="color: var(--color-text); font-weight: 700; margin-bottom: 10px;">KEY CONCEPTS FROM TODAY:</div>
-    <ul><li>4 quantum numbers (n, l, m, s) uniquely describe every electron in an atom</li><li>n = shell, l = shape (s,p,d,f), m = orientation, s = spin</li><li>Pauli Exclusion Principle: no two electrons share all 4 quantum numbers</li><li>This completes Chapter 2 (Atomic Structure) and opens the door to the Periodic Table</li></ul>
+    <ul><li>Quantum mechanics replaces orbits with orbitals (probability clouds, |\u03c8|\u00b2).</li><li>4 Quantum numbers (n, l, m_l, m_s) uniquely describe every electron.</li><li>Node formulas: Radial = n-l-1, Angular = l. Total = n-1.</li><li>Aufbau: Lowest energy first. Pauli: Max 2 electrons/orbital, opposite spin. Hund: Singly fill degenerate orbitals first.</li><li>Half-filled (d\u2075) and fully-filled (d\u00b9\u2070) subshells offer extra stability due to symmetry and exchange energy.</li></ul>
     <div class="mcq-block">
       <strong>NCERT MCQs:</strong><br>
-      Classwork: 2.6-1, 2, 3<br>
-      Assignment: 2.6-4, 5
+      Classwork: 2.6-1 to 2.6-67<br>
+      Assignment: Finish Chapter 2 Exercises
     </div>
   </div>
 </div>
 
 <div class="slide-nav">
   <button id="btn-prev">◀ PREV</button>
-  <span id="slide-counter">Slide 1 of 9</span>
+  <span id="slide-counter">Slide 1 of 21</span>
   <button id="btn-next">NEXT ▶</button>
 </div>
 
@@ -92,6 +170,8 @@
 <script src="../../../components/animation.js"></script>
 <script src="../../../components/quantum-sim.js"></script>
 <script src="../../../components/quantum-explorer.js"></script>
+<script src="../../../components/math-derivation.js"></script>
+<script src="../../../components/postulate-list.js"></script>
 <script>
 const SESSION_ID = 'ch02_w08_s01-02';
 let currentSlide = 0;
@@ -129,6 +209,8 @@ function initCurrentSlide() {
     case 'animation': ChemAnimation.init(container, config); break;
     case 'quantum-sim': QuantumSim.init(container, config); break;
     case 'quantum-explorer': QuantumExplorer.init(container, config); break;
+    case 'math-derivation': MathDerivation.init(container, config); break;
+    case 'postulate-list': PostulateList.init(container, config); break;
   }
 }
 
@@ -160,4 +242,3 @@ if (ChemProgress.isComplete(SESSION_ID)) {
 </script>
 </body>
 </html>
-
