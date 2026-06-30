@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../../../assets/design-tokens.css">
 <link rel="stylesheet" href="../../../assets/session.css">
 <link rel="stylesheet" href="../../../assets/quantum-deck.css">
+<link rel="stylesheet" href="../../../assets/mcq-overlay.css?v=3">
 <script src="../../../assets/theme.js"></script>
 </head>
 <body>
@@ -46,6 +47,7 @@
 <!-- Slide 4: Visual Explain (Max Born & Probability Density) -->
 <div class="slide" data-type="visual-explain" data-config='{"title": "Probability Density (|\u03c8|\u00b2)", "layout": "split", "points": ["The wave function \u03c8 itself has NO physical meaning.", "However, German physicist Max Born proposed that the SQUARE of the wave function (|\u03c8|\u00b2) at a point gives the PROBABILITY DENSITY of finding the electron there.", "|\u03c8|\u00b2 is always positive.", "By plotting |\u03c8|\u00b2 in 3D space, we get boundary surface diagrams (clouds) that enclose regions where there is a 90% chance of finding the electron. These regions are called Atomic Orbitals."], "visual": "cloud-density"}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":64}])'>MCQs 📝</button>
 </div>
 
 <!-- Slide 5: Scaffold/List (4 Quantum Numbers Intro) -->
@@ -56,21 +58,25 @@
 <!-- Slide 6: Visual Explain (Principal Quantum Number n) -->
 <div class="slide" data-type="visual-explain" data-config='{"title": "1. Principal Quantum Number (n)", "layout": "bullets", "points": ["Positive integer: n = 1, 2, 3, 4...", "Identifies the main SHELL (K, L, M, N...).", "Determines the SIZE of the orbital. As n increases, the orbital becomes larger and the electron is further from the nucleus.", "Determines the ENERGY. As n increases, energy increases (becomes less negative) because it takes energy to move an electron away from the positive nucleus.", "The number of allowed orbitals in a shell is n\u00b2.", "The maximum number of electrons in a shell is 2n\u00b2."], "visual": "target"}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":65}, {"category":"NCERT Extract (MCQs CORNER)","qNum":67}])'>MCQs 📝</button>
 </div>
 
 <!-- Slide 7: Visual Explain (Azimuthal Quantum Number l) -->
 <div class="slide" data-type="visual-explain" data-config='{"title": "2. Azimuthal Quantum Number (l)", "layout": "bullets", "points": ["Also known as Orbital Angular Momentum or Subsidiary quantum number.", "Defines the 3D SHAPE of the orbital.", "For a given shell n, l can have n values ranging from 0 to (n-1).", "If n=1, l=0. If n=2, l=0, 1. If n=3, l=0, 1, 2.", "Subshell notations based on l value:", "l = 0 \u2192 s subshell (spherical)", "l = 1 \u2192 p subshell (dumbbell)", "l = 2 \u2192 d subshell (double-dumbbell)", "l = 3 \u2192 f subshell"], "visual": "shapes"}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":66}])'>MCQs 📝</button>
 </div>
 
 <!-- Slide 8: Visual Explain (Magnetic Quantum Number m_l) -->
 <div class="slide" data-type="visual-explain" data-config='{"title": "3. Magnetic Quantum Number (m\u2097)", "layout": "bullets", "points": ["Gives information about the SPATIAL ORIENTATION of the orbital with respect to a standard coordinate axis.", "For any subshell l, there are (2l + 1) possible values of m\u2097.", "Values range from -l to +l (including 0).", "For s-subshell (l=0): m\u2097 = 0. Only 1 orientation (1 orbital).", "For p-subshell (l=1): m\u2097 = -1, 0, +1. Three orientations (3 orbitals: p\u2093, p\u2098, p\u2095).", "For d-subshell (l=2): m\u2097 = -2, -1, 0, +1, +2. Five orientations (5 orbitals).", "Number of orbitals in a subshell equals (2l+1)."], "visual": "axis"}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":68}, {"category":"NCERT Extract (MCQs CORNER)","qNum":69}])'>MCQs 📝</button>
 </div>
 
 <!-- Slide 9: Story/Visual (Electron Spin Quantum Number m_s) -->
 <div class="slide" data-type="story" data-config='{"setting": "Uhlenbeck & Goudsmit, 1925", "narrative": "The first three quantum numbers perfectly described orbital shapes and energies, but they couldn&#39;t explain why some spectral lines appeared as closely spaced doublets. Something was missing.", "reveal": "They discovered the Electron Spin Quantum Number (m\u209b). An electron spins on its own axis, creating a tiny magnetic field. It can only spin in two directions: +1/2 (spin up \u2191) or -1/2 (spin down \u2193). An orbital can hold a maximum of 2 electrons, and they must have opposite spins!", "visual": "molecule", "image": "../../../assets/images/infographics/spin-caricature.jpg"}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":75}])'>MCQs 📝</button>
 </div>
 
 <!-- Slide 10: Quantum Sim (s and p orbital shapes & boundary surfaces) -->
@@ -81,6 +87,7 @@
 <!-- Slide 11: Visual Explain (d orbital shapes) -->
 <div class="slide" data-type="visual-explain" data-config='{"title": "Shapes of d Orbitals (l=2)", "layout": "split", "points": ["For l=2, there are 5 possible m\u2097 values, meaning 5 d-orbitals.", "Four of them have a clover-leaf (double-dumbbell) shape:", "d_xy, d_yz, d_xz (lobes lie BETWEEN the axes)", "d_x\u00b2-y\u00b2 (lobes lie ON the x and y axes)", "The fifth orbital, d_z\u00b2, looks different: a dumbbell along the z-axis with a donut (torus) ring around the center.", "Despite different shapes, all five 3d orbitals are equivalent in energy (degenerate) in an isolated atom."], "visual": "d-orbitals"}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":73}])'>MCQs 📝</button>
 </div>
 
 <!-- Slide 12: Math/Visual (Nodes) -->
@@ -104,6 +111,7 @@
 <!-- Slide 14: Gamification (n+l Rule) -->
 <div class="slide" data-type="gamification" data-config='{"instruction": "Order the orbitals by energy using the (n+l) Rule! Lower (n+l) = lower energy. If tie, lower n = lower energy. Group them into Lower Energy vs Higher Energy relative to 4s (n=4, l=0 \u2192 sum=4).", "items": ["3p", "3d", "4p", "5s"], "categories": ["Lower or Equal to 4s", "Higher Energy than 4s"], "answers": {"3p": "Lower or Equal to 4s", "3d": "Higher Energy than 4s", "4p": "Higher Energy than 4s", "5s": "Higher Energy than 4s"}}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":84}, {"category":"NCERT Extract (MCQs CORNER)","qNum":88}, {"category":"Exam Archive","qNum":10}])'>MCQs 📝</button>
 </div>
 
 <!-- Slide 15: Visual Explain (Aufbau Principle) -->
@@ -119,11 +127,13 @@
 <!-- Slide 17: Visual Explain (Hunds Rule) -->
 <div class="slide" data-type="visual-explain" data-config='{"title": "3. Hund&#39;s Rule of Maximum Multiplicity", "layout": "bullets", "points": ["Deals with filling electrons into DEGENERATE orbitals (orbitals belonging to the same subshell, like the three 2p orbitals).", "Principle: Pairing of electrons in the orbitals belonging to the same subshell does NOT take place until each orbital belonging to that subshell has got one electron each.", "That is, every orbital in a subshell is SINGLY occupied first, with parallel spins.", "Why? Putting two electrons in the same orbital causes repulsion. Filling empty orbitals first minimizes electron-electron repulsion and maximizes exchange energy, creating a more stable state."], "visual": "hunds-rule"}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":89}])'>MCQs 📝</button>
 </div>
 
 <!-- Slide 18: Interactive (Writing Electronic Configurations) -->
 <div class="slide" data-type="quantum-explorer" data-config='{}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":95}])'>MCQs 📝</button>
 </div>
 
 <!-- Slide 19: Visual Explain (Stability of Half/Fully Filled Subshells) -->
@@ -172,6 +182,10 @@
 <script src="../../../components/quantum-explorer.js"></script>
 <script src="../../../components/math-derivation.js"></script>
 <script src="../../../components/postulate-list.js"></script>
+<script src="../mcq-data.js?v=4"></script>
+<script src="../../../assets/mcq-fx.js?v=3"></script>
+<script src="../../../assets/mcq-overlay.js?v=2"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
 const SESSION_ID = 'ch02_w08_s01-02';
 let currentSlide = 0;
@@ -215,6 +229,7 @@ function initCurrentSlide() {
 }
 
 document.addEventListener('keydown', e => {
+  if (window.mcqOverlayActive) return;
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
   if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
   if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();

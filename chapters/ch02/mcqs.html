@@ -6,6 +6,7 @@
 <title>MCQs | Chapter 2</title>
 <link rel="stylesheet" href="../../assets/design-tokens.css?v=3">
 <link rel="stylesheet" href="../../assets/mcq-theme.css?v=3">
+<link rel="stylesheet" href="../../assets/mcq-overlay.css?v=3">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
 </head>
 <body>
@@ -22,7 +23,7 @@
   <div id="home-view">
     <div>
       <h2 style="margin-top:0; margin-bottom: 0.5rem;">Select Question Category</h2>
-      <div id="home-session-title" style="color: var(--dimmed); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 600;"></div>
+      <div id="home-session-title" style="color: var(--dimmed); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 600;">Loading session...</div>
     </div>
     <div class="category-grid" id="category-grid">
       <button class="category-btn" data-cat="NCERT Extract (MCQs CORNER)">NCERT Extract (MCQs CORNER)</button>
@@ -34,186 +35,68 @@
     </div>
   </div>
 
-  <div id="question-view">
-    <div class="view-header">
-      <button class="back-btn" id="btn-back-home">← Categories</button>
-      <div>
-        <h2 id="current-category-title"></h2>
-        <div id="session-title-display" style="color: var(--dimmed); font-size: 0.9rem; margin-top: 4px;"></div>
-      </div>
-    </div>
-    <div id="questions-container"></div>
-  </div>
-
 </div>
 
 <script src="../../assets/mcq-fx.js?v=3"></script>
+<script src="../../assets/mcq-overlay.js?v=3"></script>
 <script src="mcq-data.js?v=4"></script>
 <script>
-  const homeView = document.getElementById('home-view');
-  const questionView = document.getElementById('question-view');
-  const questionsContainer = document.getElementById('questions-container');
-  const catTitle = document.getElementById('current-category-title');
+  let sessionTopicPrefix = "";
+  let sessionName = "Chapter 2 MCQs";
+
+  async function init() {
+    const params = new URLSearchParams(window.location.search);
+    const week = parseInt(params.get('week'));
+    const sessionStr = params.get('session');
+
+    if (week && sessionStr) {
+      try {
+        const res = await fetch('../../SCHEDULE.json');
+        const data = await res.json();
+        const sess = data.sessions.find(s => s.chapter === 2 && s.week === week && s.session === sessionStr);
+        if (sess && sess.topics && sess.topics.length > 0) {
+          sessionName = sess.topics[0];
+          // Extract prefix like "2.5" or "2.6"
+          const match = sessionName.match(/^(\d+\.\d+)/);
+          if (match) {
+            sessionTopicPrefix = match[1];
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load schedule:", err);
+      }
+    }
+    
+    document.getElementById('home-session-title').textContent = sessionName;
+  }
+
+  init();
 
   // Handle Category Clicks
   document.querySelectorAll('.category-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const cat = e.target.getAttribute('data-cat');
-      renderQuestions(cat);
-      homeView.style.display = 'none';
-      questionView.style.display = 'block';
-      catTitle.textContent = cat;
-    });
-  });
-
-  // Handle Back
-  document.getElementById('btn-back-home').addEventListener('click', () => {
-    questionView.style.display = 'none';
-    homeView.style.display = 'block';
-  });
-
-  function renderQuestions(category) {
-    questionsContainer.innerHTML = '';
-    
-    // Filter questions by category
-    const catQs = MCQs.filter(q => q.category === category);
-    
-    if (catQs.length === 0) {
-      questionsContainer.innerHTML = '<p>No questions transcribed yet for this category.</p>';
-      return;
-    }
-
-    // Group by topic
-    const grouped = {};
-    catQs.forEach(q => {
-      if (!grouped[q.topic]) grouped[q.topic] = [];
-      grouped[q.topic].push(q);
-    });
-
-    Object.keys(grouped).forEach(topic => {
-      const topicDiv = document.createElement('div');
-      topicDiv.className = 'topic-group';
+      const category = e.target.getAttribute('data-cat');
       
-      if (topic !== "General") {
-        topicDiv.innerHTML = `<div class="topic-header">${topic}</div>`;
+      // Filter questions by category and topic prefix
+      const catQs = MCQs.filter(q => {
+        if (q.category !== category) return false;
+        if (sessionTopicPrefix && q.topic !== "General") {
+          return q.topic.startsWith(sessionTopicPrefix);
+        }
+        return true;
+      });
+      
+      if (catQs.length === 0) {
+        alert('No questions found for this category and session.');
+        return;
       }
-      
-      grouped[topic].forEach(q => {
-        const card = document.createElement('div');
-        card.className = 'q-card';
-        card.innerHTML = `
-          <div class="q-meta">
-            <span>${q.category} | Page ${q.page || '?'}</span>
-            <span style="display:flex; align-items:center; gap:12px;">
-              <button class="hw-btn" onclick="triggerHW(this)">HW</button>
-              <span>Q${q.qNum}</span>
-            </span>
-          </div>
-          <div class="q-body">
-            <div class="q-text">${q.text}</div>
-            <div class="q-options-container">
-              <div class="q-options">
-                ${q.options.map((opt, i) => `
-                  <button class="opt" onclick="selectOption(this, ${i}, ${q.correctOption})">
-                    <div class="opt-letter">${String.fromCharCode(97+i)}</div>
-                    <div class="opt-text">${opt}</div>
-                  </button>
-                `).join('')}
-              </div>
-            </div>
-            <div class="sol">
-              <div class="sol-drag-handle"></div>
-              <strong>Explanation:</strong><br>
-              ${q.explanation}
-            </div>
-          </div>
-        `;
-        topicDiv.appendChild(card);
-      });
-      
-      questionsContainer.appendChild(topicDiv);
+
+      // Convert to filter format required by MCQOverlay
+      const filters = catQs.map(q => ({ category: q.category, qNum: q.qNum }));
+      MCQOverlay.open(filters);
     });
+  });
 
-    const bottomNav = document.createElement('div');
-    bottomNav.className = 'bottom-nav';
-    bottomNav.innerHTML = `<button class="nav-btn" onclick="document.getElementById('btn-back-home').click()">← Back to Categories</button>`;
-    questionsContainer.appendChild(bottomNav);
-    
-    if(window.MathJax) {
-      MathJax.typesetPromise();
-    }
-  }
-
-  function triggerHW(btn) {
-    const card = btn.closest('.q-card');
-    const body = card.querySelector('.q-body');
-    
-    // Disable btn
-    btn.disabled = true;
-    btn.textContent = "Assigning...";
-    
-    setTimeout(() => {
-      const overlay = document.createElement('div');
-      overlay.className = 'hw-overlay';
-      overlay.innerHTML = `
-        <h3>!!! ASSIGNMENT !!!</h3>
-        <p>Let's see if you can do it 📝🎯</p>
-      `;
-      const optionsContainer = card.querySelector('.q-options-container');
-      const solDiv = card.querySelector('.sol');
-      if (solDiv) solDiv.style.display = 'none';
-
-      optionsContainer.appendChild(overlay);
-      
-      // Remove btn smoothly
-      btn.style.opacity = '0';
-      setTimeout(() => btn.remove(), 200);
-    }, 3000);
-  }
-
-  // Handle Answer Selection
-  function selectOption(btn, selectedIndex, correctIndex) {
-    if (btn.closest('.q-options').classList.contains('answered')) return;
-    
-    const optionsDiv = btn.closest('.q-options');
-    optionsDiv.classList.add('answered');
-    const allBtns = optionsDiv.querySelectorAll('.opt');
-    const card = btn.closest('.q-card');
-    const solDiv = card.querySelector('.sol');
-
-    // Disable all options
-    allBtns.forEach(b => b.disabled = true);
-    
-    // Clear previous fx
-    clearFX();
-
-    if (selectedIndex === correctIndex) {
-      btn.classList.add('correct');
-      playWin();
-      launchConfetti();
-    } else {
-      btn.classList.add('wrong');
-      allBtns[correctIndex].classList.add('correct');
-      allBtns.forEach((b, i) => {
-        if (i !== selectedIndex && i !== correctIndex) b.classList.add('dim');
-      });
-      playBoo();
-      launchBoo();
-    }
-    
-    // Reveal explanation after 3 seconds
-    setTimeout(() => {
-      solDiv.style.display = 'block';
-      makeDraggable(solDiv);
-    }, 3000);
-  }
-
-  // Session topic / mapping
-  const uniqueTopics = [...new Set(MCQs.map(q => q.topic).filter(t => t !== "General"))];
-  const sessionName = uniqueTopics.length > 0 ? uniqueTopics[0] : "Session MCQs";
-  
-  document.getElementById('home-session-title').textContent = sessionName;
-  document.getElementById('session-title-display').textContent = sessionName;
 </script>
 </body>
 </html>

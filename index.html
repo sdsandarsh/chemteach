@@ -968,7 +968,7 @@ function renderChapterGrid(sessions, state, today, lastOpened) {
           </span>
           ${hasNote ? '<span class="note-icon">📝</span>' : ''}
           <div style="display:flex; gap: 8px;">
-            <a class="go-btn mcq-btn" href="chapters/ch${String(s.chapter).padStart(2, '0')}/mcqs.html?week=${s.week}&session=${s.session}" style="background-color: var(--color-surface); color: var(--color-primary); border: 1px solid var(--color-primary);">MCQs</a>
+            <a class="go-btn mcq-btn" href="chapters/ch${String(s.chapter).padStart(2, '0')}/mcqs.html?week=${s.week}&session=${s.session}&v=2" style="background-color: var(--color-surface); color: var(--color-primary); border: 1px solid var(--color-primary);">MCQs</a>
             <a class="go-btn" href="${s.file}">GO</a>
           </div>
         `;

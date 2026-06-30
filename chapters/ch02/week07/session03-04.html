@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../../../assets/design-tokens.css">
 <link rel="stylesheet" href="../../../assets/session.css">
 <link rel="stylesheet" href="../../../assets/quantum-deck.css">
+<link rel="stylesheet" href="../../../assets/mcq-overlay.css?v=3">
 <script src="../../../assets/theme.js"></script>
 </head>
 <body>
@@ -38,6 +39,7 @@
 
 <div class="slide" data-type="riddle" data-config='{"question": "To &#39;see&#39; an electron&#39;s exact position, you would need to bounce light (a photon) off it. But a photon striking an electron knocks it and changes its velocity in the process. So the very act of measuring position disturbs velocity. What does this tell you about ever knowing BOTH position and velocity exactly, at the same time?", "hint": "Think about whether the disturbance can ever be avoided, even in principle.", "answer": "It is IMPOSSIBLE \u2014 you can never know both with perfect precision simultaneously", "explanation": "This is the heart of Heisenberg&#39;s Uncertainty Principle: the act of measuring one property (position) inevitably disturbs the other (momentum/velocity) for very small particles. This is not a limitation of our instruments \u2014 it is a fundamental property of nature at the quantum scale."}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":57}])'>MCQs 📝</button>
 </div>
 
 <div class="slide" data-type="quantum-sim" data-config='{"mode": "heisenberg", "title": "The Gamma-Ray Microscope", "instruction": "Click the canvas to fire a photon. Adjust the Wavelength slider to see the trade-off! Short \u03BB (Gamma) gives precise position but knocks the electron violently. Long \u03BB (Radio) is gentle but leaves the position blurry!"}'>
@@ -50,10 +52,12 @@
 
 <div class="slide" data-type="analogy" data-config='{"realWorld": {"label": "PHOTOGRAPHING A SPEEDING CAR", "visual": "car-camera-sim", "fact": "A fast camera flash freezes the car&#39;s exact position in a sharp photo, but in that instant you cannot tell its speed from one frame. A long exposure shows speed as a blur, but you lose the exact position."}, "chemistry": {"label": "HEISENBERG&#39;S UNCERTAINTY PRINCIPLE", "visual": "electron-sim", "fact": "For electrons, you cannot simultaneously know exact position (\u0394x) and exact momentum (\u0394p) \u2014 the product of their uncertainties has an absolute, unavoidable minimum: \u0394x\u00b7\u0394p \u2265 h/4\u03c0."}, "bridge": "Just as sharper position-info (fast flash) costs you speed-info (blur), precise position-knowledge of an electron costs you precise momentum-knowledge \u2014 and vice versa."}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":58}, {"category":"NCERT Extract (MCQs CORNER)","qNum":59}])'>MCQs 📝</button>
 </div>
 
 <div class="slide" data-type="mnemonic" data-config='{"mnemonic": "Δx · Δp ≥ h/4π", "breakdown": ["Δx \u2192 uncertainty in position", "Δp \u2192 uncertainty in momentum", "At Least (≥) \u2192 the PRODUCT of these uncertainties has a guaranteed minimum value", "h/4π \u2192 where h is Planck&#39;s constant"], "rule": "This uncertainty is significant only at the atomic/subatomic scale \u2014 it is utterly negligible for everyday macroscopic objects.", "tip": "Heisenberg&#39;s principle is WHY orbitals (probability clouds) replaced orbits (fixed paths) in the quantum mechanical model."}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"NCERT Extract (MCQs CORNER)","qNum":60}, {"category":"NCERT Extract (MCQs CORNER)","qNum":61}, {"category":"NCERT Extract (MCQs CORNER)","qNum":62}])'>MCQs 📝</button>
 </div>
 
 <div class="slide" data-type="known-unknown" data-config='{"known": {"label": "WHAT BOHR ASSUMED", "text": "Bohr&#39;s model assumed an electron moves in an exact, fixed circular path \u2014 meaning its exact position AND exact velocity at any instant were both perfectly known."}, "bridge": {"label": "WHY THAT IS NOW IMPOSSIBLE", "text": "Heisenberg&#39;s principle proves you can NEVER know both position and momentum exactly at the same time for something as small as an electron. Bohr&#39;s &#39;fixed orbit&#39; picture directly violates this fundamental limit."}, "unknown": {"label": "WHAT REPLACES IT", "text": "We describe electrons using probability \u2014 orbitals that show WHERE an electron is LIKELY to be found, never an exact path. This uncertainty is built into nature itself, not a flaw in our tools."}}'>
@@ -62,6 +66,7 @@
 
 <div class="slide" data-type="gamification" data-config='{"instruction": "Sort each statement as Consistent or Violates Heisenberg&#39;s Uncertainty Principle.", "items": ["Electron follows an exact circular path", "Electron exists in a probability cloud (orbital)", "Both position and velocity known exactly at once", "Position known precisely, momentum has spread of possible values"], "categories": ["Violates Uncertainty Principle", "Consistent with Uncertainty Principle"], "answers": {"Electron follows an exact circular path": "Violates Uncertainty Principle", "Electron exists in a probability cloud (orbital)": "Consistent with Uncertainty Principle", "Both position and velocity known exactly at once": "Violates Uncertainty Principle", "Position known precisely, momentum has spread of possible values": "Consistent with Uncertainty Principle"}}'>
   <div class="component-container"></div>
+  <button class="mcq-slide-btn" onclick='MCQOverlay.open([{"category":"Matching Type Questions","qNum":4}])'>MCQs 📝</button>
 </div>
 
 <div class="slide" data-type="quantum-sim" data-config='{"mode": "orbital-collapse", "title": "Orbit Dissolution", "instruction": "Drag the slider to physically witness the consequence of Heisenberg&#39;s uncertainty: transitioning from a rigid planetary orbit into a statistical probability cloud (orbital)."}'>
@@ -105,6 +110,10 @@
 <script src="../../../components/animation.js"></script>
 <script src="../../../components/infographic.js"></script>
 <script src="../../../components/quantum-sim.js"></script>
+<script src="../mcq-data.js?v=4"></script>
+<script src="../../../assets/mcq-fx.js?v=3"></script>
+<script src="../../../assets/mcq-overlay.js?v=2"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
 const SESSION_ID = 'ch02_w07_s03-04';
 let currentSlide = 0;
@@ -146,6 +155,7 @@ function initCurrentSlide() {
 }
 
 document.addEventListener('keydown', e => {
+  if (window.mcqOverlayActive) return;
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goToSlide(currentSlide + 1);
   if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goToSlide(currentSlide - 1);
   if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();

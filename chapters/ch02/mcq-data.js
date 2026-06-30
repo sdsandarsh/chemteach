@@ -314,4 +314,200 @@ const MCQs = [
     correctOption: 2,
     explanation: "For hydrogen and hydrogen-like atoms (single-electron systems), the energy of an orbital depends ONLY on the principal quantum number \\(n\\). Therefore, the \\(2s\\) and \\(2p\\) orbitals are degenerate (have the exact same energy). The statement claiming \\(2s < 2p\\) is only true for multi-electron atoms."
   }
+,
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 39,
+      "qNum": 64,
+      "text": "The probability of finding out an electron at a point within an atom is proportional to the",
+      "options": [
+          "square of the orbital wave function i.e., \(\psi^2\)",
+          "orbital wave function i.e., \(\psi\)",
+          "Hamiltonian operator i.e., H",
+          "principal quantum number i.e., n"
+      ],
+      "correctOption": 0,
+      "explanation": "According to Max Born, the wave function \(\psi\) has no physical meaning, but its square, \(\psi^2\), represents the probability density of finding the electron at a point."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 39,
+      "qNum": 65,
+      "text": "How many orbitals in total are associated with \(4^{\text{th}}\) energy level?",
+      "options": [
+          "4",
+          "9",
+          "16",
+          "7"
+      ],
+      "correctOption": 2,
+      "explanation": "For any principal quantum number \(n\), the total number of orbitals is given by \(n^2\). For \(n=4\), \(n^2 = 16\)."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 39,
+      "qNum": 66,
+      "text": "What is the lowest value of \(n\) that allows \(g\) orbital to exist?",
+      "options": [
+          "6",
+          "7",
+          "4",
+          "5"
+      ],
+      "correctOption": 3,
+      "explanation": "For a \(g\) orbital, the azimuthal quantum number \(l = 4\). Since \(n\) must be strictly greater than \(l\) (i.e., \(n > l\)), the lowest possible value for \(n\) is \(l+1 = 5\)."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 39,
+      "qNum": 67,
+      "text": "How many orbitals and electrons are associated with \(n = 4\)?",
+      "options": [
+          "32, 64",
+          "16, 32",
+          "4, 16",
+          "8, 16"
+      ],
+      "correctOption": 1,
+      "explanation": "Total orbitals in shell \(n\) is \(n^2 = 16\). Since each orbital holds a maximum of 2 electrons, the total number of electrons is \(2n^2 = 32\)."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 39,
+      "qNum": 68,
+      "text": "An electron is in one of the \(3d\)-orbitals. What are the possible values of \(n, l\) and \(m_l\) for this electron?",
+      "options": [
+          "\(n = 3, l = 0, m_l = 0\)",
+          "\(n = 3, l = 1, m_l = -1, 0, +1\)",
+          "\(n = 3, l = 2, m_l = -2, -1, 0, +1, +2\)",
+          "\(n = 3, l = 3, m_l = -3, -2, -1, 0, +1, +2, +3\)"
+      ],
+      "correctOption": 2,
+      "explanation": "For a \(3d\) orbital, the principal quantum number \(n = 3\). The azimuthal quantum number for a \(d\) subshell is \(l = 2\). The possible magnetic quantum numbers \(m_l\) range from \(-l\) to \(+l\), which gives \(-2, -1, 0, +1, +2\)."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 40,
+      "qNum": 69,
+      "text": "What are the possible values of \(n, l\) and \(m_l\) for an atomic orbital \(4f\)?",
+      "options": [
+          "\(n = 4, l = 0, 1, 2, 3, m_l = -2, -1, 0, +1, +2\)",
+          "\(n = 4, l = 3, m_l = -3, -2, -1, 0, +1, +2, +3\)",
+          "\(n = 4, l = 2, m_l = -2, -1, 0, +1, +2, +3\)",
+          "\(n = 4, l = 0, 1, m_l = -1, 0, +1\)"
+      ],
+      "correctOption": 1,
+      "explanation": "For a \(4f\) orbital, \(n = 4\) and \(l = 3\). Therefore, \(m_l\) can be \(-3, -2, -1, 0, +1, +2, +3\)."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 40,
+      "qNum": 73,
+      "text": "How many electrons are associated with the given set of quantum numbers, \(n = 3\) and \(l = 1\)?",
+      "options": [
+          "2",
+          "8",
+          "6",
+          "10"
+      ],
+      "correctOption": 2,
+      "explanation": "The given quantum numbers correspond to the \(3p\) subshell (since \(n=3\) and \(l=1\)). A \(p\) subshell has 3 orbitals, and each orbital can hold 2 electrons, giving a maximum of \(3 \times 2 = 6\) electrons."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 40,
+      "qNum": 75,
+      "text": "How many electrons in an atom have the following quantum numbers?\(n=4, m_s = -1/2\)",
+      "options": [
+          "32",
+          "18",
+          "8",
+          "16"
+      ],
+      "correctOption": 3,
+      "explanation": "In the \(n=4\) shell, there are a total of \(2n^2 = 32\) electrons. Half of these electrons will have spin \(+1/2\) and the other half will have spin \(-1/2\). Therefore, \(32 / 2 = 16\) electrons."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 40,
+      "qNum": 84,
+      "text": "Which of the following is not a correct statement regarding the energies of orbitals?",
+      "options": [
+          "The lower the value of \((n + l)\) for an orbital, lower is its energy.",
+          "Electrons in the same subshell have equal energy.",
+          "Energy of \(s\)-orbital is lower than the \(p\)-orbital and that of \(p\)-orbital is lower than the \(d\)-orbital.",
+          "If two orbitals have same value for \((n + l)\), the orbital with higher value of \(n\) will have lower energy."
+      ],
+      "correctOption": 3,
+      "explanation": "According to the \(n+l\) rule, if two orbitals have the same \(n+l\) sum, the orbital with the LOWER value of \(n\) has the LOWER energy. Therefore, the statement claiming the higher value of \(n\) has lower energy is incorrect."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 41,
+      "qNum": 88,
+      "text": "Which of the sequences given below shows the correct increasing order of energy?",
+      "options": [
+          "\(3s, 3p, 4s, 4p, 3d, 5s, 5p, 4d\)",
+          "\(3s, 3p, 3d, 4s, 4p, 4d, 5s, 5p\)",
+          "\(3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p\)",
+          "\(3s, 3p, 4s, 4p, 5s, 3d, 4d, 5p\)"
+      ],
+      "correctOption": 2,
+      "explanation": "Following the Aufbau principle and \(n+l\) rule: 3s(3) < 3p(4) < 4s(4) < 3d(5) < 4p(5) < 5s(5) < 4d(6) < 5p(6). When \(n+l\) is tied, lower \(n\) fills first."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 41,
+      "qNum": 89,
+      "text": "Which of the following configurations does not follow Hund's rule of maximum multiplicity?",
+      "options": [
+          "\(1s^2, 2s^2, 2p^6, 3s^2, 3p^2\)",
+          "\(1s^2, 2s^2, 2p^6, 3s^2, 3p^6, 4s^2, 3d^6\)",
+          "\(1s^2, 2s^2, 2p^6, 3s^2, 3p^6, 4s^1, 3d^5\)",
+          "\(1s^2, 2s^2, 2p^6, 3s^2, 3p^6, 3d^4, 4s^2\)"
+      ],
+      "correctOption": 3,
+      "explanation": "The configuration \(1s^2, 2s^2, 2p^6, 3s^2, 3p^6, 3d^4, 4s^2\) belongs to Chromium (Z=24). Due to the extra stability of a exactly half-filled d-subshell, an electron is transferred from 4s to 3d, giving \([\text{Ar}] 3d^5 4s^1\). The given \(3d^4 4s^2\) configuration violates this expected anomalous stability derived from Hund's rule (maximum exchange energy)."
+  },
+  {
+      "category": "NCERT Extract (MCQs CORNER)",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 41,
+      "qNum": 95,
+      "text": "Which atom (X) is indicated by the following configuration?\(X \rightarrow [\text{Ne}] 3s^2 3p^3\)",
+      "options": [
+          "Nitrogen",
+          "Chlorine",
+          "Phosphorus",
+          "Sulphur"
+      ],
+      "correctOption": 2,
+      "explanation": "Neon [Ne] has 10 electrons. Adding the valence electrons (2 in 3s and 3 in 3p), we get 10 + 2 + 3 = 15 electrons. The element with atomic number 15 is Phosphorus."
+  },
+  {
+      "category": "Exam Archive",
+      "topic": "2.6 Quantum Mechanical Model of Atom",
+      "page": 49,
+      "qNum": 10,
+      "text": "Arrange the following orbitals in decreasing order of energy.<br>A. \(n = 3, l = 0, m = 0\)<br>B. \(n = 4, l = 0, m = 0\)<br>C. \(n = 3, l = 1, m = 0\)<br>D. \(n = 3, l = 2, m = 1\)",
+      "options": [
+          "D > B > C > A",
+          "B > D > C > A",
+          "A > C > B > D",
+          "D > B > A > C"
+      ],
+      "correctOption": 0,
+      "explanation": "Using the \(n+l\) rule:<br>A (3s): n+l = 3+0 = 3<br>B (4s): n+l = 4+0 = 4<br>C (3p): n+l = 3+1 = 4<br>D (3d): n+l = 3+2 = 5<br>For tied values of n+l (B and C), higher \(n\) has higher energy. So, B (4s) > C (3p).<br>Overall order: D > B > C > A."
+  }
 ];
