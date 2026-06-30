@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(14px) scale(.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  #sol {
+    width: 300px; height: 100px; background: red;
+    position: absolute; left: 50px; bottom: 50px;
+    animation: cardIn 0.4s ease forwards;
+  }
+  .handle { height: 20px; background: blue; cursor: grab; }
+</style>
+</head>
+<body>
+<div id="sol">
+  <div class="handle">Handle</div>
+  Content
+</div>
+<script>
+  const MCQOverlay = {
+    solX: 0, solY: 0,
+    setupDraggable: function() {
+      const sol = document.getElementById('sol');
+      const handle = sol.querySelector('.handle');
+      let isDragging = false;
+      let startX, startY;
+      
+      const dragTarget = handle || sol;
+      
+      dragTarget.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        e.preventDefault();
+        sol.style.animation = 'none'; // FIX
+        startX = e.clientX - this.solX;
+        startY = e.clientY - this.solY;
+      });
+      
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        this.solX = e.clientX - startX;
+        this.solY = e.clientY - startY;
+        sol.style.transform = `translate(${this.solX}px, ${this.solY}px)`;
+      });
+      
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+    }
+  };
+  MCQOverlay.setupDraggable();
+</script>
+</body>
+</html>

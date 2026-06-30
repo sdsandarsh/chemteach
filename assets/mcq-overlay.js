@@ -139,6 +139,7 @@ const MCQOverlay = {
     this.solTimeout = setTimeout(() => {
       const sol = document.getElementById('mcq-overlay-sol');
       document.getElementById('mcq-overlay-sol-content').innerHTML = `<strong>Explanation:</strong><br>${explanationText}`;
+      sol.style.animation = ''; // Reset animation so it runs again
       sol.style.display = 'block';
       if (window.MathJax) {
         MathJax.typesetPromise([sol]).catch(console.error);
@@ -185,6 +186,7 @@ const MCQOverlay = {
     dragTarget.addEventListener('mousedown', (e) => {
       isDragging = true;
       e.preventDefault();
+      sol.style.animation = 'none'; // Prevent CSS animation from overriding drag transform
       startX = e.clientX - this.solX;
       startY = e.clientY - this.solY;
     });
