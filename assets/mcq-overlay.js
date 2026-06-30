@@ -176,11 +176,15 @@ const MCQOverlay = {
   solY: 0,
   setupDraggable: function() {
     const sol = document.getElementById('mcq-overlay-sol');
+    const handle = sol.querySelector('.sol-drag-handle');
     let isDragging = false;
     let startX, startY;
     
-    sol.addEventListener('mousedown', (e) => {
+    const dragTarget = handle || sol;
+    
+    dragTarget.addEventListener('mousedown', (e) => {
       isDragging = true;
+      e.preventDefault();
       startX = e.clientX - this.solX;
       startY = e.clientY - this.solY;
     });
