@@ -69,6 +69,18 @@ window.QuantumSim = (() => {
     container.appendChild(wrap);
 
     const ctx = canvas.getContext('2d');
+    
+    // Auto-resize intrinsic canvas resolution to match CSS layout bounds before clearing
+    const originalClearRect = ctx.clearRect.bind(ctx);
+    ctx.clearRect = function(x, y, w, h) {
+       const rect = canvas.getBoundingClientRect();
+       if (rect.width > 0 && rect.height > 0 && (canvas.width !== Math.floor(rect.width) || canvas.height !== Math.floor(rect.height))) {
+           canvas.width = Math.floor(rect.width);
+           canvas.height = Math.floor(rect.height);
+       }
+       originalClearRect(0, 0, canvas.width, canvas.height);
+    };
+
     let animationId;
     let time = 0;
 
@@ -602,7 +614,7 @@ window.QuantumSim = (() => {
         ctx.fillRect(40, canvas.height/2 - 5, 10, 10);
         
         // Draw Slit Barrier
-        const barrierX = 300;
+        const barrierX = Math.floor(canvas.width * 0.4);
         ctx.fillStyle = 'rgba(255,255,255,0.8)';
         ctx.fillRect(barrierX, 0, 10, canvas.height/2 - 40);
         ctx.fillRect(barrierX, canvas.height/2 - 10, 10, 20);
