@@ -31,4 +31,39 @@
      label once the DOM is ready (the attribute itself is already set,
      avoiding any flash of the wrong theme). */
   document.addEventListener('DOMContentLoaded', () => apply(readStored()));
+
+  /* Custom Zoom Handler: 
+     Because the project uses fluid typography (vw) which resists native browser zoom,
+     we intercept Ctrl + / - / scroll to manually adjust the CSS zoom property.
+     This ensures perfect proportional scaling on all screens/projectors. */
+  let currentZoom = 1.0;
+  function updateZoom(newZoom) {
+    currentZoom = Math.max(0.3, Math.min(newZoom, 3.0));
+    if (document.body) {
+      document.body.style.zoom = currentZoom;
+    }
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.ctrlKey) {
+      if (e.key === '-' || e.key === '_') {
+        e.preventDefault();
+        updateZoom(currentZoom - 0.1);
+      } else if (e.key === '=' || e.key === '+') {
+        e.preventDefault();
+        updateZoom(currentZoom + 0.1);
+      } else if (e.key === '0') {
+        e.preventDefault();
+        updateZoom(1.0);
+      }
+    }
+  }, { passive: false });
+
+  window.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) {
+      e.preventDefault();
+      if (e.deltaY > 0) updateZoom(currentZoom - 0.05);
+      else updateZoom(currentZoom + 0.05);
+    }
+  }, { passive: false });
 })();
