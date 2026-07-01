@@ -281,8 +281,10 @@ window.QuantumSim = (() => {
 
       canvas.addEventListener('click', (e) => {
         const rect = canvas.getBoundingClientRect();
-        photonX = e.clientX - rect.left;
-        photonY = e.clientY - rect.top;
+        const scaleX = canvas.width / (rect.width || 1);
+        const scaleY = canvas.height / (rect.height || 1);
+        photonX = (e.clientX - rect.left) * scaleX;
+        photonY = (e.clientY - rect.top) * scaleY;
         
         const dist = Math.hypot(photonX - eX, photonY - eY);
         // Let's say if we are within the "blur" radius, we hit it
