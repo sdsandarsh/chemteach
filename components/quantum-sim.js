@@ -286,18 +286,18 @@ window.QuantumSim = (() => {
         photonX = (e.clientX - rect.left) * scaleX;
         photonY = (e.clientY - rect.top) * scaleY;
         
+        // Always flash where the user clicks
+        flashTime = 1.0;
+        
         const dist = Math.hypot(photonX - eX, photonY - eY);
-        // Let's say if we are within the "blur" radius, we hit it
         const val = parseInt(slider.value) / 100; // 0 (long) to 1 (short)
         const radius = 100 - (val * 90); // 10 to 100
         
+        // If it hits within the probability blur, kick the electron!
         if (dist < radius) {
-          flashTime = 1.0;
-          // Kick the electron! Short wavelength = big kick
           const kick = 1 + (val * 20); 
           vX = (Math.random() - 0.5) * kick;
           vY = (Math.random() - 0.5) * kick;
-          // Move the electron to exactly where the photon hit
           eX = photonX;
           eY = photonY;
         }
