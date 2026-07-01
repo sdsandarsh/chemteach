@@ -24,7 +24,7 @@ window.IupacNamer = (() => {
     wrapper.style.alignItems = 'center';
     wrapper.style.gap = '20px';
     wrapper.style.width = '100%';
-    wrapper.style.maxWidth = '600px';
+    wrapper.style.maxWidth = '100%';
     wrapper.style.margin = '0 auto';
     wrapper.style.background = 'var(--color-card)';
     wrapper.style.border = '1px solid var(--color-border)';

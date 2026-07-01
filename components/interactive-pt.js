@@ -179,7 +179,7 @@ window.InteractivePT = (() => {
       cell.style.display = 'flex';
       cell.style.alignItems = 'center';
       cell.style.justifyContent = 'center';
-      cell.style.fontSize = '12px';
+      cell.style.fontSize = 'clamp(12px, 1.2vw, 26px)';
       cell.style.fontWeight = 'bold';
       cell.style.borderRadius = '4px';
       cell.style.cursor = 'pointer';

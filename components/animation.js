@@ -17,7 +17,7 @@ window.ChemAnimation = (() => {
 
     const stage = document.createElement('div');
     stage.style.width = '100%';
-    stage.style.maxWidth = '700px';
+    stage.style.maxWidth = '100%';
     stage.style.minHeight = '260px';
     stage.style.background = 'var(--color-card)';
     stage.style.border = '1px solid var(--color-border)';
@@ -50,7 +50,7 @@ window.ChemAnimation = (() => {
 
     const stepLabel = document.createElement('div');
     stepLabel.style.color = 'var(--color-text-body)';
-    stepLabel.style.fontSize = '18px';
+    stepLabel.style.fontSize = 'clamp(18px, 1.8vw, 39px)';
     stepLabel.style.textAlign = 'center';
     stepLabel.style.minHeight = '28px';
 
@@ -73,7 +73,7 @@ window.ChemAnimation = (() => {
     const captionEl = document.createElement('div');
     captionEl.textContent = config.caption || '';
     captionEl.style.color = 'var(--color-text-muted)';
-    captionEl.style.fontSize = '14px';
+    captionEl.style.fontSize = 'clamp(14px, 1.4vw, 30px)';
     captionEl.style.textAlign = 'center';
 
     wrap.appendChild(stage);

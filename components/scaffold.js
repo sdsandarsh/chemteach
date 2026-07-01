@@ -19,14 +19,14 @@ window.Scaffold = (() => {
     badge.textContent = data.label || '';
     badge.style.color = borderColor;
     badge.style.fontWeight = '700';
-    badge.style.fontSize = '13px';
+    badge.style.fontSize = 'clamp(13px, 1.3vw, 28px)';
     badge.style.letterSpacing = '1px';
     badge.style.marginBottom = '10px';
 
     const text = document.createElement('div');
     text.textContent = data.text || '';
     text.style.color = 'var(--color-text-body)';
-    text.style.fontSize = '18px';
+    text.style.fontSize = 'clamp(18px, 1.8vw, 39px)';
 
     div.appendChild(badge);
     div.appendChild(text);
@@ -39,7 +39,7 @@ window.Scaffold = (() => {
     wrap.style.display = 'flex';
     wrap.style.flexDirection = 'column';
     wrap.style.gap = '16px';
-    wrap.style.maxWidth = '700px';
+    wrap.style.maxWidth = '100%';
     wrap.style.margin = '0 auto';
 
     const panels = [
@@ -51,7 +51,7 @@ window.Scaffold = (() => {
     const progress = document.createElement('div');
     progress.style.textAlign = 'center';
     progress.style.color = 'var(--color-text-muted)';
-    progress.style.fontSize = '14px';
+    progress.style.fontSize = 'clamp(14px, 1.4vw, 30px)';
 
     const nextBtn = document.createElement('button');
     nextBtn.textContent = 'NEXT';

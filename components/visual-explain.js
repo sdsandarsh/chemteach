@@ -85,7 +85,7 @@ window.VisualExplain = (() => {
 
     const svgWrap = document.createElement('div');
     svgWrap.style.width = '100%';
-    svgWrap.style.maxWidth = '700px';
+    svgWrap.style.maxWidth = '100%';
     svgWrap.style.background = 'var(--color-card)';
     svgWrap.style.borderRadius = 'var(--radius)';
     svgWrap.style.border = '1px solid var(--color-border)';
@@ -197,7 +197,7 @@ window.VisualExplain = (() => {
     const captionEl = document.createElement('div');
     captionEl.textContent = config.caption || '';
     captionEl.style.color = 'var(--color-text-muted)';
-    captionEl.style.fontSize = '14px';
+    captionEl.style.fontSize = 'clamp(14px, 1.4vw, 30px)';
     captionEl.style.textAlign = 'center';
 
     wrap.appendChild(svgWrap);

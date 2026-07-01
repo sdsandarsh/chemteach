@@ -161,7 +161,7 @@ window.Model3D = (() => {
         dot.style.display = 'flex';
         dot.style.alignItems = 'center';
         dot.style.justifyContent = 'center';
-        dot.style.fontSize = '12px';
+        dot.style.fontSize = 'clamp(12px, 1.2vw, 26px)';
         dot.style.color = '#FFFFFF';
         dot.style.textShadow = '0 1px 3px rgba(0,0,0,0.8)';
         dot.style.fontWeight = 'bold';
@@ -228,7 +228,7 @@ window.Model3D = (() => {
 
     const captionEl = document.createElement('div');
     captionEl.style.color = 'var(--color-text-muted)';
-    captionEl.style.fontSize = '14px';
+    captionEl.style.fontSize = 'clamp(14px, 1.4vw, 30px)';
     captionEl.style.textAlign = 'center';
     captionEl.textContent = config.caption || '';
     wrap.appendChild(captionEl);

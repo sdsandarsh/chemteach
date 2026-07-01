@@ -38,14 +38,14 @@ window.Story = (() => {
     const content = document.createElement('div');
     content.style.position = 'relative';
     content.style.zIndex = '2';
-    content.style.maxWidth = '720px';
+    content.style.maxWidth = '100%';
     content.style.padding = '40px';
     content.style.textAlign = 'center';
 
     const setting = document.createElement('div');
     setting.textContent = config.setting || '';
     setting.style.color = 'var(--color-accent)';
-    setting.style.fontSize = '14px';
+    setting.style.fontSize = 'clamp(14px, 1.4vw, 30px)';
     setting.style.letterSpacing = '2px';
     setting.style.marginBottom = '20px';
     setting.style.textTransform = 'uppercase';
@@ -53,7 +53,7 @@ window.Story = (() => {
     const narrative = document.createElement('div');
     narrative.textContent = config.narrative || '';
     narrative.style.color = '#FFFFFF';
-    narrative.style.fontSize = '22px';
+    narrative.style.fontSize = 'clamp(22px, 2.2vw, 48px)';
     narrative.style.lineHeight = '1.6';
 
     const revealContainer = document.createElement('div');
@@ -69,7 +69,7 @@ window.Story = (() => {
     revealLine.textContent = config.reveal || '';
     revealLine.style.color = 'var(--color-highlight)';
     revealLine.style.fontWeight = '700';
-    revealLine.style.fontSize = '26px';
+    revealLine.style.fontSize = 'clamp(26px, 2.6vw, 57px)';
 
     revealContainer.appendChild(revealLine);
 

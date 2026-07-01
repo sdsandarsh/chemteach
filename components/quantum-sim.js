@@ -57,7 +57,7 @@ window.QuantumSim = (() => {
     if (config.instruction) {
       const instr = document.createElement('p');
       instr.style.color = 'var(--qd-slate-400)';
-      instr.style.fontSize = '12px';
+      instr.style.fontSize = 'clamp(12px, 1.2vw, 26px)';
       instr.style.textAlign = 'center';
       instr.style.width = '100%';
       instr.style.marginBottom = '8px';

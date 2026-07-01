@@ -28,7 +28,7 @@ window.DragDrop = (() => {
     const instruction = document.createElement('div');
     instruction.textContent = config.instruction || '';
     instruction.style.color = 'var(--color-text-body)';
-    instruction.style.fontSize = '16px';
+    instruction.style.fontSize = 'clamp(16px, 1.6vw, 35px)';
     instruction.style.textAlign = 'center';
 
     const holding = document.createElement('div');
@@ -50,7 +50,7 @@ window.DragDrop = (() => {
     message.style.color = 'var(--color-highlight)';
     message.style.textAlign = 'center';
     message.style.fontWeight = '600';
-    message.style.fontSize = '16px';
+    message.style.fontSize = 'clamp(16px, 1.6vw, 35px)';
     message.style.minHeight = '24px';
 
     let dragged = null;
@@ -99,7 +99,7 @@ window.DragDrop = (() => {
       label.textContent = cat;
       label.style.color = 'var(--color-accent)';
       label.style.fontWeight = '700';
-      label.style.fontSize = '14px';
+      label.style.fontSize = 'clamp(14px, 1.4vw, 30px)';
       label.style.marginBottom = '8px';
 
       const dropArea = document.createElement('div');

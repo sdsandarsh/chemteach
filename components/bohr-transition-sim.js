@@ -76,7 +76,7 @@ window.BohrTransitionSim = (() => {
       label.style.left = '50%';
       label.style.transform = 'translateX(-50%)';
       label.style.color = 'rgba(0, 229, 255, 0.6)';
-      label.style.fontSize = '12px';
+      label.style.fontSize = 'clamp(12px, 1.2vw, 26px)';
       orbit.appendChild(label);
     });
 
@@ -117,7 +117,7 @@ window.BohrTransitionSim = (() => {
     caption.style.width = '100%';
     caption.style.textAlign = 'center';
     caption.style.color = 'var(--color-text)';
-    caption.style.fontSize = '16px';
+    caption.style.fontSize = 'clamp(16px, 1.6vw, 35px)';
     caption.textContent = 'Awaiting photon...';
     stage.appendChild(caption);
 

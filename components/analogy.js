@@ -46,7 +46,7 @@ window.Analogy = (() => {
     label.textContent = data.label || '';
     label.style.color = 'var(--color-accent)';
     label.style.fontWeight = '700';
-    label.style.fontSize = '14px';
+    label.style.fontSize = 'clamp(14px, 1.4vw, 30px)';
     label.style.letterSpacing = '1px';
 
     const visual = document.createElement('div');
@@ -66,7 +66,7 @@ window.Analogy = (() => {
     const fact = document.createElement('div');
     fact.innerHTML = data.fact || '';
     fact.style.color = 'var(--color-text-body)';
-    fact.style.fontSize = '16px';
+    fact.style.fontSize = 'clamp(16px, 1.6vw, 35px)';
     fact.style.lineHeight = '1.5';
 
     div.appendChild(label);
@@ -246,7 +246,7 @@ window.Analogy = (() => {
     bridge.style.textAlign = 'center';
     bridge.style.color = 'var(--color-highlight)';
     bridge.style.fontWeight = '600';
-    bridge.style.fontSize = '18px';
+    bridge.style.fontSize = 'clamp(18px, 1.8vw, 39px)';
     bridge.style.padding = '16px';
     bridge.style.borderTop = '1px solid var(--color-border)';
 

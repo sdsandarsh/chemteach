@@ -46,13 +46,13 @@ window.ParticleSim = (() => {
 
     const labelEl = document.createElement('div');
     labelEl.style.color = 'var(--color-text-body)';
-    labelEl.style.fontSize = '18px';
+    labelEl.style.fontSize = 'clamp(18px, 1.8vw, 39px)';
     labelEl.style.textAlign = 'center';
-    labelEl.style.maxWidth = '700px';
+    labelEl.style.maxWidth = '100%';
 
     const captionEl = document.createElement('div');
     captionEl.style.color = 'var(--color-text-muted)';
-    captionEl.style.fontSize = '14px';
+    captionEl.style.fontSize = 'clamp(14px, 1.4vw, 30px)';
     captionEl.style.textAlign = 'center';
     captionEl.textContent = config.caption || '';
 

@@ -13,7 +13,7 @@ window.Infographic = (() => {
     wrap.style.alignItems = 'center';
     wrap.style.gap = '20px';
     wrap.style.width = '100%';
-    wrap.style.maxWidth = '1100px';
+    wrap.style.maxWidth = '100%';
     wrap.style.margin = '0 auto';
     wrap.style.background = 'var(--color-card)';
     wrap.style.borderRadius = 'var(--radius-lg)';
@@ -88,7 +88,7 @@ window.Infographic = (() => {
       captionEl.textContent = config.caption;
       captionEl.style.margin = '0';
       captionEl.style.color = 'var(--color-accent)';
-      captionEl.style.fontSize = '18px';
+      captionEl.style.fontSize = 'clamp(18px, 1.8vw, 39px)';
       captionEl.style.fontWeight = 'bold';
       captionEl.style.textAlign = 'center';
       textArea.appendChild(captionEl);
@@ -98,10 +98,10 @@ window.Infographic = (() => {
       const expEl = document.createElement('div');
       expEl.innerHTML = config.explanation;
       expEl.style.color = 'var(--color-text-body)';
-      expEl.style.fontSize = '15px';
+      expEl.style.fontSize = 'clamp(15px, 1.5vw, 33px)';
       expEl.style.lineHeight = '1.6';
       expEl.style.textAlign = 'center';
-      expEl.style.maxWidth = '850px';
+      expEl.style.maxWidth = '100%';
       expEl.style.background = 'rgba(255,255,255,0.03)';
       expEl.style.padding = '16px';
       expEl.style.borderRadius = 'var(--radius)';
@@ -116,7 +116,7 @@ window.Infographic = (() => {
     const instruction = document.createElement('small');
     instruction.textContent = '🔍 Click image to zoom fullscreen';
     instruction.style.color = 'var(--color-text-muted)';
-    instruction.style.fontSize = '12px';
+    instruction.style.fontSize = 'clamp(12px, 1.2vw, 26px)';
     instruction.style.marginTop = '10px';
     wrap.appendChild(instruction);
 

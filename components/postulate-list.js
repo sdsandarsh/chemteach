@@ -10,7 +10,7 @@ window.PostulateList = (() => {
     wrapper.style.flexDirection = 'column';
     wrapper.style.gap = '20px';
     wrapper.style.width = '100%';
-    wrapper.style.maxWidth = '900px';
+    wrapper.style.maxWidth = '100%';
     wrapper.style.margin = '0 auto';
 
     const header = document.createElement('h3');
@@ -43,7 +43,7 @@ window.PostulateList = (() => {
       numberBg.style.position = 'absolute';
       numberBg.style.top = '-20px';
       numberBg.style.right = '-10px';
-      numberBg.style.fontSize = '120px';
+      numberBg.style.fontSize = 'clamp(120px, 12.0vw, 264px)';
       numberBg.style.fontWeight = '900';
       numberBg.style.color = 'var(--color-accent)';
       numberBg.style.opacity = '0.05';

@@ -15,7 +15,7 @@ window.Mnemonic = (() => {
 
     const stage = document.createElement('div');
     stage.style.width = '100%';
-    stage.style.maxWidth = '700px';
+    stage.style.maxWidth = '100%';
     stage.style.minHeight = '320px';
     stage.style.perspective = '1200px';
 
@@ -40,7 +40,7 @@ window.Mnemonic = (() => {
 
     const phrase = document.createElement('div');
     phrase.textContent = config.mnemonic || '';
-    phrase.style.fontSize = '32px';
+    phrase.style.fontSize = 'clamp(32px, 3.2vw, 70px)';
     phrase.style.fontWeight = '800';
     phrase.style.textAlign = 'center';
     phrase.style.background = 'linear-gradient(90deg, #00B4CC, #00E5FF)';
@@ -68,7 +68,7 @@ window.Mnemonic = (() => {
       const row = document.createElement('div');
       row.textContent = line;
       row.style.color = 'var(--color-text-body)';
-      row.style.fontSize = '16px';
+      row.style.fontSize = 'clamp(16px, 1.6vw, 35px)';
       row.style.padding = '6px 0';
       row.style.borderBottom = '1px solid var(--color-border)';
       table.appendChild(row);
@@ -83,7 +83,7 @@ window.Mnemonic = (() => {
     const tip = document.createElement('div');
     tip.textContent = config.tip ? ('Tip: ' + config.tip) : '';
     tip.style.color = 'var(--color-warning)';
-    tip.style.fontSize = '14px';
+    tip.style.fontSize = 'clamp(14px, 1.4vw, 30px)';
 
     back.appendChild(table);
     back.appendChild(rule);

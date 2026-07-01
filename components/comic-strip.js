@@ -66,7 +66,7 @@ window.ComicStrip = (() => {
       const caption = document.createElement('div');
       caption.textContent = p.caption || '';
       caption.style.color = 'var(--color-text-muted)';
-      caption.style.fontSize = '13px';
+      caption.style.fontSize = 'clamp(13px, 1.3vw, 28px)';
       caption.style.textAlign = 'center';
       col.appendChild(caption);
 
